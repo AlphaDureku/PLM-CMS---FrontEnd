@@ -1,0 +1,50 @@
+.UserProfile_Container {
+  display: flex;
+  width: auto;
+}
+
+.UserProfile_Container > div:nth-child(1) {
+  background-color: var(--Yellow);
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 100%;
+}
+
+.UserProfile_Container > div:nth-child(2) {
+  margin: auto 0;
+  text-align: left;
+}
+
+.UserProfile_Container > div:nth-child(2) > span:nth-child(1) {
+  font-weight: 700;
+}
+
+.UserProfileImage {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Style the radio input */
+input[type="radio"] {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333; /* Border color for unchecked state */
+  border-radius: 50%;
+  outline: none;
+  /* Reduce the size of the inner circle (dot) */
+  background-clip: content-box;
+  padding: 4px;
+}
+
+/* Style the custom radio button when checked */
+input[type="radio"]:checked {
+  border-color: var(--Yellow); /* Change the border color for checked state */
+  background-color: var(--Yellow);
+  padding: 2px;
+}
+
+label {
+  display: inline;
+  vertical-align: top;
+}
