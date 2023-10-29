@@ -1,14 +1,14 @@
 import React from "react";
 import CheckBox from "./CheckBox";
 
-export default function DropDownItem() {
+type Props = {
+  list: string[];
+};
+
+export default function DropDownItem(props: Props) {
   // To add functionality
-  const list: string[] = [
-    "Dropdown Item 1",
-    "Dropdown Item 2",
-    "Dropdown Item 3",
-  ];
-  const renderedList: JSX.Element[] = list.map((item: string) => {
+
+  const renderedList: JSX.Element[] = props.list.map((item: string) => {
     return (
       <div key={item}>
         <CheckBox item={item} />

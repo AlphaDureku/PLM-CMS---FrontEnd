@@ -1,11 +1,15 @@
 import { Button } from "@mantine/core";
 
-export default function CustomButton() {
+type Props = {
+  text: string;
+  color: string;
+};
+export default function CustomButton(props: Props) {
   //To add functionality
 
   return (
-    <Button variant="filled" color="#cca000" radius="sm">
-      Button
+    <Button variant="filled" color={props.color} radius="sm">
+      {props.text}
     </Button>
   );
 }

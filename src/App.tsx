@@ -10,6 +10,7 @@ import TextBox from "./components/Reusable Components/TextBox";
 import TextBoxWithHint from "./components/Reusable Components/TextboxWithHint";
 import UserProfile from "./components/Reusable Components/UserProfile";
 function App() {
+  document.title = "PLM";
   return (
     <>
       <div className="MainContainer">
@@ -19,11 +20,15 @@ function App() {
         <br />
         <RadioButton item="Option 1" />
         <br />
-        <CustomButton />
+        <CustomButton text="Sample Text" color="var(--Yellow)" />
         <br></br>
-        <DropDownItem />
+        <DropDownItem list={["Option 1", "Option 2", "Option 3"]} />
         <br></br>
-        <ShortCard />
+        <ShortCard
+          ImageLink="https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif"
+          Title="Bocchi the Rock"
+          Description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt, rem recusandae mollitia alias a! Eos laborum cupiditate consectetur quam."
+        />
         <br></br>
         <TextBoxWithHint inputHint="Input Hint" />
         <br></br>
@@ -31,7 +36,16 @@ function App() {
         <br></br>
         <ExitBtn topText="Top Label" bottomText="Bottom Label" />
 
-        <LongCard />
+        <LongCard
+          ImageLink="https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif"
+          Title="Bocchi the Rock"
+          Description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt, rem recusandae mollitia alias a! Eos laborum cupiditate consectetur quam."
+          BottomRow={{
+            Date: "10/29/23",
+            Time: "9:00PM",
+            BtnLink: "youtube.com",
+          }}
+        />
       </div>
     </>
   );

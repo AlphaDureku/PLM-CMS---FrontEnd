@@ -7,5 +7,5 @@ type Props = {
 export default function CheckBox(props: Props) {
   //To add functionality
 
-  return <Checkbox label={<>{props.item}</>} color="#cca000" size="md" />;
+  return <Checkbox label={<>{props.item}</>} color="var(--Yellow)" size="md" />;
 }

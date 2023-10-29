@@ -1,13 +1,24 @@
 import { Button, Image } from "@mantine/core";
-export default function LongCard() {
+
+type Props = {
+  ImageLink: string;
+  Title: string;
+  Description: string;
+  BottomRow: {
+    Time: string;
+    Date: string;
+    BtnLink: string;
+  };
+};
+export default function LongCard(props: Props) {
   //To add functionality
 
   return (
-    <div className="LongCardContainer">
+    <div className="LongCard_Container">
       <div>
         {" "}
         <Image
-          src="https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif"
+          src={props.ImageLink}
           alt="No way!"
           radius="md"
           h={200}
@@ -17,29 +28,25 @@ export default function LongCard() {
       </div>
       <div>
         <div>
-          <h2>INSERT TITLE HERE</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore
-          </p>
+          <h2>{props.Title}</h2>
+          <p>{props.Description}</p>
         </div>
         <hr></hr>
         <div>
           <div className="LongCard_BottomRow">
             <div>
               <img src="/images/CalendarLogo.png" alt="img not found" />
-              <span>MM/DD/YYYY</span>
+              <span>{props.BottomRow.Date}</span>
               <img src="/images/ClockLogo.png" alt="img not found" />
-              <span>9:00PM</span>
+              <span>{props.BottomRow.Time}</span>
             </div>
             <div>
-              <Button variant="filled" color="#032968" size="lg">
-                <span style={{ marginRight: "8px" }}>Read More</span>
-                <img src="/images/ButtonArrowLogo.png" alt="img not found" />
-              </Button>
+              <a href={props.BottomRow.BtnLink}>
+                <Button variant="filled" color="#032968" size="lg">
+                  <span style={{ marginRight: "8px" }}>Read More</span>
+                  <img src="/images/ButtonArrowLogo.png" alt="img not found" />
+                </Button>
+              </a>
             </div>
           </div>
           <div></div>

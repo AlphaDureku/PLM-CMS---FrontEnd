@@ -1,8 +1,14 @@
 import { Card, Image } from "@mantine/core";
 
-export default function Cards() {
+type Props = {
+  ImageLink: string;
+  Title: string;
+  Description: string;
+};
+
+export default function Cards(props: Props) {
   return (
-    <div className="ShortCardContainer">
+    <div className="ShortCard_Container">
       <Card
         padding="md"
         style={{
@@ -11,18 +17,12 @@ export default function Cards() {
         }}
       >
         <Card.Section>
-          <Image
-            src="https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif"
-            alt="No way!"
-          />
+          <Image src={props.ImageLink} alt="No way!" />
         </Card.Section>
 
         <div style={{ textAlign: "left" }}>
-          <h2>Bocchi the rock!</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt
-          </p>
+          <h2>{props.Title}</h2>
+          <p>{props.Description}</p>
         </div>
       </Card>
     </div>
