@@ -11,14 +11,22 @@ export default function TextBox() {
       >
         <div>
           {" "}
-          <img src="/images/compass.png" alt="img not found" />
+          <img
+            src="/images/compass.png"
+            alt="img not found"
+            className="makeHoverable"
+          />
         </div>
         <div>
           <Input placeholder="Text Input" variant="unstyled" />
         </div>
         <div>
           {" "}
-          <img src="/images/profile.png" alt="img not found" />
+          <img
+            src="/images/profile.png"
+            alt="img not found"
+            className="makeHoverable"
+          />
         </div>
       </div>
     </>

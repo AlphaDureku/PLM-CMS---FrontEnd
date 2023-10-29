@@ -1,13 +1,14 @@
 import "@mantine/core/styles.css";
-import CheckBox from "./components/CheckBox";
-import CustomButton from "./components/CustomButton";
-import DropDownItem from "./components/DropDownItem";
-import LongCard from "./components/LongCard";
-import RadioButton from "./components/RadioButton";
-import ShortCard from "./components/ShortCard";
-import TextBox from "./components/TextBox";
-import TextBoxWithHint_Container from "./components/TextboxWithHint";
-import UserProfile from "./components/UserProfile";
+import CheckBox from "./components/Reusable Components/CheckBox";
+import CustomButton from "./components/Reusable Components/CustomButton";
+import DropDownItem from "./components/Reusable Components/DropDownItem";
+import ExitBtn from "./components/Reusable Components/ExitButton";
+import LongCard from "./components/Reusable Components/LongCard";
+import RadioButton from "./components/Reusable Components/RadioButton";
+import ShortCard from "./components/Reusable Components/ShortCard";
+import TextBox from "./components/Reusable Components/TextBox";
+import TextBoxWithHint from "./components/Reusable Components/TextboxWithHint";
+import UserProfile from "./components/Reusable Components/UserProfile";
 function App() {
   return (
     <>
@@ -24,11 +25,13 @@ function App() {
         <br></br>
         <ShortCard />
         <br></br>
-        <TextBoxWithHint_Container />
+        <TextBoxWithHint inputHint="Input Hint" />
         <br></br>
-
         <TextBox />
-        {/* <LongCard /> */}
+        <br></br>
+        <ExitBtn topText="Top Label" bottomText="Bottom Label" />
+
+        <LongCard />
       </div>
     </>
   );

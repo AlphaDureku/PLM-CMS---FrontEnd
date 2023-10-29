@@ -1,3 +1,9 @@
+.makeHoverable:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.15s;
+}
+
 .UserProfile_Container {
   display: flex;
   width: auto;
@@ -111,3 +117,15 @@ label {
   margin-right: auto;
   display: block;
 }
+
+.exitBtn_Container {
+  text-align: center;
+}
+
+.exitBtn_Container > p {
+  font-size: 0.9rem;
+  color: var(--Yellow);
+  font-weight: 600;
+}
+
+/*Animations*/
