@@ -62,7 +62,7 @@ label {
   display: flex;
   flex-direction: row;
   text-align: left;
-  width: 85%;
+  width: 70%;
   border-radius: 8px;
   align-items: center;
 }
@@ -82,4 +82,32 @@ label {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.textBoxWithHint_Container {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 20%; /* Dynamic width */
+  font-size: 0.9rem;
+}
+
+.textBoxWithHint_Container > div:nth-child(2) {
+  width: 70%;
+  border-left: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+  padding: 0 3%;
+}
+
+.textBoxWithHint_Container > div:nth-child(1),
+.textBoxWithHint_Container > div:nth-child(3) {
+  width: 15%;
+}
+
+.textBoxWithHint_Container > div > img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }

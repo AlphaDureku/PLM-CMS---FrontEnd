@@ -5,6 +5,8 @@ import DropDownItem from "./components/DropDownItem";
 import LongCard from "./components/LongCard";
 import RadioButton from "./components/RadioButton";
 import ShortCard from "./components/ShortCard";
+import TextBox from "./components/TextBox";
+import TextBoxWithHint_Container from "./components/TextboxWithHint";
 import UserProfile from "./components/UserProfile";
 function App() {
   return (
@@ -22,8 +24,11 @@ function App() {
         <br></br>
         <ShortCard />
         <br></br>
+        <TextBoxWithHint_Container />
+        <br></br>
 
-        <LongCard />
+        <TextBox />
+        {/* <LongCard /> */}
       </div>
     </>
   );

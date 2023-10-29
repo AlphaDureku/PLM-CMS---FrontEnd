@@ -28,7 +28,7 @@ export default function LongCard() {
         </div>
         <hr></hr>
         <div>
-          <div className="LongCard_BottomRow" style={{ textAlign: "left" }}>
+          <div className="LongCard_BottomRow">
             <div>
               <img src="/images/CalendarLogo.png" alt="img not found" />
               <span>MM/DD/YYYY</span>
