@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./HomePageStyling.css";
-import "./ReusableComponentsStyling.css";
+import "./assets/HomePageStyling.css";
+import "./assets/ReusableComponentsStyling.css";
 
 import "./index.css";
 
