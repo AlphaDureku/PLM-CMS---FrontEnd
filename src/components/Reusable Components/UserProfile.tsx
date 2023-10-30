@@ -1,4 +1,9 @@
-export default function UserProfile() {
+type Props = {
+  name: string;
+  role: string;
+};
+
+export default function UserProfile(props: Props) {
   return (
     <>
       <div className="UserProfile_Container">
@@ -12,9 +17,9 @@ export default function UserProfile() {
           </div>
         </div>
         <div>
-          <span>Juan Dela Cruz</span>
+          <span>{props.name}</span>
           <br />
-          <span>Admin</span>
+          <span>{props.role}</span>
         </div>
       </div>
     </>

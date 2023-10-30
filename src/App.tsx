@@ -1,4 +1,5 @@
 import "@mantine/core/styles.css";
+import HomePageNavbar from "./components/Home Page Components/NavBar";
 import CheckBox from "./components/Reusable Components/CheckBox";
 import CustomButton from "./components/Reusable Components/CustomButton";
 import DropDownItem from "./components/Reusable Components/DropDownItem";
@@ -9,12 +10,14 @@ import ShortCard from "./components/Reusable Components/ShortCard";
 import TextBox from "./components/Reusable Components/TextBox";
 import TextBoxWithHint from "./components/Reusable Components/TextboxWithHint";
 import UserProfile from "./components/Reusable Components/UserProfile";
+
 function App() {
   document.title = "PLM";
   return (
     <>
-      <div className="MainContainer">
-        <UserProfile />
+      <HomePageNavbar />
+      <div className="Main_Container">
+        <UserProfile name="Mark Angelo Templanza" role="Administrator" />
         <br />
         <CheckBox item="Option 1" />
         <br />

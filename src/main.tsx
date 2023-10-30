@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./ComponentsStyling.css";
+import "./HomePageStyling.css";
+import "./ReusableComponentsStyling.css";
+
 import "./index.css";
 
 import { MantineProvider, createTheme } from "@mantine/core";

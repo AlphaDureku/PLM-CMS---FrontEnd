@@ -17,7 +17,11 @@ export default function Cards(props: Props) {
         }}
       >
         <Card.Section>
-          <Image src={props.ImageLink} alt="No way!" />
+          <Image
+            src={props.ImageLink}
+            alt="No way!"
+            style={{ padding: "5px" }}
+          />
         </Card.Section>
 
         <div style={{ textAlign: "left" }}>
