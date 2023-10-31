@@ -1,4 +1,4 @@
-import { Button, Image } from "@mantine/core";
+import { Image } from "@mantine/core";
 import { LongCardObject } from "../../Types/HomePageTypes";
 import CustomButton from "./CustomButton";
 
