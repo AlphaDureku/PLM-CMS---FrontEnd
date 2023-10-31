@@ -1,6 +1,8 @@
 .HomePageNavBar_Container {
   display: flex;
-  background-color: rgba(var(--RedRGBA), 0.9);
+  background-color: rgba(255, 255, 255 0.9);
+  box-shadow: 0px 24px 23px 0px #00000040;
+
   padding: 0 2%;
 }
 
@@ -31,4 +33,75 @@
 .HomePageNavBar_Container > div:nth-child(2) > div {
   display: flex;
   gap: 40px;
+}
+
+/* QuickAccess_Section */
+
+.QuickAccess_Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+}
+
+.QuickAccess_Header > h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.QuickAccess_Card_Container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3%;
+  width: 65vw;
+  margin: 3% 0;
+}
+
+.QuickAccess_Card_Container > div {
+  margin: 5% 0;
+}
+
+/* Mission and Vision Section */
+
+.MissionVision_Section {
+  display: flex;
+  justify-content: center;
+  background-color: #f3f3f3;
+  padding: 5% 0;
+  position: relative;
+}
+
+.MissionVision_Container {
+  width: 65%;
+  position: relative;
+  padding-bottom: 5%;
+}
+
+.MissionVision_Container > div > div {
+  width: 65%;
+}
+
+.MissionVision_Container > div:nth-child(2) > div {
+  text-align: end;
+  margin-left: auto;
+}
+
+.MissionVision_Container > div > div > p {
+  margin: 4% 0;
+}
+
+.MissionVision_Container > div:nth-child(2) > img {
+  position: absolute;
+  right: 0;
+}
+
+.MissionVision_Section > div:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  right: 12%;
+  width: 15%;
+}
+.MissionVision_Section > div:nth-child(2) > img {
+  margin: 0 8%;
 }

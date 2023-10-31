@@ -1,12 +1,7 @@
 import { Card, Image } from "@mantine/core";
+import { ShortCardObject } from "../../Types/HomePageTypes";
 
-type Props = {
-  ImageLink: string;
-  Title: string;
-  Description: string;
-};
-
-export default function Cards(props: Props) {
+export default function Cards(props: ShortCardObject) {
   return (
     <div className="ShortCard_Container">
       <Card
@@ -17,11 +12,14 @@ export default function Cards(props: Props) {
         }}
       >
         <Card.Section>
-          <Image
-            src={props.ImageLink}
-            alt="No way!"
-            style={{ padding: "5px" }}
-          />
+          <a href={props.GotoLink}>
+            <Image
+              src={props.ImageLink}
+              alt="No way!"
+              style={{ padding: "5px" }}
+              className="makeHoverable"
+            />
+          </a>
         </Card.Section>
 
         <div style={{ textAlign: "left" }}>

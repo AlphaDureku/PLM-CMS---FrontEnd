@@ -1,16 +1,7 @@
 import { Button, Image } from "@mantine/core";
+import { LongCardObject } from "../../Types/HomePageTypes";
 
-type Props = {
-  ImageLink: string;
-  Title: string;
-  Description: string;
-  BottomRow: {
-    Time: string;
-    Date: string;
-    BtnLink: string;
-  };
-};
-export default function LongCard(props: Props) {
+export default function LongCard(props: LongCardObject) {
   //To add functionality
 
   return (
