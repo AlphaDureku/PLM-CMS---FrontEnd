@@ -2,7 +2,7 @@ import CustomButton from "../../Reusable Components/CustomButton";
 
 export default function ExitBtn() {
   //To add functionality
-
+  console.log("hi");
   return (
     <section className="MissionVision_Section">
       <div className="MissionVision_Container">
@@ -53,7 +53,7 @@ export default function ExitBtn() {
           text="LEARN MORE"
           color="var(--Yellow)"
           size="lg"
-          ImageLink="GreaterThanSymbol.png"
+          ImageLink="/images/MissionVision/GreaterThanSymbol.png"
         />
       </div>
       <div>

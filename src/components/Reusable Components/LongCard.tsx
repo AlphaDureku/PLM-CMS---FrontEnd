@@ -1,5 +1,6 @@
 import { Button, Image } from "@mantine/core";
 import { LongCardObject } from "../../Types/HomePageTypes";
+import CustomButton from "./CustomButton";
 
 export default function LongCard(props: LongCardObject) {
   //To add functionality
@@ -33,10 +34,12 @@ export default function LongCard(props: LongCardObject) {
             </div>
             <div>
               <a href={props.BottomRow.BtnLink}>
-                <Button variant="filled" color="#032968" size="lg">
-                  <span style={{ marginRight: "8px" }}>Read More</span>
-                  <img src="/images/ButtonArrowLogo.png" alt="img not found" />
-                </Button>
+                <CustomButton
+                  color="#032968"
+                  ImageLink="/images/ButtonArrowLogo.png"
+                  text="Read More"
+                  size="md"
+                />
               </a>
             </div>
           </div>

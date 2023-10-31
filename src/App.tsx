@@ -1,6 +1,7 @@
 import "@mantine/core/styles.css";
 import HomePageNavbar from "./components/Home Page Components/NavBar";
 import MissonVision from "./components/Home Page Components/Sections/MissionVission";
+import NewsNAnnouncement from "./components/Home Page Components/Sections/NewsNAnnouncement";
 import QuickAccess from "./components/Home Page Components/Sections/QuickAccess";
 
 // import CheckBox from "./components/Reusable Components/CheckBox";
@@ -107,6 +108,49 @@ function App() {
         />
       </div>
       <MissonVision />
+      <NewsNAnnouncement
+        items={[
+          {
+            Title: "Title",
+            ImageLink:
+              "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+            Description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+
+            BottomRow: {
+              Date: "11/01/23",
+              Time: "9:00PM",
+              BtnLink: "Youtube.com",
+            },
+          },
+          {
+            Title: "Title",
+            ImageLink:
+              "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+            Description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+
+            BottomRow: {
+              Date: "11/01/23",
+              Time: "9:00PM",
+              BtnLink: "Youtube.com",
+            },
+          },
+          {
+            Title: "Title",
+            ImageLink:
+              "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+            Description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+
+            BottomRow: {
+              Date: "11/01/23",
+              Time: "9:00PM",
+              BtnLink: "Youtube.com",
+            },
+          },
+        ]}
+      />
     </>
   );
 }

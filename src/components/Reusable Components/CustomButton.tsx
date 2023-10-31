@@ -11,13 +11,13 @@ export default function CustomButton(props: Props) {
 
   return (
     <Button variant="filled" color={props.color} radius="sm" size={props.size}>
-      {props.text}
+      <span>{props.text}</span>
       {props.ImageLink ? (
         <img
-          src={`/images/MissionVision/${props.ImageLink}`}
+          src={props.ImageLink}
           alt="img not found"
-          style={{ marginLeft: "8%" }}
-          width="75%"
+          style={{ marginLeft: "8px" }}
+          width="65%"
         />
       ) : null}
     </Button>
