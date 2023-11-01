@@ -1,20 +1,21 @@
 import { Image } from "@mantine/core";
 import "@mantine/core/styles.css";
 import HomePageNavbar from "./components/Home Page Components/NavBar";
+import HeroSection from "./components/Home Page Components/Sections/HeroSection";
 import MissonVision from "./components/Home Page Components/Sections/MissionVission";
 import NewsNAnnouncement from "./components/Home Page Components/Sections/NewsNAnnouncement";
 import QuickAccess from "./components/Home Page Components/Sections/QuickAccess";
 
-import CheckBox from "./components/Reusable Components/CheckBox";
-import CustomButton from "./components/Reusable Components/CustomButton";
-import DropDownItem from "./components/Reusable Components/DropDownItem";
-import ExitBtn from "./components/Reusable Components/ExitButton";
-import LongCard from "./components/Reusable Components/LongCard";
-import RadioButton from "./components/Reusable Components/RadioButton";
-import ShortCard from "./components/Reusable Components/ShortCard";
-import TextBox from "./components/Reusable Components/TextBox";
-import TextBoxWithHint from "./components/Reusable Components/TextboxWithHint";
-import UserProfile from "./components/Reusable Components/UserProfile";
+// import CheckBox from "./components/Reusable Components/CheckBox";
+// import CustomButton from "./components/Reusable Components/CustomButton";
+// import DropDownItem from "./components/Reusable Components/DropDownItem";
+// import ExitBtn from "./components/Reusable Components/ExitButton";
+// import LongCard from "./components/Reusable Components/LongCard";
+// import RadioButton from "./components/Reusable Components/RadioButton";
+// import ShortCard from "./components/Reusable Components/ShortCard";
+// import TextBox from "./components/Reusable Components/TextBox";
+// import TextBoxWithHint from "./components/Reusable Components/TextboxWithHint";
+// import UserProfile from "./components/Reusable Components/UserProfile";
 
 function App() {
   document.title = "PLM";
@@ -22,25 +23,25 @@ function App() {
     <>
       <HomePageNavbar />
       <Image
-        src="/images/RedBlob.png"
+        src="/images/HomePage/RedBlob.png"
         className="HomeBlobImage"
         height={1000}
         w="auto"
       />{" "}
       <Image
-        src="/images/BuildingBlob.png"
+        src="/images/HomePage/BuildingBlob.png"
         className="HomeBlobImage"
         height={1000}
         w="auto"
       />
       <Image
-        src="/images/PLM_LogoBG.png"
+        src="/images/HomePage/PLM_LogoBG.png"
         className="HomeLogoBG"
         height={1000}
         w="auto"
       />
       <div className="Main_Container">
-        <UserProfile name="Mark Angelo Templanza" role="Administrator" />
+        {/* <UserProfile name="Mark Angelo Templanza" role="Administrator" />
         <br />
         <CheckBox item="Option 1" />
         <br />
@@ -72,7 +73,8 @@ function App() {
             Time: "9:00PM",
             BtnLink: "youtube.com",
           }}
-        />
+        /> */}
+        <HeroSection />
         <QuickAccess
           items={[
             {
