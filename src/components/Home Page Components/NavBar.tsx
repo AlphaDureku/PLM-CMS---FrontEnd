@@ -12,7 +12,7 @@ export default function Navbar() {
             <h4 style={{ color: "var(--Yellow)" }}>
               PAMANTASAN NG LUNGSOD NG MAYNILA
             </h4>
-            <h5 style={{ color: "white" }}>
+            <h5 style={{ color: "#686868" }}>
               UNIVSERSITY OF THE CITY OF MANILA
             </h5>
           </div>

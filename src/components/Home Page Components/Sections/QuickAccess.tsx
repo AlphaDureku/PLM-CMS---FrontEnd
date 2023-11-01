@@ -1,3 +1,4 @@
+import { SimpleGrid } from "@mantine/core";
 import { ShortCardObject } from "../../../Types/HomePageTypes";
 import ShortCard from "../../Reusable Components/ShortCard";
 
@@ -24,7 +25,13 @@ export default function UserProfile(props: Props) {
         <div className="QuickAccess_Header">
           <h2>Quick Access</h2>
         </div>
-        <div className="QuickAccess_Card_Container">{contents}</div>
+        <SimpleGrid
+          cols={{ base: 1, sm: 2, lg: 3 }}
+          spacing={{ base: "md", sm: 100 }}
+          verticalSpacing={{ base: "md", sm: 40 }}
+        >
+          {contents}
+        </SimpleGrid>
       </section>
     </>
   );

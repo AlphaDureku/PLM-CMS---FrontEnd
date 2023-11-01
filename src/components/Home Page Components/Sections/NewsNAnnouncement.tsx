@@ -1,3 +1,4 @@
+import { Flex } from "@mantine/core";
 import { LongCardObject } from "../../../Types/HomePageTypes";
 import LongCard from "../../Reusable Components/LongCard";
 
@@ -28,7 +29,15 @@ export default function UserProfile(props: Props) {
         <div className="NewsNAnnouncement_Header">
           <h2>News & Announcement</h2>
         </div>
-        <div className="NewsNAnnouncement_Card_Container">{contents}</div>
+        <Flex
+          gap="xl"
+          justify="center"
+          align="center"
+          direction="column"
+          wrap="wrap"
+        >
+          {contents}
+        </Flex>
       </section>
     </>
   );

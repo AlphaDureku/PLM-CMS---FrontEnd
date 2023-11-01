@@ -21,6 +21,7 @@
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
 .Main_Container {
@@ -28,4 +29,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.HomeBlobImage {
+  position: absolute;
+  top: 0;
+  z-index: -99;
+}
+
+.HomeLogoBG {
+  position: absolute;
+  z-index: -98;
+  right: 0;
 }

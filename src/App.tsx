@@ -1,3 +1,4 @@
+import { Image } from "@mantine/core";
 import "@mantine/core/styles.css";
 import HomePageNavbar from "./components/Home Page Components/NavBar";
 import MissonVision from "./components/Home Page Components/Sections/MissionVission";
@@ -20,6 +21,24 @@ function App() {
   return (
     <>
       <HomePageNavbar />
+      <Image
+        src="/images/RedBlob.png"
+        className="HomeBlobImage"
+        height={1000}
+        w="auto"
+      />{" "}
+      <Image
+        src="/images/BuildingBlob.png"
+        className="HomeBlobImage"
+        height={1000}
+        w="auto"
+      />
+      <Image
+        src="/images/PLM_LogoBG.png"
+        className="HomeLogoBG"
+        height={1000}
+        w="auto"
+      />
       <div className="Main_Container">
         {/* <UserProfile name="Mark Angelo Templanza" role="Administrator" />
         <br />
@@ -106,51 +125,52 @@ function App() {
             },
           ]}
         />
+        <MissonVision />
+        <NewsNAnnouncement
+          items={[
+            {
+              Title: "Title",
+              ImageLink:
+                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+              Description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+
+              BottomRow: {
+                Date: "11/01/23",
+                Time: "9:00PM",
+                BtnLink: "Youtube.com",
+              },
+            },
+            {
+              Title: "Title",
+              ImageLink:
+                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+              Description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+
+              BottomRow: {
+                Date: "11/01/23",
+                Time: "9:00PM",
+                BtnLink: "Youtube.com",
+              },
+            },
+            {
+              Title: "Title",
+              ImageLink:
+                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+              Description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+
+              BottomRow: {
+                Date: "11/01/23",
+                Time: "9:00PM",
+                BtnLink: "Youtube.com",
+              },
+            },
+          ]}
+        />
       </div>
-      <MissonVision />
-      <NewsNAnnouncement
-        items={[
-          {
-            Title: "Title",
-            ImageLink:
-              "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-
-            BottomRow: {
-              Date: "11/01/23",
-              Time: "9:00PM",
-              BtnLink: "Youtube.com",
-            },
-          },
-          {
-            Title: "Title",
-            ImageLink:
-              "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-
-            BottomRow: {
-              Date: "11/01/23",
-              Time: "9:00PM",
-              BtnLink: "Youtube.com",
-            },
-          },
-          {
-            Title: "Title",
-            ImageLink:
-              "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-
-            BottomRow: {
-              Date: "11/01/23",
-              Time: "9:00PM",
-              BtnLink: "Youtube.com",
-            },
-          },
-        ]}
-      />
+      <HomePageFooter />
     </>
   );
 }
