@@ -46,7 +46,7 @@ function App() {
         <br />
         <RadioButton item="Option 1" />
         <br />
-        <CustomButton text="Sample Text" color="var(--Yellow)" />
+        <CustomButton text="Sample Text" color="var(--Yellow)" size="lg" />
         <br></br>
         <DropDownItem list={["Option 1", "Option 2", "Option 3"]} />
         <br></br>
