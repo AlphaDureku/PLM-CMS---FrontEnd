@@ -5,16 +5,16 @@ import MissonVision from "./components/Home Page Components/Sections/MissionViss
 import NewsNAnnouncement from "./components/Home Page Components/Sections/NewsNAnnouncement";
 import QuickAccess from "./components/Home Page Components/Sections/QuickAccess";
 
-// import CheckBox from "./components/Reusable Components/CheckBox";
-// import CustomButton from "./components/Reusable Components/CustomButton";
-// import DropDownItem from "./components/Reusable Components/DropDownItem";
-// import ExitBtn from "./components/Reusable Components/ExitButton";
-// import LongCard from "./components/Reusable Components/LongCard";
-// import RadioButton from "./components/Reusable Components/RadioButton";
-// import ShortCard from "./components/Reusable Components/ShortCard";
-// import TextBox from "./components/Reusable Components/TextBox";
-// import TextBoxWithHint from "./components/Reusable Components/TextboxWithHint";
-// import UserProfile from "./components/Reusable Components/UserProfile";
+import CheckBox from "./components/Reusable Components/CheckBox";
+import CustomButton from "./components/Reusable Components/CustomButton";
+import DropDownItem from "./components/Reusable Components/DropDownItem";
+import ExitBtn from "./components/Reusable Components/ExitButton";
+import LongCard from "./components/Reusable Components/LongCard";
+import RadioButton from "./components/Reusable Components/RadioButton";
+import ShortCard from "./components/Reusable Components/ShortCard";
+import TextBox from "./components/Reusable Components/TextBox";
+import TextBoxWithHint from "./components/Reusable Components/TextboxWithHint";
+import UserProfile from "./components/Reusable Components/UserProfile";
 
 function App() {
   document.title = "PLM";
@@ -40,7 +40,7 @@ function App() {
         w="auto"
       />
       <div className="Main_Container">
-        {/* <UserProfile name="Mark Angelo Templanza" role="Administrator" />
+        <UserProfile name="Mark Angelo Templanza" role="Administrator" />
         <br />
         <CheckBox item="Option 1" />
         <br />
@@ -72,7 +72,7 @@ function App() {
             Time: "9:00PM",
             BtnLink: "youtube.com",
           }}
-        /> */}
+        />
         <QuickAccess
           items={[
             {
@@ -170,7 +170,6 @@ function App() {
           ]}
         />
       </div>
-      <HomePageFooter />
     </>
   );
 }
