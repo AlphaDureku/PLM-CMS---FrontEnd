@@ -39,6 +39,7 @@ export default function LongCard(props: LongCardObject) {
                   ImageLink="/images/ButtonArrowLogo.png"
                   text="Read More"
                   size="md"
+                  gotoLink="Youtube.com"
                 />
               </a>
             </div>

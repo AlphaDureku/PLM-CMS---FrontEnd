@@ -116,3 +116,50 @@
   font-size: 2rem;
   font-weight: 600;
 }
+
+.HomePageFooter_Container {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  height: 300px;
+  margin-top: 5%;
+  align-items: center;
+  grid-auto-flow: row;
+  background-color: var(--Red);
+  color: white;
+  padding: 2%;
+  grid-template-areas:
+    "Logo Name . . ."
+    ". Visit Links Links Links"
+    ". Visit copyright copyright copyright";
+}
+
+.Links {
+  grid-area: Links;
+  padding-left: 10%;
+  font-size: 1.3rem;
+  color: var(--Yellow);
+  text-decoration: underline;
+}
+
+.copyright {
+  grid-area: copyright;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.Visit {
+  grid-area: Visit;
+  font-size: 1.1rem;
+  width: 65%;
+}
+
+.Name {
+  grid-area: Name;
+  font-size: 1.2rem;
+}
+
+.Logo {
+  grid-area: Logo;
+}

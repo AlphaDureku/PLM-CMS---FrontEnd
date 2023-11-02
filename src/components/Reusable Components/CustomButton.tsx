@@ -5,21 +5,30 @@ type Props = {
   color: string;
   size: string;
   ImageLink?: string;
+  gotoLink: string;
 };
 export default function CustomButton(props: Props) {
   //To add functionality
 
   return (
-    <Button variant="filled" color={props.color} radius="sm" size={props.size}>
-      <span>{props.text}</span>
-      {props.ImageLink ? (
-        <img
-          src={props.ImageLink}
-          alt="img not found"
-          style={{ marginLeft: "8px" }}
-          width="65%"
-        />
-      ) : null}
-    </Button>
+    <a href={props.gotoLink}>
+      <Button
+        variant="filled"
+        color={props.color}
+        radius="sm"
+        size={props.size}
+        className="makeHoverable"
+      >
+        <span>{props.text}</span>
+        {props.ImageLink ? (
+          <img
+            src={props.ImageLink}
+            alt="img not found"
+            style={{ marginLeft: "8px" }}
+            width="65%"
+          />
+        ) : null}
+      </Button>
+    </a>
   );
 }

@@ -1,6 +1,8 @@
 import { Image } from "@mantine/core";
 import "@mantine/core/styles.css";
+import HomePageFooter from "./components/Home Page Components/Footer";
 import HomePageNavbar from "./components/Home Page Components/NavBar";
+
 import HeroSection from "./components/Home Page Components/Sections/HeroSection";
 import MissonVision from "./components/Home Page Components/Sections/MissionVission";
 import NewsNAnnouncement from "./components/Home Page Components/Sections/NewsNAnnouncement";
@@ -172,6 +174,7 @@ function App() {
           ]}
         />
       </div>
+      <HomePageFooter />
     </>
   );
 }

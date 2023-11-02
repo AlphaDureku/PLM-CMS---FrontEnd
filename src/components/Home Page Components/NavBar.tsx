@@ -5,26 +5,20 @@ function ScrollOpacityElement() {
   const [Pcolor, setPcolor] = useState(false);
 
   useEffect(() => {
-    // Add a scroll event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const handleScroll = () => {
-    // Calculate the scroll position
     const scrollPosition = window.scrollY;
 
-    // Define the threshold at which you want to change the opacity
-    const opacityThreshold = 100; // Adjust this value to your needs
+    const opacityThreshold = 100;
 
-    // Calculate the new opacity value
     const newOpacity = Math.min(1, scrollPosition / opacityThreshold);
 
-    // Update the opacity state
     setOpacity(newOpacity);
     if (scrollPosition > opacityThreshold) {
       setPcolor(true);

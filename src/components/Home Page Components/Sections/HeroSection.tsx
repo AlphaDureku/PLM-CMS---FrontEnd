@@ -13,12 +13,18 @@ export default function UserProfile() {
           reprehenderit in voluptate velit esse cillum dolore
         </p>
         <div>
-          <CustomButton text="VIEW PROGRAMS" color="var(--Yellow)" size="lg" />
+          <CustomButton
+            text="VIEW PROGRAMS"
+            color="var(--Yellow)"
+            size="lg"
+            gotoLink="Youtube.com"
+          />
           <CustomButton
             text="APPLY NOW"
             color="var(--Yellow)"
             size="lg"
             ImageLink="/images/GreaterThanSymbol.png"
+            gotoLink="Youtube.com"
           />
         </div>
       </section>
