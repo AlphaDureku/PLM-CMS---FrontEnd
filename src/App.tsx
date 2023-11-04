@@ -39,8 +39,9 @@ function App() {
       <Image
         src="/images/HomePage/PLM_LogoBG.png"
         className="HomeLogoBG"
-        height={1000}
+        height={900}
         w="auto"
+        style={{ marginTop: "5%" }}
       />
       <div className="Main_Container">
         {/* <UserProfile name="Mark Angelo Templanza" role="Administrator" />
