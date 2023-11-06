@@ -1,0 +1,10 @@
+.LogInPage_Header_Container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LogInPage_PLMLogo{
+    width: 20%;
+}
+
