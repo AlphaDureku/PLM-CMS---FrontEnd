@@ -23,34 +23,3 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
-
-.HomeBlobImage {
-  position: absolute;
-  top: 0;
-  z-index: -99;
-}
-
-.HomeLogoBG {
-  position: absolute;
-  z-index: -98;
-  right: 0;
-}
-
-.HeroSection_Container {
-  height: 80vh;
-  width: 50%;
-  padding: 13%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 10%;
-}
-
-.HeroSection_Container > h1 {
-  font-size: 3rem;
-}
-
-.HeroSection_Container > div {
-  display: flex;
-  gap: 10%;
-}

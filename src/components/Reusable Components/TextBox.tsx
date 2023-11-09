@@ -1,6 +1,10 @@
 import { Input } from "@mantine/core";
 
-export default function TextBox() {
+type Props = {
+  type?: "text" | "password";
+  placeholder: string;
+};
+export default function TextBox(props: Props) {
   //To add functionality
 
   return (
@@ -18,7 +22,11 @@ export default function TextBox() {
           />
         </div>
         <div>
-          <Input placeholder="Text Input" variant="unstyled" />
+          <Input
+            placeholder={props.placeholder}
+            variant="unstyled"
+            type={props.type}
+          />
         </div>
         <div>
           {" "}

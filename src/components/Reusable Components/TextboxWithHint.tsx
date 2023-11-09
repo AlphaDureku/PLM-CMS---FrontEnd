@@ -2,6 +2,7 @@ import { Input } from "@mantine/core";
 
 type Props = {
   inputHint: string;
+  type?: "text" | "password";
 };
 
 export default function TextBoxWithHint(props: Props) {
@@ -25,7 +26,11 @@ export default function TextBoxWithHint(props: Props) {
           <span style={{ color: "#686868", fontWeight: "600" }}>
             {props.inputHint}
           </span>
-          <Input placeholder="Text Input" variant="unstyled" />
+          <Input
+            placeholder="Text Input"
+            variant="unstyled"
+            type={props.type}
+          />
         </div>
         <div>
           {" "}

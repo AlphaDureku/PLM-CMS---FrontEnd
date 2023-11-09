@@ -7,21 +7,9 @@ import MissonVision from "../Home Page Components/Sections/MissionVission";
 import NewsNAnnouncement from "../Home Page Components/Sections/NewsNAnnouncement";
 import QuickAccess from "../Home Page Components/Sections/QuickAccess";
 
-// import CheckBox from "../Reusable Components/CheckBox";
-// import CustomButton from "../Reusable Components/CustomButton";
-// import DropDownItem from "../Reusable Components/DropDownItem";
-// import ExitBtn from "../Reusable Components/ExitButton";
-// import LongCard from "../Reusable Components/LongCard";
-// import RadioButton from "../Reusable Components/RadioButton";
-// import ShortCard from "../Reusable Components/ShortCard";
-// import TextBox from "../Reusable Components/TextBox";
-// import TextBoxWithHint from "../Reusable Components/TextboxWithHint";
-// import UserProfile from "../Reusable Components/UserProfile";
-
-
-export default function Home(){
-    document.title = "PLM";
-    return (
+export default function Home() {
+  document.title = "PLM";
+  return (
     <>
       <HomePageNavbar />
       <Image
@@ -39,7 +27,7 @@ export default function Home(){
       <Image
         src="/images/HomePage/PLM_LogoBG.png"
         className="HomeLogoBG"
-        height={1000}
+        height={900}
         w="auto"
       />
       <div className="Main_Container">
@@ -176,5 +164,5 @@ export default function Home(){
       </div>
       <HomePageFooter />
     </>
-    );
+  );
 }

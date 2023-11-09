@@ -5,10 +5,12 @@ type Props = {
   color: string;
   size: string;
   ImageLink?: string;
-  gotoLink: string;
+  gotoLink?: string;
+  onClick?: () => void;
 };
+
 export default function CustomButton(props: Props) {
-  //To add functionality
+  // To add functionality
 
   return (
     <a href={props.gotoLink}>
@@ -17,7 +19,7 @@ export default function CustomButton(props: Props) {
         color={props.color}
         radius="sm"
         size={props.size}
-        className="makeHoverable"
+        onClick={props.onClick}
       >
         <span>{props.text}</span>
         {props.ImageLink ? (
