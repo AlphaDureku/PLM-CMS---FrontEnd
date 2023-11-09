@@ -1,6 +1,6 @@
 // import { Image } from "@mantine/core";
 
-export default function LogIn() {
+export default function Login() {
   return (
     <>
       <div className="LogInPage_Header_Container">

@@ -1,11 +1,11 @@
 import { Image } from "@mantine/core";
-import useIntersectionObserver from "../CustomHooks/observerClass";
-import HomePageFooter from "../Home Page Components/Footer";
-import HomePageNavbar from "../Home Page Components/NavBar";
-import HeroSection from "../Home Page Components/Sections/HeroSection";
-import MissonVision from "../Home Page Components/Sections/MissionVission";
-import NewsNAnnouncement from "../Home Page Components/Sections/NewsNAnnouncement";
-import QuickAccess from "../Home Page Components/Sections/QuickAccess";
+import useIntersectionObserver from "../../CustomHooks/observerClass";
+import HomePageFooter from "../../Home Page Components/Footer";
+import HomePageNavbar from "../../Home Page Components/NavBar";
+import HeroSection from "../../Home Page Components/Sections/HeroSection";
+import MissonVision from "../../Home Page Components/Sections/MissionVission";
+import NewsNAnnouncement from "../../Home Page Components/Sections/NewsNAnnouncement";
+import QuickAccess from "../../Home Page Components/Sections/QuickAccess";
 
 export default function Home() {
   document.title = "PLM";
