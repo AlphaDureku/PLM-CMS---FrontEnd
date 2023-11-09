@@ -1,5 +1,4 @@
 import { Image } from "@mantine/core";
-import { useEffect } from "react";
 import useIntersectionObserver from "../CustomHooks/observerClass";
 import HomePageFooter from "../Home Page Components/Footer";
 import HomePageNavbar from "../Home Page Components/NavBar";
