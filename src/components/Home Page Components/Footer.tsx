@@ -2,7 +2,7 @@ import { Flex } from "@mantine/core";
 export default function Footer() {
   return (
     <>
-      <div className="HomePageFooter_Container">
+      <div className="HomePageFooter_Container hidden">
         <div className="Logo">
           {" "}
           <img

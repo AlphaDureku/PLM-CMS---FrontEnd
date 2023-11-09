@@ -11,7 +11,7 @@ export default function Home() {
   document.title = "PLM";
 
   useIntersectionObserver([
-    { selector: ".hidden" },
+    { selector: ".hidden", additionalClass: "show" },
     { selector: ".left", additionalClass: "slideFromLeft" },
     { selector: ".top", additionalClass: "slideFromTop" },
     { selector: ".bottom", additionalClass: "slideFromBottom" },
@@ -23,19 +23,19 @@ export default function Home() {
       <HomePageNavbar />
       <Image
         src="/images/HomePage/RedBlob.png"
-        className="HomeBlobImage hidden slideFromLeft"
+        className="HomeBlobImage  left"
         height={1000}
         w="auto"
       />{" "}
       <Image
         src="/images/HomePage/BuildingBlob.png"
-        className="HomeBlobImage hidden"
+        className="HomeBlobImage "
         height={1000}
         w="auto"
       />
       <Image
         src="/images/HomePage/PLM_LogoBG.png"
-        className="HomeLogoBG hidden slideFromRight"
+        className="HomeLogoBG  right"
         height={900}
         w="auto"
       />

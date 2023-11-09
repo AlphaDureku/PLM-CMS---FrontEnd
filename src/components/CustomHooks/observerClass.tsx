@@ -8,6 +8,7 @@ interface ObserveConfig {
 const useIntersectionObserver = (configs: ObserveConfig[]): void => {
   useEffect(() => {
     const classMap: Record<string, string> = {
+      hidden: "show",
       left: "slideFromLeft",
       right: "slideFromRight",
       top: "slideFromTop",
@@ -25,8 +26,6 @@ const useIntersectionObserver = (configs: ObserveConfig[]): void => {
             isIntersecting && target.classList.contains(key)
           );
         });
-
-        target.classList.toggle("show", isIntersecting);
       });
     });
 
