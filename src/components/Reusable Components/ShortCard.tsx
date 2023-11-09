@@ -3,7 +3,7 @@ import { ShortCardObject } from "../../Types/HomePageTypes";
 
 export default function Cards(props: ShortCardObject) {
   return (
-    <div className="ShortCard_Container">
+    <div className="ShortCard_Container hidden">
       <Card
         padding="md"
         style={{

@@ -1,7 +1,8 @@
 import { Image } from "@mantine/core";
+import { useEffect } from "react";
+import useIntersectionObserver from "../CustomHooks/observerClass";
 import HomePageFooter from "../Home Page Components/Footer";
 import HomePageNavbar from "../Home Page Components/NavBar";
-
 import HeroSection from "../Home Page Components/Sections/HeroSection";
 import MissonVision from "../Home Page Components/Sections/MissionVission";
 import NewsNAnnouncement from "../Home Page Components/Sections/NewsNAnnouncement";
@@ -9,61 +10,37 @@ import QuickAccess from "../Home Page Components/Sections/QuickAccess";
 
 export default function Home() {
   document.title = "PLM";
+
+  useIntersectionObserver([
+    { selector: ".hidden" },
+    { selector: ".left", additionalClass: "slideFromLeft" },
+    { selector: ".top", additionalClass: "slideFromTop" },
+    { selector: ".bottom", additionalClass: "slideFromBottom" },
+    { selector: ".right", additionalClass: "slideFromRight" },
+  ]);
+
   return (
     <>
       <HomePageNavbar />
       <Image
         src="/images/HomePage/RedBlob.png"
-        className="HomeBlobImage"
+        className="HomeBlobImage hidden slideFromLeft"
         height={1000}
         w="auto"
       />{" "}
       <Image
         src="/images/HomePage/BuildingBlob.png"
-        className="HomeBlobImage"
+        className="HomeBlobImage hidden"
         height={1000}
         w="auto"
       />
       <Image
         src="/images/HomePage/PLM_LogoBG.png"
-        className="HomeLogoBG"
+        className="HomeLogoBG hidden slideFromRight"
         height={900}
         w="auto"
       />
       <div className="Main_Container">
-        {/* <UserProfile name="Mark Angelo Templanza" role="Administrator" />
-        <br />
-        <CheckBox item="Option 1" />
-        <br />
-        <RadioButton item="Option 1" />
-        <br />
-        <CustomButton text="Sample Text" color="var(--Yellow)" size="lg" />
-        <br></br>
-        <DropDownItem list={["Option 1", "Option 2", "Option 3"]} />
-        <br></br>
-        <ShortCard
-          GotoLink="youtube.com"
-          ImageLink="https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif"
-          Title="Bocchi the Rock"
-          Description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt."
-        />
-        <br></br>
-        <TextBoxWithHint inputHint="Input Hint" />
-        <br></br>
-        <TextBox />
-        <br></br>
-        <ExitBtn topText="Top Label" bottomText="Bottom Label" />
-
-        <LongCard
-          ImageLink="https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif"
-          Title="Bocchi the Rock"
-          Description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt"
-          BottomRow={{
-            Date: "10/29/23",
-            Time: "9:00PM",
-            BtnLink: "youtube.com",
-          }}
-        /> */}
         <HeroSection />
         <QuickAccess
           items={[

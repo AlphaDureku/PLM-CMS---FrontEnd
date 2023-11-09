@@ -4,15 +4,15 @@ export default function UserProfile() {
   return (
     <>
       <section className="HeroSection_Container">
-        <h1>LOREM IPSUM DOLOR SIT AMET</h1>
-        <p>
+        <h1 className="slideFromTop">LOREM IPSUM DOLOR SIT AMET</h1>
+        <p className="slideFromTop">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore
         </p>
-        <div>
+        <div className="slideFromTop">
           <CustomButton
             text="VIEW PROGRAMS"
             color="var(--Yellow)"

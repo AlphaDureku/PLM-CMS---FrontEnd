@@ -76,7 +76,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 3% 0;
+  margin: 10% 0 0 5%;
 }
 
 .QuickAccess_Header > h2 {

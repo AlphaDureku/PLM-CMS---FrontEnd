@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import CustomButton from "../../Reusable Components/CustomButton";
-
+useEffect;
 export default function ExitBtn() {
   //To add functionality
-  console.log("hi");
+
   return (
     <section className="MissionVision_Section">
       <div className="MissionVision_Container">
@@ -19,6 +20,7 @@ export default function ExitBtn() {
           <img
             src="/images/MissionVision/HorizontalRedLine.png"
             alt="img not found"
+            className="left"
           />
         </div>
         <div>
@@ -32,6 +34,7 @@ export default function ExitBtn() {
           <img
             src="/images/MissionVision/HorizontalYellowLine.png"
             alt="img not found"
+            className="right"
           />
         </div>
         <div>
@@ -47,6 +50,7 @@ export default function ExitBtn() {
           <img
             src="/images/MissionVision/HorizontalRedLine.png"
             alt="img not found"
+            className="left"
           />
         </div>
         <CustomButton
@@ -57,7 +61,7 @@ export default function ExitBtn() {
           gotoLink="Youtube.com"
         />
       </div>
-      <div>
+      <div className="right">
         {" "}
         <img
           src="/images/MissionVision/ShortBlackLine.png"
