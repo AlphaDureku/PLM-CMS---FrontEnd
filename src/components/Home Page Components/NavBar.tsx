@@ -45,9 +45,14 @@ function ScrollOpacityElement() {
             <h4 style={{ color: "var(--Yellow)" }}>
               PAMANTASAN NG LUNGSOD NG MAYNILA
             </h4>
-            <h5 style={{ color: Pcolor ? "#686868" : "white" }}>
+            <p
+              style={{
+                color: Pcolor ? "#686868" : "white",
+                fontSize: "0.9rem",
+              }}
+            >
               UNIVERSITY OF THE CITY OF MANILA
-            </h5>
+            </p>
           </div>
         </div>
         <div>
