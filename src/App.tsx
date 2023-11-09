@@ -1,7 +1,7 @@
 import "@mantine/core/styles.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/Pages/Home";
-import LogIn from "./components/Pages/LogIn";
+import Home from "./components/pages/Home";
+import LogIn from "./components/pages/LogIn";
 
 function App() {
   return (
