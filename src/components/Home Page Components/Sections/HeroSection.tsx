@@ -17,14 +17,14 @@ export default function UserProfile() {
             text="VIEW PROGRAMS"
             color="var(--Yellow)"
             size="lg"
-            gotoLink="Youtube.com"
+            gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           />
           <CustomButton
             text="APPLY NOW"
             color="var(--Yellow)"
             size="lg"
             ImageLink="/images/GreaterThanSymbol.png"
-            gotoLink="Youtube.com"
+            gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           />
         </div>
       </section>

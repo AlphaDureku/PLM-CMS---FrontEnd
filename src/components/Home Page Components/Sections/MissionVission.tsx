@@ -58,7 +58,7 @@ export default function ExitBtn() {
           color="var(--Yellow)"
           size="lg"
           ImageLink="/images/MissionVision/GreaterThanSymbol.png"
-          gotoLink="Youtube.com"
+          gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         />
       </div>
       <div className="right">
