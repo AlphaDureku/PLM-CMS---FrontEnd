@@ -1,10 +1,12 @@
 import { Flex } from "@mantine/core";
-import { useState } from "react";
 import UserProfile from "../Reusable Components/UserProfile";
 
-export default function CmsNavBar() {
-  const [menuOpened, setMenuOpened] = useState(false);
+type menu = {
+  menuOpened: boolean;
+  setMenuOpened: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
+export default function CmsNavBar({ menuOpened, setMenuOpened }: menu) {
   const handleMenuClick = () => {
     setMenuOpened(!menuOpened);
   };

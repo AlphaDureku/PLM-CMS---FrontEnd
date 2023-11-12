@@ -5,7 +5,6 @@ import Home from "./components/pages/Home Pages/Home";
 import TestSite from "./components/pages/TestSite";
 
 function App() {
-  console.log(location.hostname);
   return (
     <>
       <BrowserRouter>
