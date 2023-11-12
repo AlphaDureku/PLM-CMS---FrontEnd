@@ -14,9 +14,7 @@ function ScrollOpacityElement() {
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-
     const opacityThreshold = 100;
-
     const newOpacity = Math.min(1, scrollPosition / opacityThreshold);
 
     setOpacity(newOpacity);

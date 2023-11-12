@@ -1,4 +1,5 @@
 import { Flex } from "@mantine/core";
+import { MailOutline } from "@mui/icons-material";
 import UserProfile from "../Reusable Components/UserProfile";
 
 type menu = {
@@ -47,12 +48,10 @@ export default function CmsNavBar({ menuOpened, setMenuOpened }: menu) {
         </div>
       </Flex>
       <Flex gap={"md"} align={"center"}>
-        <img
+        <MailOutline
+          fontSize="large"
+          style={{ color: "var(--Grey)" }}
           className="makeHoverable"
-          src="/images/CMS/mail.png"
-          alt="img not found"
-          width={32}
-          height={30}
         />
         <UserProfile name="Mark Angelo Templanza" role="Admin" />
       </Flex>

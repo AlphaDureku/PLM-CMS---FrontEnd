@@ -3,14 +3,14 @@ import { Route, Routes } from "react-router-dom";
 import "../../../assets/CMSLayoutStyling.css";
 import "../../../assets/HamburgerButton.css";
 
-import Layout from "./Layout";
+import Content from "./Layout";
 import Login from "./LogIn";
 
 export default function CMS() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/dashboard" element={<Layout />} />
+      <Route path="/dashboard" element={<Content />} />
     </Routes>
   );
 }

@@ -8,21 +8,11 @@ import {
   UnstyledButton,
   rem,
 } from "@mantine/core";
-import { ArrowRightRounded, HomeRounded } from "@mui/icons-material/";
-import { IconCalendarStats, IconChevronRight } from "@tabler/icons-react";
-import { useState } from "react";
+import { ArrowRightRounded } from "@mui/icons-material/";
+import { IconChevronRight } from "@tabler/icons-react";
+import { useEffect, useState } from "react";
+import { LinksGroupProps } from "../Types/CmsPage";
 import classes from "./NavbarLinksGroup.module.css";
-interface LinksGroupProps {
-  icon:
-    | React.ComponentType<React.ComponentProps<typeof IconCalendarStats>>
-    | React.ComponentType<React.ComponentProps<typeof HomeRounded>>;
-  label: string;
-  initiallyOpened?: boolean;
-  links?: { label: string; link: string }[];
-  selected: string;
-  setSelected: React.Dispatch<React.SetStateAction<string>>;
-  keys: string;
-}
 
 export function LinksGroup({
   icon: Icon,
@@ -35,16 +25,30 @@ export function LinksGroup({
 }: LinksGroupProps) {
   const hasLinks = Array.isArray(links);
   const [opened, setOpened] = useState(initiallyOpened || false);
+  const [selectedChild, setSelectedChild] = useState("");
+
+  useEffect(() => {
+    setSelectedChild("");
+  }, [selected]);
+
   const items = (hasLinks ? links : []).map((link) => (
     <Text<"a">
       component="a"
       className={classes.link}
       href={link.link}
       key={link.label}
-      onClick={(event) => event.preventDefault()}
+      onClick={(event) => {
+        event.preventDefault();
+        setSelectedChild(link.label);
+      }}
     >
-      <Flex align={"center"} style={{ color: "var(--Grey)" }}>
-        <ArrowRightRounded /> {link.label}
+      <Flex
+        align={"center"}
+        style={{
+          color: link.label === selectedChild ? "var(--Yellow)" : "var(--Grey)",
+        }}
+      >
+        <ArrowRightRounded /> <h4>{link.label}</h4>
       </Flex>
     </Text>
   ));

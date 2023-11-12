@@ -6,10 +6,8 @@ import {
   NewspaperRounded,
   PeopleAltRounded,
 } from "@mui/icons-material/";
-import { LinksGroup } from "../../mantine assets/NavbarLinksGroup";
-// import { UserButton } from "../UserButton/UserButton";
-// import { Logo } from "./Logo";
 import { useState } from "react";
+import { LinksGroup } from "../../mantine assets/NavbarLinksGroup";
 import classes from "../../mantine assets/NavbarNested.module.css";
 
 const mockdata = [

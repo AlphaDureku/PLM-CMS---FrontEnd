@@ -11,3 +11,8 @@
   z-index: 1;
   align-items: center;
 }
+.cmsPlayGroundContainer {
+  background-color: #efefef;
+  height: 89vh;
+  width: 79.5vw;
+}
