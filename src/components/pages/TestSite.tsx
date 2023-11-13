@@ -1,8 +1,8 @@
-import { useDisclosure } from "@mantine/hooks";
-// import { CMSSideBar } from "../CMS Components/SideNavBar";
 import { ThemeIcon } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { Check, Delete } from "@mui/icons-material";
 import { IconEdit } from "@tabler/icons-react";
+import { CMSSideBar } from "../CMS Components/SideNavBar";
 import CustomButton from "../Reusable Components/CustomButton";
 import ModalWithChoices from "../Reusable Components/ModalWithChoices";
 import TextBox from "../Reusable Components/TextBox";

@@ -18,20 +18,8 @@ import {
   IconSelector,
 } from "@tabler/icons-react";
 import { useState } from "react";
+import { RowData, ThProps } from "../../../Types/CmsPage";
 import classes from "../../../mantine assets/TableSort.module.css";
-interface RowData {
-  id: string;
-  fullName: string;
-  userName: string;
-  status: string;
-  [key: string]: string;
-}
-interface ThProps {
-  children: React.ReactNode;
-  reversed: boolean;
-  sorted: boolean;
-  onSort(): void;
-}
 
 function Th({ children, reversed, sorted, onSort }: ThProps) {
   const Icon = sorted

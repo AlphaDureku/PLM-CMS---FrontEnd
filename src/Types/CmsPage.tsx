@@ -21,3 +21,17 @@ export type CMSmenuProp = {
   menuOpened: boolean;
   setMenuOpened: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
+export interface RowData {
+  id: string;
+  fullName: string;
+  userName: string;
+  status: string;
+  [key: string]: string;
+}
+export interface ThProps {
+  children: React.ReactNode;
+  reversed: boolean;
+  sorted: boolean;
+  onSort(): void;
+}
