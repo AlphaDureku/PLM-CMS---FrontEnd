@@ -2,6 +2,7 @@ import {
   Center,
   Flex,
   Group,
+  ScrollArea,
   Table,
   Text,
   TextInput,
@@ -18,7 +19,7 @@ import {
   IconSelector,
 } from "@tabler/icons-react";
 import { useState } from "react";
-import { RowData, ThProps } from "../../../Types/CmsPage";
+import { ManageAccountRowData, ThProps } from "../../../Types/CmsPage";
 import classes from "../../../mantine assets/TableSort.module.css";
 
 function Th({ children, reversed, sorted, onSort }: ThProps) {
@@ -43,7 +44,7 @@ function Th({ children, reversed, sorted, onSort }: ThProps) {
   );
 }
 
-function filterData(data: RowData[], search: string) {
+function filterData(data: ManageAccountRowData[], search: string) {
   const query = search.toLowerCase().trim();
   const itemKeys = Object.keys(data[0]);
   return data.filter((item) =>
@@ -52,8 +53,12 @@ function filterData(data: RowData[], search: string) {
 }
 
 function sortData(
-  data: RowData[],
-  payload: { sortBy: keyof RowData | null; reversed: boolean; search: string }
+  data: ManageAccountRowData[],
+  payload: {
+    sortBy: keyof ManageAccountRowData | null;
+    reversed: boolean;
+    search: string;
+  }
 ) {
   const { sortBy } = payload;
 
@@ -75,27 +80,63 @@ function sortData(
 
 const data = [
   {
-    id: "202018923",
-    fullName: "Athena Weissnat",
-    userName: "Lil - Rippin",
+    id: "202000001",
+    fullName: "John Doe",
+    userName: "johndoe123",
     status: "Activated",
   },
   {
-    id: "202016523",
-    fullName: "Test Weissnat",
-    userName: "Little - Rippin",
+    id: "202000002",
+    fullName: "Jane Smith",
+    userName: "janesmith456",
+    status: "Deactivated",
+  },
+  {
+    id: "202000003",
+    fullName: "Bob Johnson",
+    userName: "bob_j",
     status: "Activated",
   },
   {
-    id: "202015643",
-    fullName: "AAAA Weissnat",
-    userName: "Big - Rippin",
+    id: "202000004",
+    fullName: "Alice Williams",
+    userName: "alice_w",
+    status: "Deactivated",
+  },
+  {
+    id: "202000005",
+    fullName: "Charlie Brown",
+    userName: "charlie_b",
     status: "Activated",
   },
   {
-    id: "2020123323",
-    fullName: "Tessss Weissnat",
-    userName: "Medium - Rippin",
+    id: "202000006",
+    fullName: "Emma Davis",
+    userName: "emma_d",
+    status: "Deactivated",
+  },
+  {
+    id: "202000007",
+    fullName: "Mike Miller",
+    userName: "mike_m",
+    status: "Activated",
+  },
+  {
+    id: "202000008",
+    fullName: "Olivia Wilson",
+    userName: "olivia_w",
+    status: "Deactivated",
+  },
+  {
+    id: "202000009",
+    fullName: "David Lee",
+    userName: "david_l",
+    status: "Activated",
+  },
+  {
+    id: "202000010",
+    fullName: "Sophia Taylor",
+    userName: "sophia_t",
     status: "Deactivated",
   },
 ];
@@ -103,10 +144,10 @@ const data = [
 export default function ManageAccounts() {
   const [search, setSearch] = useState("");
   const [sortedData, setSortedData] = useState(data);
-  const [sortBy, setSortBy] = useState<keyof RowData | null>(null);
+  const [sortBy, setSortBy] = useState<keyof ManageAccountRowData | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
 
-  const setSorting = (field: keyof RowData) => {
+  const setSorting = (field: keyof ManageAccountRowData) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;
     setReverseSortDirection(reversed);
     setSortBy(field);
@@ -189,11 +230,12 @@ export default function ManageAccounts() {
           value={search}
           onChange={handleSearchChange}
         />
-        <div
+        <ScrollArea
           style={{
             backgroundColor: "white",
             borderRadius: "8px",
             padding: "2%",
+            height: "70vh",
           }}
         >
           <h3>Accounts</h3>
@@ -210,28 +252,28 @@ export default function ManageAccounts() {
                   reversed={reverseSortDirection}
                   onSort={() => setSorting("id")}
                 >
-                  ID
+                  <b>ID</b>
                 </Th>
                 <Th
                   sorted={sortBy === "fullName"}
                   reversed={reverseSortDirection}
                   onSort={() => setSorting("fullName")}
                 >
-                  Full Name
+                  <b>Full Name</b>
                 </Th>
                 <Th
                   sorted={sortBy === "userName"}
                   reversed={reverseSortDirection}
                   onSort={() => setSorting("userName")}
                 >
-                  Username
+                  <b>Username</b>
                 </Th>
                 <Th
                   sorted={sortBy === "status"}
                   reversed={reverseSortDirection}
                   onSort={() => setSorting("status")}
                 >
-                  Status
+                  <b>Status</b>
                 </Th>
                 <Table.Th>Actions</Table.Th>
               </Table.Tr>
@@ -250,7 +292,7 @@ export default function ManageAccounts() {
               )}
             </Table.Tbody>
           </Table>
-        </div>
+        </ScrollArea>
       </Flex>
     </>
   );

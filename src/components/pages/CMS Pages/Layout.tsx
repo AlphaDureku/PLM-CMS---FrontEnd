@@ -1,4 +1,4 @@
-import { Flex, ScrollArea, Transition } from "@mantine/core";
+import { Flex, Transition } from "@mantine/core";
 import { useState } from "react";
 import { mockdata } from "../../../assets/CMS_Static_Data/CMS_MenuData";
 import ManageAccounts from "../../CMS Components/Menu/ManageAccounts";
@@ -28,10 +28,10 @@ export default function Content() {
             </div>
           )}
         </Transition>
-        <ScrollArea className="cmsPlayGroundContainer">
+        <div className="cmsPlayGroundContainer">
           {/* dito mo ilagay content na gusto mo depende anong naselect sa sidebar */}
           {selectedMenu === "Manage Accounts" ? <ManageAccounts /> : null}
-        </ScrollArea>
+        </div>
       </Flex>
     </>
   );
