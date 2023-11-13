@@ -1,13 +1,9 @@
-import { Flex } from "@mantine/core";
+import { Flex, Indicator } from "@mantine/core";
 import { MailOutline } from "@mui/icons-material";
+import { CMSmenuProp } from "../../Types/CmsPage";
 import UserProfile from "../Reusable Components/UserProfile";
 
-type menu = {
-  menuOpened: boolean;
-  setMenuOpened: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export default function CmsNavBar({ menuOpened, setMenuOpened }: menu) {
+export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
   const handleMenuClick = () => {
     setMenuOpened(!menuOpened);
   };
@@ -48,11 +44,13 @@ export default function CmsNavBar({ menuOpened, setMenuOpened }: menu) {
         </div>
       </Flex>
       <Flex gap={"md"} align={"center"}>
-        <MailOutline
-          fontSize="large"
-          style={{ color: "var(--Grey)" }}
-          className="makeHoverable"
-        />
+        <Indicator disabled={false}>
+          <MailOutline
+            fontSize="large"
+            style={{ color: "var(--Grey)" }}
+            className="makeHoverable"
+          />
+        </Indicator>
         <UserProfile name="Mark Angelo Templanza" role="Admin" />
       </Flex>
     </Flex>

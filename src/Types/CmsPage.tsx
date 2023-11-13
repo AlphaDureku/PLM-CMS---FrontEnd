@@ -16,3 +16,8 @@ export interface LinksGroupProps extends selectedProp {
 
   keys: string;
 }
+
+export type CMSmenuProp = {
+  menuOpened: boolean;
+  setMenuOpened: React.Dispatch<React.SetStateAction<boolean>>;
+};
