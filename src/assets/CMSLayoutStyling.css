@@ -17,3 +17,8 @@
   width: 79.5vw;
   border-radius: 8px;
 }
+
+.SidebarParentMenu:hover .ParentThemeIcon {
+  background-color: #edece8;
+  border-radius: 8px 0 0 8px;
+}

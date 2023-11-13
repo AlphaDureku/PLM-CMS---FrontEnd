@@ -83,7 +83,11 @@ export function LinksGroup({
                 }}
               />
             )}
-            <ThemeIcon variant="white" size={"4rem"}>
+            <ThemeIcon
+              size={"4rem"}
+              className="ParentThemeIcon"
+              color="transparent"
+            >
               <Icon
                 style={{
                   color: selected === keys ? "var(--Yellow)" : "var(--Grey)",

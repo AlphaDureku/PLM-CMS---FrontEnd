@@ -1,5 +1,5 @@
 import { useDisclosure } from "@mantine/hooks";
-import { CMSSideBar } from "../CMS Components/SideNavBar";
+// import { CMSSideBar } from "../CMS Components/SideNavBar";
 import CustomButton from "../Reusable Components/CustomButton";
 import ModalWithChoices from "../Reusable Components/ModalWithChoices";
 import TextBox from "../Reusable Components/TextBox";
@@ -23,7 +23,7 @@ export default function TestSite() {
         onClick={open}
       />
       <TextBox type="password" placeholder="Enter Password" />
-      <CMSSideBar />
+      {/* <CMSSideBar /> */}
     </>
   );
 }

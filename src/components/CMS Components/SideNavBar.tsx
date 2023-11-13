@@ -1,54 +1,17 @@
 import { ScrollArea } from "@mantine/core";
-import {
-  AddToQueue,
-  EmailRounded,
-  HomeRounded,
-  NewspaperRounded,
-  PeopleAltRounded,
-} from "@mui/icons-material/";
-import { useState } from "react";
+import { selectedProp } from "../../Types/CmsPage";
+import { mockdata } from "../../assets/CMS_Static_Data/CMS_MenuData";
 import { LinksGroup } from "../../mantine assets/NavbarLinksGroup";
 import classes from "../../mantine assets/NavbarNested.module.css";
 
-const mockdata = [
-  { label: "Dashboard", icon: HomeRounded },
-
-  {
-    label: "Posts",
-    icon: NewspaperRounded,
-    links: [
-      { label: "View Posts", link: "/" },
-      { label: "Create Posts ", link: "/" },
-      { label: "Manage Posts", link: "/" },
-    ],
-  },
-  {
-    label: "Manage Accounts",
-    icon: PeopleAltRounded,
-    initiallyOpened: true,
-  },
-  {
-    label: "Tags",
-    icon: AddToQueue,
-    links: [
-      { label: "Upcoming releases", link: "/" },
-      { label: "Previous releases", link: "/" },
-      { label: "Releases schedule", link: "/" },
-    ],
-  },
-  { label: "Notifications", icon: EmailRounded },
-];
-
-export function CMSSideBar() {
-  const [selectedMenu, setSelectedMenu] = useState(mockdata[0].label);
-
+export function CMSSideBar(props: selectedProp) {
   const links = mockdata.map((item) => (
     <LinksGroup
       {...item}
       key={item.label}
-      selected={selectedMenu}
+      selected={props.selected}
       keys={item.label}
-      setSelected={setSelectedMenu}
+      setSelected={props.setSelected}
     />
   ));
 
