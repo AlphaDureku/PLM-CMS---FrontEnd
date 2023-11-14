@@ -167,6 +167,16 @@ export default function ManageAccounts() {
     () => {
       console.log(`Clicked on id: ${id}`);
     };
+  const modifyHandler =
+    (id: string): React.MouseEventHandler<HTMLDivElement> =>
+    () => {
+      console.log(`Clicked on id: ${id}`);
+    };
+  const confirmHandler =
+    (id: string): React.MouseEventHandler<HTMLDivElement> =>
+    () => {
+      console.log(`Clicked on id: ${id}`);
+    };
 
   const rows = sortedData.map((row) => (
     <Table.Tr key={row.id}>
@@ -182,6 +192,7 @@ export default function ManageAccounts() {
             aria-label="Gradient action icon"
             gradient={{ from: "var(--Yellow)", to: "yellow", deg: 90 }}
             className="makeHoverable"
+            onClick={confirmHandler(row.id)}
           >
             <Check style={{ width: "70%", height: "70%" }} />
           </ThemeIcon>
@@ -191,6 +202,7 @@ export default function ManageAccounts() {
             aria-label="Gradient action icon"
             gradient={{ from: "blue", to: "cyan", deg: 90 }}
             className="makeHoverable"
+            onClick={modifyHandler(row.id)}
           >
             <IconEdit style={{ width: "70%", height: "70%" }} />
           </ThemeIcon>

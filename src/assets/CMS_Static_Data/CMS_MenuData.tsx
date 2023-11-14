@@ -26,11 +26,6 @@ export const mockdata = [
   {
     label: "Tags",
     icon: AddToQueue,
-    links: [
-      { label: "Upcoming releases", link: "/" },
-      { label: "Previous releases", link: "/" },
-      { label: "Releases schedule", link: "/" },
-    ],
   },
   { label: "Notifications", icon: EmailRounded },
 ];
