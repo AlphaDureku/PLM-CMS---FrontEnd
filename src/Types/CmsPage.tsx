@@ -87,3 +87,11 @@ export interface TagsProps extends searchBarProps {
     >
   >;
 }
+
+export type accountType = {
+  id: string;
+  fullName: string;
+  userName: string;
+  status: string;
+  accountType?: string;
+};

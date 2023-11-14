@@ -166,6 +166,8 @@ export default function Tags() {
             verticalSpacing="xs"
             miw={700}
             layout="fixed"
+            highlightOnHover
+            highlightOnHoverColor="#edece8"
           >
             <Table.Tbody>
               <Table.Tr>

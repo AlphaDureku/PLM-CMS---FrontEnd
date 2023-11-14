@@ -20,7 +20,11 @@ import {
   IconSelector,
 } from "@tabler/icons-react";
 import { useMemo, useState } from "react";
-import { ManageAccountRowData, ThProps } from "../../../Types/CmsPage";
+import {
+  ManageAccountRowData,
+  ThProps,
+  accountType,
+} from "../../../Types/CmsPage";
 import classes from "../../../mantine assets/TableSort.module.css";
 import ModifyAccountModal from "./ModifyAccountModal";
 
@@ -80,7 +84,7 @@ function sortData(
   );
 }
 
-const data = [
+const data: accountType[] = [
   {
     id: "202000001",
     fullName: "John Doe",
@@ -149,7 +153,12 @@ export default function ManageAccounts() {
   const [sortBy, setSortBy] = useState<keyof ManageAccountRowData | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
-  const [selectedAccount, setSelectedAccount] = useState("");
+  const [selectedAccount, setSelectedAccount] = useState({
+    id: "",
+    fullName: "",
+    userName: "",
+    status: "",
+  });
 
   const setSorting = (field: keyof ManageAccountRowData) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;
@@ -169,8 +178,8 @@ export default function ManageAccounts() {
   const deleteHandler = (id: string): void => {
     console.log(`Clicked on id: ${id}`);
   };
-  const modifyHandler = (id: string): void => {
-    setSelectedAccount(id);
+  const modifyHandler = (account: accountType): void => {
+    setSelectedAccount(account);
   };
 
   const confirmHandler = (id: string): void => {
@@ -213,7 +222,12 @@ export default function ManageAccounts() {
             className="makeHoverable"
             onClick={() => {
               open();
-              modifyHandler(row.id);
+              modifyHandler({
+                id: row.id,
+                userName: row.userName,
+                fullName: row.fullName,
+                status: row.status,
+              });
             }}
           >
             <IconEdit style={{ width: "70%", height: "70%" }} />
@@ -269,6 +283,8 @@ export default function ManageAccounts() {
             verticalSpacing="xs"
             miw={700}
             layout="fixed"
+            highlightOnHover
+            highlightOnHoverColor="#edece8"
           >
             <Table.Tbody>
               <Table.Tr>

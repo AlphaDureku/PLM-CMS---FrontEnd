@@ -8,14 +8,19 @@ import {
   TextInput,
 } from "@mantine/core";
 import React, { useEffect, useState } from "react";
+import { accountType } from "../../../Types/CmsPage";
 
 type modalProps = {
   opened: boolean;
   close: () => void;
-  selectedAccount: string;
+  selectedAccount: accountType;
 };
 
-export default function ModifyAccountModal({ opened, close }: modalProps) {
+export default function ModifyAccountModal({
+  opened,
+  close,
+  selectedAccount,
+}: modalProps) {
   const labelStyle = {
     label: {
       fontWeight: 900,
@@ -23,20 +28,16 @@ export default function ModifyAccountModal({ opened, close }: modalProps) {
   };
 
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
-  const [forms, setForms] = useState({
-    accountName: "",
+  const [forms, setForms] = useState<accountType>({
+    id: "",
+    fullName: "",
     userName: "",
     accountType: "",
-    accountStatus: "",
+    status: "",
   });
 
   useEffect(() => {
-    setForms({
-      accountName: "",
-      userName: "",
-      accountType: "",
-      accountStatus: "",
-    });
+    setForms(selectedAccount);
   }, [opened]);
   const permissions = [
     {
@@ -114,7 +115,7 @@ export default function ModifyAccountModal({ opened, close }: modalProps) {
         <Flex direction={"column"} gap={"lg"}>
           <TextInput
             label="Account Name"
-            value={forms.accountName}
+            value={forms.fullName}
             style={{ width: "100%" }}
             styles={labelStyle}
             name="accountName"
@@ -142,23 +143,29 @@ export default function ModifyAccountModal({ opened, close }: modalProps) {
             ></TextInput>
           </Flex>
           <Select
+            searchable
             label="Account Status"
             data={["Activated", "Deactivated"]}
             styles={labelStyle}
             mt="md"
-            value={forms.accountStatus}
+            value={forms.status}
             name="accountStatus"
             onChange={(value) =>
               setForms((prev) => ({
                 ...prev,
-                accountStatus: value as string,
+                status: value as string,
               }))
             }
           />
 
           <Text fw={"bold"}>Manage Permissions</Text>
           <div style={{ borderRadius: "8px", backgroundColor: "#efefef" }}>
-            <Table>
+            <Table
+              highlightOnHover
+              highlightOnHoverColor="#edece8"
+              horizontalSpacing="md"
+              verticalSpacing="xs"
+            >
               <Table.Thead>
                 <Table.Tr>
                   <Table.Th>Permissions</Table.Th>
