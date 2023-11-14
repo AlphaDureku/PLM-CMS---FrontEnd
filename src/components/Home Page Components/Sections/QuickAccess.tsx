@@ -24,7 +24,7 @@ export default function UserProfile(props: Props) {
     <>
       <section className="QuickAccess_Section">
         <div className="QuickAccess_Header">
-          <h2>Quick Access</h2>
+          <h2 id="Explore">Quick Access</h2>
         </div>
         <SimpleGrid
           cols={{ base: 1, sm: 2, lg: 3 }}

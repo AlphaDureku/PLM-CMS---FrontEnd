@@ -1,9 +1,11 @@
-import { Flex, Indicator } from "@mantine/core";
+import { Flex, Indicator, Popover } from "@mantine/core";
 import { MailOutline } from "@mui/icons-material";
+import { useState } from "react";
 import { CMSmenuProp } from "../../Types/CmsPage";
 import UserProfile from "../Reusable Components/UserProfile";
 
 export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
+  const [indicator, setIndicator] = useState<boolean>(false);
   const handleMenuClick = () => {
     setMenuOpened(!menuOpened);
   };
@@ -44,13 +46,34 @@ export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
         </div>
       </Flex>
       <Flex gap={"md"} align={"center"}>
-        <Indicator disabled={false}>
-          <MailOutline
-            fontSize="large"
-            style={{ color: "var(--Grey)" }}
-            className="makeHoverable"
-          />
-        </Indicator>
+        <Popover
+          width={400}
+          position="bottom"
+          withArrow
+          shadow="lg"
+          arrowSize={12}
+          offset={{ mainAxis: 20, crossAxis: 100 }}
+          closeOnClickOutside
+        >
+          <Popover.Target>
+            <Indicator disabled={indicator}>
+              <MailOutline
+                fontSize="large"
+                style={{ color: "var(--Grey)" }}
+                className="makeHoverable"
+                onClick={() => setIndicator(true)}
+              />
+            </Indicator>
+          </Popover.Target>
+          <Popover.Dropdown>
+            <h4>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+              voluptatum earum repellat alias quo ex maxime repudiandae,
+              exercitationem iure odio atque molestiae ipsum sed distinctio
+              beatae voluptates adipisci corrupti dolorum.
+            </h4>
+          </Popover.Dropdown>
+        </Popover>
         <UserProfile name="Mark Angelo Templanza" role="Admin" />
       </Flex>
     </Flex>

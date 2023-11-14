@@ -10,6 +10,7 @@ import {
   UnstyledButton,
   rem,
 } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { Check, Delete } from "@mui/icons-material";
 import {
   IconChevronDown,
@@ -18,9 +19,10 @@ import {
   IconSearch,
   IconSelector,
 } from "@tabler/icons-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ManageAccountRowData, ThProps } from "../../../Types/CmsPage";
 import classes from "../../../mantine assets/TableSort.module.css";
+import ModifyAccountModal from "./ModifyAccountModal";
 
 function Th({ children, reversed, sorted, onSort }: ThProps) {
   const Icon = sorted
@@ -146,6 +148,8 @@ export default function ManageAccounts() {
   const [sortedData, setSortedData] = useState(data);
   const [sortBy, setSortBy] = useState<keyof ManageAccountRowData | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
+  const [opened, { open, close }] = useDisclosure(false);
+  const [selectedAccount, setSelectedAccount] = useState("");
 
   const setSorting = (field: keyof ManageAccountRowData) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;
@@ -162,21 +166,26 @@ export default function ManageAccounts() {
     );
   };
 
-  const deleteHandler =
-    (id: string): React.MouseEventHandler<HTMLDivElement> =>
-    () => {
-      console.log(`Clicked on id: ${id}`);
-    };
-  const modifyHandler =
-    (id: string): React.MouseEventHandler<HTMLDivElement> =>
-    () => {
-      console.log(`Clicked on id: ${id}`);
-    };
-  const confirmHandler =
-    (id: string): React.MouseEventHandler<HTMLDivElement> =>
-    () => {
-      console.log(`Clicked on id: ${id}`);
-    };
+  const deleteHandler = (id: string): void => {
+    console.log(`Clicked on id: ${id}`);
+  };
+  const modifyHandler = (id: string): void => {
+    setSelectedAccount(id);
+  };
+
+  const confirmHandler = (id: string): void => {
+    console.log(`Clicked on id: ${id}`);
+  };
+
+  const modalMemo = useMemo(() => {
+    return (
+      <ModifyAccountModal
+        opened={opened}
+        close={close}
+        selectedAccount={selectedAccount}
+      />
+    );
+  }, [opened]);
 
   const rows = sortedData.map((row) => (
     <Table.Tr key={row.id}>
@@ -192,7 +201,7 @@ export default function ManageAccounts() {
             aria-label="Gradient action icon"
             gradient={{ from: "var(--Yellow)", to: "yellow", deg: 90 }}
             className="makeHoverable"
-            onClick={confirmHandler(row.id)}
+            onClick={() => confirmHandler(row.id)}
           >
             <Check style={{ width: "70%", height: "70%" }} />
           </ThemeIcon>
@@ -202,7 +211,10 @@ export default function ManageAccounts() {
             aria-label="Gradient action icon"
             gradient={{ from: "blue", to: "cyan", deg: 90 }}
             className="makeHoverable"
-            onClick={modifyHandler(row.id)}
+            onClick={() => {
+              open();
+              modifyHandler(row.id);
+            }}
           >
             <IconEdit style={{ width: "70%", height: "70%" }} />
           </ThemeIcon>
@@ -212,7 +224,7 @@ export default function ManageAccounts() {
             aria-label="Gradient action icon"
             gradient={{ from: "red", to: "pink", deg: 90 }}
             className="makeHoverable"
-            onClick={deleteHandler(row.id)}
+            onClick={() => deleteHandler(row.id)}
           >
             <Delete style={{ width: "70%", height: "70%" }} />
           </ThemeIcon>
@@ -220,9 +232,10 @@ export default function ManageAccounts() {
       </Table.Td>
     </Table.Tr>
   ));
-
+  console.log(selectedAccount);
   return (
     <>
+      {modalMemo}
       <Flex
         gap={"lg"}
         direction={"column"}

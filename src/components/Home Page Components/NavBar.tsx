@@ -28,6 +28,7 @@ function ScrollOpacityElement() {
   return (
     <>
       <div
+        id="HomeNav"
         className="HomePageNavBar_Container slideFromTop"
         style={{
           backgroundColor: `rgba(255, 255, 255, ${opacity})`,

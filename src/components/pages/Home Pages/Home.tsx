@@ -1,4 +1,9 @@
-import { Image } from "@mantine/core";
+import { Affix, Flex, Image, Transition } from "@mantine/core";
+import { useWindowScroll } from "@mantine/hooks";
+import {
+  KeyboardArrowDownRounded,
+  KeyboardArrowUpRounded,
+} from "@mui/icons-material";
 import useIntersectionObserver from "../../CustomHooks/observerClass";
 import HomePageFooter from "../../Home Page Components/Footer";
 import HomePageNavbar from "../../Home Page Components/NavBar";
@@ -6,10 +11,9 @@ import HeroSection from "../../Home Page Components/Sections/HeroSection";
 import MissonVision from "../../Home Page Components/Sections/MissionVission";
 import NewsNAnnouncement from "../../Home Page Components/Sections/NewsNAnnouncement";
 import QuickAccess from "../../Home Page Components/Sections/QuickAccess";
-
 export default function Home() {
   document.title = "PLM";
-
+  const [scroll, scrollTo] = useWindowScroll();
   useIntersectionObserver([
     { selector: ".hidden", additionalClass: "show" },
     { selector: ".left", additionalClass: "slideFromLeft" },
@@ -17,9 +21,37 @@ export default function Home() {
     { selector: ".bottom", additionalClass: "slideFromBottom" },
     { selector: ".right", additionalClass: "slideFromRight" },
   ]);
+  const scrollToTarget = () => {
+    const targetDiv = document.getElementById("Explore");
+    const navbarElement = document.getElementById("HomeNav");
 
+    if (targetDiv && navbarElement) {
+      const navbarHeight = navbarElement.offsetHeight;
+      const targetPosition = targetDiv.offsetTop - navbarHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <>
+      <Affix className="exploreAffix">
+        <Transition transition="slide-up" mounted={scroll.y == 0}>
+          {(transitionStyles) => (
+            <Flex
+              align={"center"}
+              style={transitionStyles}
+              onClick={scrollToTarget}
+              className="makeHoverable"
+            >
+              <h2>Explore</h2>
+              <KeyboardArrowDownRounded fontSize={"large"} />
+            </Flex>
+          )}
+        </Transition>
+      </Affix>
       <HomePageNavbar />
       <Image
         src="/images/HomePage/RedBlob.png"
@@ -138,6 +170,21 @@ export default function Home() {
           ]}
         />
       </div>
+      <Affix position={{ bottom: 20, right: 20 }}>
+        <Transition transition="slide-up" mounted={scroll.y > 2000}>
+          {(transitionStyles) => (
+            <Flex
+              align={"center"}
+              style={transitionStyles}
+              onClick={() => scrollTo({ y: 0 })}
+              className="makeHoverable"
+            >
+              <h2>Back to Top</h2>
+              <KeyboardArrowUpRounded fontSize={"large"} />
+            </Flex>
+          )}
+        </Transition>
+      </Affix>
       <HomePageFooter />
     </>
   );

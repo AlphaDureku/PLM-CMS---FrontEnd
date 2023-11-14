@@ -1,8 +1,8 @@
 import { Flex, Transition } from "@mantine/core";
 import { useState } from "react";
 import { mockdata } from "../../../assets/CMS_Static_Data/CMS_MenuData";
-import ManageAccounts from "../../CMS Components/Menu/ManageAccounts";
-import Tags from "../../CMS Components/Menu/Tags";
+import ManageAccounts from "../../CMS Components/Contents/ManageAccounts";
+import Tags from "../../CMS Components/Contents/Tags";
 import { CMSSideBar } from "../../CMS Components/SideNavBar";
 import CmsNavBar from "../../CMS Components/TopNavBar";
 export default function Content() {

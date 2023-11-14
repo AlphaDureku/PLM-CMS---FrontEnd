@@ -196,3 +196,9 @@
 .Logo {
   grid-area: Logo;
 }
+
+.exploreAffix {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+}
