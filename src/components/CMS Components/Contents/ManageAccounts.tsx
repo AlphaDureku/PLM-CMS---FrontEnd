@@ -92,12 +92,14 @@ const originalData = [
     userName: "johndoe123",
     status: "Activated",
     permissions: [1, 2],
+    role: "Admin",
   },
   {
     id: "202000002",
     fullName: "Jane Smith",
     userName: "janesmith456",
     permissions: [3, 4],
+    role: "Admin",
     status: "Deactivated",
   },
   {
@@ -105,6 +107,7 @@ const originalData = [
     fullName: "Bob Johnson",
     userName: "bob_j",
     permissions: [5, 6],
+    role: "Admin",
     status: "Activated",
   },
   {
@@ -112,6 +115,7 @@ const originalData = [
     fullName: "Alice Williams",
     userName: "alice_w",
     permissions: [1, 2],
+    role: "Admin",
     status: "Deactivated",
   },
   {
@@ -119,6 +123,7 @@ const originalData = [
     fullName: "Charlie Brown",
     userName: "charlie_b",
     permissions: [1, 2],
+    role: "Admin",
     status: "Activated",
   },
   {
@@ -127,6 +132,7 @@ const originalData = [
     userName: "emma_d",
     permissions: [1, 2],
     status: "Deactivated",
+    role: "Super Admin",
   },
   {
     id: "202000007",
@@ -134,6 +140,7 @@ const originalData = [
     userName: "mike_m",
     permissions: [1, 2],
     status: "Activated",
+    role: "Super Admin",
   },
   {
     id: "202000008",
@@ -141,6 +148,7 @@ const originalData = [
     userName: "olivia_w",
     permissions: [1, 2],
     status: "Deactivated",
+    role: "Super Admin",
   },
   {
     id: "202000009",
@@ -148,6 +156,7 @@ const originalData = [
     userName: "david_l",
     permissions: [1, 2],
     status: "Activated",
+    role: "Super Admin",
   },
   {
     id: "202000010",
@@ -155,14 +164,16 @@ const originalData = [
     userName: "sophia_t",
     permissions: [1, 2],
     status: "Deactivated",
+    role: "Super Admin",
   },
 ];
 
-const data = originalData.map(({ id, fullName, userName, status }) => ({
+const data = originalData.map(({ id, fullName, userName, status, role }) => ({
   id,
   fullName,
   userName,
   status,
+  role,
 }));
 
 const permissions = originalData.map(({ id, permissions }) => ({
@@ -226,6 +237,8 @@ export default function ManageAccounts() {
       <Table.Td>{row.fullName}</Table.Td>
       <Table.Td>{row.userName}</Table.Td>
       <Table.Td>{row.status}</Table.Td>
+      <Table.Td>{row.role}</Table.Td>
+
       <Table.Td>
         <Flex gap={"sm"}>
           <Tooltip label="Confirm">
@@ -276,7 +289,6 @@ export default function ManageAccounts() {
       </Table.Td>
     </Table.Tr>
   ));
-  console.log(selectedAccount);
   return (
     <>
       {modalMemo}
@@ -345,6 +357,13 @@ export default function ManageAccounts() {
                   onSort={() => setSorting("status")}
                 >
                   <b>Status</b>
+                </Th>
+                <Th
+                  sorted={sortBy === "role"}
+                  reversed={reverseSortDirection}
+                  onSort={() => setSorting("role")}
+                >
+                  <b>Role</b>
                 </Th>
                 <Table.Th>Actions</Table.Th>
               </Table.Tr>

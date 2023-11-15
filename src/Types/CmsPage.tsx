@@ -31,6 +31,7 @@ export interface ManageAccountRowData extends RowData {
   fullName: string;
   userName: string;
   status: string;
+  role: string;
 }
 
 export interface TagsRowData extends RowData {
@@ -60,6 +61,7 @@ export interface ManageAccountsProps extends searchBarProps {
     fullName: string;
     userName: string;
     status: string;
+    role: string;
   }>;
   setSortedData: React.Dispatch<
     React.SetStateAction<

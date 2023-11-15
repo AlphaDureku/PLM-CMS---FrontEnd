@@ -170,8 +170,8 @@ export default function Notification() {
             <Text size="lg">Mark all as read</Text>
           </Flex>
         </Flex>
-        <ScrollArea>
-          <Flex direction={"column"} className="notificationFlexBoxContainer">
+        <ScrollArea className="notificationFlexBoxContainer">
+          <Flex direction={"column"}>
             {!isUnread ? renderNotificationsAll : renderNotificationsUnread}
           </Flex>
         </ScrollArea>
