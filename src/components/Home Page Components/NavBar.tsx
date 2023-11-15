@@ -139,9 +139,9 @@ function ScrollOpacityElement() {
           <a className="makeHoverable">{item.Parent}</a>
         </HoverCard.Target>
         <HoverCard.Dropdown className="HomePage_HoverCard_Container">
-          <div className="HomePage_HoverCard">
+          <div className="HomePage_HoverCard ">
             {item.Child.map((itemChild) => {
-              return <h4>{itemChild}</h4>;
+              return <h4 className="HoverYellow">{itemChild}</h4>;
             })}
           </div>
         </HoverCard.Dropdown>
@@ -157,7 +157,9 @@ function ScrollOpacityElement() {
         {childItems.map((itemChild, index) => (
           <div key={index}>
             {typeof itemChild === "string" ? (
-              <h4 key={index}>{itemChild}</h4>
+              <h4 key={index} className="HoverYellow">
+                {itemChild}
+              </h4>
             ) : itemChild.Child ? (
               <HoverCard
                 transitionProps={{ duration: 200, transition: "pop" }}
@@ -166,8 +168,8 @@ function ScrollOpacityElement() {
                 offset={30}
               >
                 <HoverCard.Target>
-                  <Flex justify={"center"} className="makeHoverable">
-                    <a>{itemChild.Parent} </a>
+                  <Flex justify={"center"} className="HoverYellow">
+                    <h4>{itemChild.Parent} </h4>
                     <KeyboardArrowDownRounded />
                   </Flex>
                 </HoverCard.Target>

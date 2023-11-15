@@ -9,8 +9,8 @@ import Login from "./LogIn";
 export default function CMS() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/dashboard" element={<Content />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/playground" element={<Content />} />
     </Routes>
   );
 }

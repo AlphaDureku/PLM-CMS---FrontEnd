@@ -219,3 +219,6 @@
   background-color: #fefefe;
   border-bottom: 4px solid var(--Red);
 }
+.HoverYellow:hover {
+  color: var(--Yellow);
+}

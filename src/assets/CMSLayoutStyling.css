@@ -18,3 +18,22 @@
   border-radius: 8px;
   padding: 2%;
 }
+.NotificationContainer {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2%;
+  height: 82vh;
+}
+.NotificationContainer > :nth-child(2) {
+  color: var(--Grey);
+}
+.NotificationContainer > :nth-child(2) > * > *:hover {
+  cursor: pointer;
+}
+
+.check {
+  color: black;
+}
+.disableMouse {
+  cursor: not-allowed;
+}

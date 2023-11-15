@@ -56,13 +56,15 @@ export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
           closeOnClickOutside
         >
           <Popover.Target>
-            <Tooltip label="Notifications" position="top">
+            <Tooltip label="Notifications" position="left">
               <Indicator disabled={indicator}>
                 <MailOutline
                   fontSize="large"
                   style={{ color: "var(--Grey)" }}
                   className="makeHoverable"
-                  onClick={() => setIndicator(true)}
+                  onClick={() => {
+                    setIndicator(true);
+                  }}
                 />
               </Indicator>
             </Tooltip>

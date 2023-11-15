@@ -1,5 +1,6 @@
 import {
   Center,
+  Checkbox,
   Flex,
   Group,
   ScrollArea,
@@ -7,6 +8,7 @@ import {
   Table,
   Text,
   TextInput,
+  Tooltip,
   UnstyledButton,
   rem,
 } from "@mantine/core";
@@ -94,6 +96,7 @@ export default function Tags() {
   const [sortedData, setSortedData] = useState(data);
   const [sortBy, setSortBy] = useState<keyof TagsRowData | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
+  const [selectedRow, setSelectedRow] = useState<string[]>([]);
 
   const setSorting = (field: keyof TagsRowData) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;
@@ -109,19 +112,35 @@ export default function Tags() {
       sortData(data, { sortBy, reversed: reverseSortDirection, search: value })
     );
   };
-
-  const rows = sortedData.map((row) => (
-    <Table.Tr key={row.id}>
-      <Table.Td>{row.id}</Table.Td>
-      <Table.Td>{row.name}</Table.Td>
-      <Table.Td>
-        {" "}
-        <Spoiler maxHeight={20} showLabel="..." hideLabel="Hide">
-          {row.description}
-        </Spoiler>
-      </Table.Td>
-    </Table.Tr>
-  ));
+  console.log(selectedRow);
+  const rows = sortedData.map(
+    (row: { id: string; name: string; description: string }) => (
+      <Table.Tr key={row.id}>
+        <Table.Td>
+          <Checkbox
+            color="var(--Yellow)"
+            name={row.id}
+            checked={selectedRow.includes(row.id)}
+            onChange={() =>
+              selectedRow.includes(row.id)
+                ? setSelectedRow((prev) =>
+                    prev.filter((item) => item !== row.id)
+                  )
+                : setSelectedRow((prev) => [...prev, row.id])
+            }
+          />
+        </Table.Td>
+        <Table.Td>{row.id}</Table.Td>
+        <Table.Td>{row.name}</Table.Td>
+        <Table.Td>
+          {" "}
+          <Spoiler maxHeight={20} showLabel="..." hideLabel="Hide">
+            {row.description}
+          </Spoiler>
+        </Table.Td>
+      </Table.Tr>
+    )
+  );
   return (
     <>
       <Flex direction={"column"} align={"center"} gap={"lg"}>
@@ -144,11 +163,37 @@ export default function Tags() {
             onChange={handleSearchChange}
           />
           <Flex align={"center"} gap={"md"}>
-            <AddCircleOutline
-              style={{ color: "var(--Yellow)", fontSize: "2rem" }}
-            />
-            <Create style={{ color: "#4088FF", fontSize: "2rem" }} />
-            <Delete style={{ color: "var(--Red)", fontSize: "2rem" }} />
+            <Tooltip position="bottom" label="Create">
+              <AddCircleOutline
+                style={{ color: "var(--Yellow)", fontSize: "2rem" }}
+                className="makeHoverable"
+              />
+            </Tooltip>
+
+            <Tooltip
+              label={selectedRow.length === 1 ? "Edit" : "Select only 1 row"}
+              position="bottom"
+            >
+              <Create
+                style={{ color: "#4088FF", fontSize: "2rem" }}
+                className={
+                  selectedRow.length !== 1 ? "disableMouse" : "makeHoverable"
+                }
+              />
+            </Tooltip>
+            <Tooltip
+              position="bottom"
+              label={
+                selectedRow.length > 0 ? "Delete" : "Select at least 1 row"
+              }
+            >
+              <Delete
+                style={{ color: "var(--Red)", fontSize: "2rem" }}
+                className={
+                  selectedRow.length === 0 ? "disableMouse" : "makeHoverable"
+                }
+              />
+            </Tooltip>
           </Flex>
         </Flex>
 
@@ -171,6 +216,7 @@ export default function Tags() {
           >
             <Table.Tbody>
               <Table.Tr>
+                <Table.Th>Select</Table.Th>
                 <Th
                   sorted={sortBy === "id"}
                   reversed={reverseSortDirection}
