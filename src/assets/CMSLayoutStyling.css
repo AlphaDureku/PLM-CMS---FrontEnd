@@ -37,3 +37,15 @@
 .disableMouse {
   cursor: not-allowed;
 }
+
+.notificationFlexBoxContainer {
+  background-color: #efefef;
+  height: 90%;
+  border-radius: 8px;
+}
+.notificationsFlexBox {
+  border-bottom: 1px solid var(--Grey);
+}
+.notificationsFlexBox > * {
+  padding: 12px;
+}
