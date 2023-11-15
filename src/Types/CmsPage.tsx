@@ -94,4 +94,5 @@ export type accountType = {
   userName: string;
   status: string;
   accountType?: string;
+  permissions?: number[];
 };

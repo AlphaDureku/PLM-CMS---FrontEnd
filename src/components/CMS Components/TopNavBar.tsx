@@ -1,4 +1,4 @@
-import { Flex, Indicator, Popover } from "@mantine/core";
+import { Flex, Indicator, Popover, Tooltip } from "@mantine/core";
 import { MailOutline } from "@mui/icons-material";
 import { useState } from "react";
 import { CMSmenuProp } from "../../Types/CmsPage";
@@ -56,14 +56,16 @@ export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
           closeOnClickOutside
         >
           <Popover.Target>
-            <Indicator disabled={indicator}>
-              <MailOutline
-                fontSize="large"
-                style={{ color: "var(--Grey)" }}
-                className="makeHoverable"
-                onClick={() => setIndicator(true)}
-              />
-            </Indicator>
+            <Tooltip label="Notifications" position="top">
+              <Indicator disabled={indicator}>
+                <MailOutline
+                  fontSize="large"
+                  style={{ color: "var(--Grey)" }}
+                  className="makeHoverable"
+                  onClick={() => setIndicator(true)}
+                />
+              </Indicator>
+            </Tooltip>
           </Popover.Target>
           <Popover.Dropdown>
             <h4>

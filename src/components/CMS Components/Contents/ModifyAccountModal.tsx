@@ -1,6 +1,7 @@
 import {
   Checkbox,
   Flex,
+  Group,
   Modal,
   Select,
   Table,
@@ -9,17 +10,29 @@ import {
 } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { accountType } from "../../../Types/CmsPage";
+import CustomButton from "../../Reusable Components/CustomButton";
 
+type permissionType = {
+  id: string;
+  permissions: number[];
+};
 type modalProps = {
   opened: boolean;
   close: () => void;
   selectedAccount: accountType;
+  permissions: permissionType[];
 };
+
+// type postModification = {
+//   accountDetails: accountType;
+//   permissions: number;
+// };
 
 export default function ModifyAccountModal({
   opened,
   close,
   selectedAccount,
+  permissions,
 }: modalProps) {
   const labelStyle = {
     label: {
@@ -28,6 +41,13 @@ export default function ModifyAccountModal({
   };
 
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
+  //   const [temporary, setTemporary] = useState<accountType>({
+  //     id: "",
+  //     fullName: "",
+  //     userName: "",
+  //     accountType: "",
+  //     status: "",
+  //   });
   const [forms, setForms] = useState<accountType>({
     id: "",
     fullName: "",
@@ -38,8 +58,13 @@ export default function ModifyAccountModal({
 
   useEffect(() => {
     setForms(selectedAccount);
+    const permissionProps = permissions.find(
+      (item) => item.id === selectedAccount.id
+    );
+    setSelectedRows(permissionProps ? permissionProps.permissions : []);
   }, [opened]);
-  const permissions = [
+
+  const permissionsStatic = [
     {
       id: 1,
       action: "Create Post",
@@ -81,7 +106,7 @@ export default function ModifyAccountModal({
     }));
   };
 
-  const modalPermissions = permissions.map((element, index) => (
+  const modalPermissions = permissionsStatic.map((element, index) => (
     <Table.Tr key={index}>
       <Table.Td>
         <Checkbox
@@ -176,6 +201,24 @@ export default function ModifyAccountModal({
               <Table.Tbody>{modalPermissions}</Table.Tbody>
             </Table>
           </div>
+
+          <Group justify="center" mt={"md"}>
+            <CustomButton
+              color="var(--Yellow)"
+              text="Confirm"
+              size="sm"
+              onClick={() => {
+                console.log(forms);
+                console.log(selectedRows);
+              }}
+            ></CustomButton>
+            <CustomButton
+              color="var(--Red)"
+              size="sm"
+              text="Cancel"
+              onClick={close}
+            ></CustomButton>
+          </Group>
         </Flex>
       </Modal>
     </>

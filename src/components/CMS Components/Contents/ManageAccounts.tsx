@@ -7,6 +7,7 @@ import {
   Text,
   TextInput,
   ThemeIcon,
+  Tooltip,
   UnstyledButton,
   rem,
 } from "@mantine/core";
@@ -84,68 +85,90 @@ function sortData(
   );
 }
 
-const data: accountType[] = [
+const originalData = [
   {
     id: "202000001",
     fullName: "John Doe",
     userName: "johndoe123",
     status: "Activated",
+    permissions: [1, 2],
   },
   {
     id: "202000002",
     fullName: "Jane Smith",
     userName: "janesmith456",
+    permissions: [3, 4],
     status: "Deactivated",
   },
   {
     id: "202000003",
     fullName: "Bob Johnson",
     userName: "bob_j",
+    permissions: [5, 6],
     status: "Activated",
   },
   {
     id: "202000004",
     fullName: "Alice Williams",
     userName: "alice_w",
+    permissions: [1, 2],
     status: "Deactivated",
   },
   {
     id: "202000005",
     fullName: "Charlie Brown",
     userName: "charlie_b",
+    permissions: [1, 2],
     status: "Activated",
   },
   {
     id: "202000006",
     fullName: "Emma Davis",
     userName: "emma_d",
+    permissions: [1, 2],
     status: "Deactivated",
   },
   {
     id: "202000007",
     fullName: "Mike Miller",
     userName: "mike_m",
+    permissions: [1, 2],
     status: "Activated",
   },
   {
     id: "202000008",
     fullName: "Olivia Wilson",
     userName: "olivia_w",
+    permissions: [1, 2],
     status: "Deactivated",
   },
   {
     id: "202000009",
     fullName: "David Lee",
     userName: "david_l",
+    permissions: [1, 2],
     status: "Activated",
   },
   {
     id: "202000010",
     fullName: "Sophia Taylor",
     userName: "sophia_t",
+    permissions: [1, 2],
     status: "Deactivated",
   },
 ];
+
+const data = originalData.map(({ id, fullName, userName, status }) => ({
+  id,
+  fullName,
+  userName,
+  status,
+}));
+
+const permissions = originalData.map(({ id, permissions }) => ({
+  id,
+  permissions,
+}));
 
 export default function ManageAccounts() {
   const [search, setSearch] = useState("");
@@ -192,6 +215,7 @@ export default function ManageAccounts() {
         opened={opened}
         close={close}
         selectedAccount={selectedAccount}
+        permissions={permissions}
       />
     );
   }, [opened]);
@@ -204,44 +228,50 @@ export default function ManageAccounts() {
       <Table.Td>{row.status}</Table.Td>
       <Table.Td>
         <Flex gap={"sm"}>
-          <ThemeIcon
-            variant="gradient"
-            size="lg"
-            aria-label="Gradient action icon"
-            gradient={{ from: "var(--Yellow)", to: "yellow", deg: 90 }}
-            className="makeHoverable"
-            onClick={() => confirmHandler(row.id)}
-          >
-            <Check style={{ width: "70%", height: "70%" }} />
-          </ThemeIcon>
-          <ThemeIcon
-            variant="gradient"
-            size="lg"
-            aria-label="Gradient action icon"
-            gradient={{ from: "blue", to: "cyan", deg: 90 }}
-            className="makeHoverable"
-            onClick={() => {
-              open();
-              modifyHandler({
-                id: row.id,
-                userName: row.userName,
-                fullName: row.fullName,
-                status: row.status,
-              });
-            }}
-          >
-            <IconEdit style={{ width: "70%", height: "70%" }} />
-          </ThemeIcon>
-          <ThemeIcon
-            variant="gradient"
-            size="lg"
-            aria-label="Gradient action icon"
-            gradient={{ from: "red", to: "pink", deg: 90 }}
-            className="makeHoverable"
-            onClick={() => deleteHandler(row.id)}
-          >
-            <Delete style={{ width: "70%", height: "70%" }} />
-          </ThemeIcon>
+          <Tooltip label="Confirm">
+            <ThemeIcon
+              variant="gradient"
+              size="lg"
+              aria-label="Gradient action icon"
+              gradient={{ from: "var(--Yellow)", to: "yellow", deg: 90 }}
+              className="makeHoverable"
+              onClick={() => confirmHandler(row.id)}
+            >
+              <Check style={{ width: "70%", height: "70%" }} />
+            </ThemeIcon>
+          </Tooltip>
+          <Tooltip label="Modify">
+            <ThemeIcon
+              variant="gradient"
+              size="lg"
+              aria-label="Gradient action icon"
+              gradient={{ from: "blue", to: "cyan", deg: 90 }}
+              className="makeHoverable"
+              onClick={() => {
+                open();
+                modifyHandler({
+                  id: row.id,
+                  userName: row.userName,
+                  fullName: row.fullName,
+                  status: row.status,
+                });
+              }}
+            >
+              <IconEdit style={{ width: "70%", height: "70%" }} />
+            </ThemeIcon>
+          </Tooltip>
+          <Tooltip label="Delete">
+            <ThemeIcon
+              variant="gradient"
+              size="lg"
+              aria-label="Gradient action icon"
+              gradient={{ from: "red", to: "pink", deg: 90 }}
+              className="makeHoverable"
+              onClick={() => deleteHandler(row.id)}
+            >
+              <Delete style={{ width: "70%", height: "70%" }} />
+            </ThemeIcon>
+          </Tooltip>
         </Flex>
       </Table.Td>
     </Table.Tr>

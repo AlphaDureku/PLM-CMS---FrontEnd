@@ -48,7 +48,7 @@
 .HomePageNavBar_Container > div:nth-child(1) {
   display: flex;
   align-items: center;
-  width: 43%;
+  width: 40%;
 }
 
 .HomePageNavBar_Container > div:nth-child(1) > img {
@@ -61,13 +61,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  width: 57%;
+  width: 60%;
   gap: 10px;
 }
 
 .HomePageNavBar_Container > div:nth-child(2) > div {
   display: flex;
-  gap: 40px;
+  gap: 80px;
 }
 
 /* QuickAccess_Section */
@@ -201,4 +201,21 @@
   position: absolute;
   bottom: 5%;
   left: 50%;
+}
+.HomePage_HoverCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.HomePage_HoverCard > * {
+  border-bottom: 1px solid var(--Yellow);
+  color: var(--Grey);
+  margin-bottom: 8px;
+  padding: 4px;
+  width: 100%;
+}
+
+.HomePage_HoverCard_Container {
+  background-color: #fefefe;
+  border-bottom: 4px solid var(--Red);
 }
