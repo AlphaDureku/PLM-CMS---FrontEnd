@@ -15,3 +15,20 @@ export type LongCardObject = {
     BtnLink: string;
   };
 };
+
+export type Menu = {
+  Parent: string;
+  Child: childMenu[];
+};
+
+export type childMenu = {
+  Parent?: string;
+  Child?: textNLinks[];
+  text?: string;
+  href?: string;
+};
+
+export type textNLinks = {
+  text: string;
+  href: string;
+};

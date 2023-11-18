@@ -5,7 +5,7 @@ export default function ExitBtn() {
   //To add functionality
 
   return (
-    <section className="MissionVision_Section">
+    <section className="MissionVision_Section" id="MissionVission">
       <div className="MissionVision_Container">
         <div>
           <h2>OUR MISSION</h2>

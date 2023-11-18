@@ -1,9 +1,6 @@
 import { Affix, Flex, Image, Transition } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
-import {
-  KeyboardArrowDownRounded,
-  KeyboardArrowUpRounded,
-} from "@mui/icons-material";
+import { KeyboardArrowDownRounded } from "@mui/icons-material";
 import useIntersectionObserver from "../../CustomHooks/observerClass";
 import HomePageFooter from "../../Home Page Components/Footer";
 import HomePageNavbar from "../../Home Page Components/NavBar";
@@ -13,7 +10,7 @@ import NewsNAnnouncement from "../../Home Page Components/Sections/NewsNAnnounce
 import QuickAccess from "../../Home Page Components/Sections/QuickAccess";
 export default function Home() {
   document.title = "PLM";
-  const [scroll, scrollTo] = useWindowScroll();
+  const [scroll] = useWindowScroll();
   useIntersectionObserver([
     { selector: ".hidden", additionalClass: "show" },
     { selector: ".left", additionalClass: "slideFromLeft" },
@@ -170,7 +167,7 @@ export default function Home() {
           ]}
         />
       </div>
-      <Affix position={{ bottom: 20, right: 20 }}>
+      {/* <Affix position={{ bottom: 20, right: 20 }}>
         <Transition transition="slide-up" mounted={scroll.y > 2000}>
           {(transitionStyles) => (
             <Flex
@@ -184,7 +181,7 @@ export default function Home() {
             </Flex>
           )}
         </Transition>
-      </Affix>
+      </Affix> */}
       <HomePageFooter />
     </>
   );

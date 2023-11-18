@@ -1,7 +1,11 @@
 import { Flex, HoverCard } from "@mantine/core";
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
-import { useEffect, useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { Menu, childMenu } from "../../Types/HomePageTypes";
+import {
+  NavBarDataBottom,
+  NavBarDataTop,
+} from "../../assets/CMS_Static_Data/HomePage_MenuData";
 function ScrollOpacityElement() {
   const [opacity, setOpacity] = useState(0);
   const [Pcolor, setPcolor] = useState(false);
@@ -13,7 +17,6 @@ function ScrollOpacityElement() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     const opacityThreshold = 100;
@@ -26,111 +29,23 @@ function ScrollOpacityElement() {
       setPcolor(false);
     }
   };
-  const NavBarDataTop = [
-    {
-      Parent: "Students",
-      Child: [
-        "Student Manual",
-        "Tuition and Fees",
-        "SFES",
-        "Student 201 Management System",
-      ],
-    },
-    {
-      Parent: "Faculty",
-      Child: [
-        "Student Manual",
-        "Tuition and Fees",
-        "SFES",
-        "Student 201 Management System",
-      ],
-    },
-    {
-      Parent: "Alumni",
-      Child: [
-        "The Alumni Association",
-        "PLM Scholars Foundation, Inc",
-        "Alumni News & Updates",
-        "ARS",
-      ],
-    },
-    {
-      Parent: "Events",
-      Child: [
-        "Student Manual",
-        "Tuition and Fees",
-        "SFES",
-        "Student 201 Management System",
-      ],
-    },
-    {
-      Parent: "Downloads",
-      Child: [
-        "Student Manual",
-        "Tuition and Fees",
-        "SFES",
-        "Student 201 Management System",
-      ],
-    },
-  ];
+  const handleLinkClick =
+    (href: string): React.MouseEventHandler<HTMLAnchorElement> =>
+    (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      event.preventDefault(); // Prevent the default anchor behavior
+      const targetElement = document.querySelector(href); // Find the target element by ID
+      const navbarElement = document.getElementById("HomeNav");
 
-  const NavBarDataBottom = [
-    {
-      Parent: "About",
-      Child: [
-        {
-          Parent: "University Profile",
-          Child: [
-            "Vision and Mission",
-            "Seal and Symbols",
-            "History",
-            "University Hymn",
-            "University Code",
-          ],
-        },
-        {
-          Parent: "Administration",
-          Child: [
-            "Board of Regents",
-            "The President",
-            "Vice Presidents and Asst. Vice Presidents",
-            "Directors and Chiefs",
-            "Deans",
-            "Organizational Chart",
-          ],
-        },
-        { Parent: "Pride Hall", Child: ["Board Exam Passers", "Graduates"] },
-      ],
-    },
-    {
-      Parent: "Academics",
-      Child: [
-        "Student Manual",
-        "Tuition and Fees",
-        "SFES",
-        "Student 201 Management System",
-      ],
-    },
-    {
-      Parent: "Admission",
-      Child: [
-        "Undergraduate Programs",
-        "PLMAT",
-        "CLAT",
-        "Scholars and Financial Aid",
-        "International Students",
-      ],
-    },
-    {
-      Parent: "News",
-      Child: [
-        "Announcements",
-        "Newsletter",
-        "Message from the University President",
-        "Job Openings / Careers",
-      ],
-    },
-  ];
+      if (targetElement && navbarElement) {
+        const navbarHeight = navbarElement.clientHeight;
+        const targetOffsetTop =
+          targetElement.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: targetOffsetTop - navbarHeight,
+          behavior: "smooth",
+        });
+      }
+    };
 
   const renderNavMenuTop = NavBarDataTop.map((item, index) => {
     return (
@@ -139,56 +54,83 @@ function ScrollOpacityElement() {
         key={index}
       >
         <HoverCard.Target>
-          <a className="makeHoverable">{item.Parent}</a>
+          <a className="makeHoverable makeUnderlineHover">{item.Parent}</a>
         </HoverCard.Target>
         <HoverCard.Dropdown className="HomePage_HoverCard_Container">
-          <div className="HomePage_HoverCard ">
-            {item.Child.map((itemChild, index) => {
-              return (
-                <h4 className="HoverYellow" key={index}>
-                  {itemChild}
-                </h4>
-              );
-            })}
+          <div className="HomePage_HoverCard">
+            {item.Child.map((itemChild, childIndex) =>
+              itemChild.href && itemChild.href.includes("#") ? (
+                <a
+                  className="HoverYellow"
+                  key={childIndex}
+                  onClick={handleLinkClick(itemChild.href)}
+                >
+                  {itemChild.text}
+                </a>
+              ) : (
+                <a
+                  className="HoverYellow"
+                  key={childIndex}
+                  href={itemChild.href}
+                >
+                  {itemChild.text}
+                </a>
+              )
+            )}
           </div>
         </HoverCard.Dropdown>
       </HoverCard>
     );
   });
 
-  const renderSubMenu = (
-    childItems: ({ Parent: string; Child: string[] } | string)[]
-  ) => {
+  const renderSubMenu = (childItems: childMenu[] | Menu) => {
     return (
       <div className="HomePage_HoverCard">
-        {childItems.map((itemChild, index) => (
-          <div key={index}>
-            {typeof itemChild === "string" ? (
-              <h4 key={index} className="HoverYellow">
-                {itemChild}
-              </h4>
-            ) : itemChild.Child ? (
-              <HoverCard
-                transitionProps={{ duration: 200, transition: "pop" }}
-                key={itemChild.Parent}
-                position="right-start"
-                offset={30}
-              >
-                <HoverCard.Target>
-                  <Flex className="HoverYellow" justify={"space-between"}>
-                    <h4>{itemChild.Parent} </h4>
-                    <KeyboardArrowDownRounded />
-                  </Flex>
-                </HoverCard.Target>
-                <HoverCard.Dropdown className="HomePage_HoverCard_Container">
-                  {renderSubMenu(itemChild.Child)}
-                </HoverCard.Dropdown>
-              </HoverCard>
-            ) : (
-              <h4 key={itemChild.Parent}>{itemChild.Parent}</h4>
-            )}
-          </div>
-        ))}
+        {Array.isArray(childItems) &&
+          childItems.map((itemChild, index) => (
+            <div key={index}>
+              {Object.prototype.hasOwnProperty.call(itemChild, "text") ? (
+                itemChild.href && itemChild.href.includes("#") ? (
+                  <a
+                    href={itemChild.href}
+                    target="_blank"
+                    key={index}
+                    onClick={handleLinkClick(itemChild.href)}
+                  >
+                    {itemChild.text}
+                  </a>
+                ) : (
+                  <a
+                    href={itemChild.href}
+                    target="_blank"
+                    key={index}
+                    className="HoverYellow"
+                  >
+                    {itemChild.text}
+                  </a>
+                )
+              ) : itemChild.Child ? (
+                <HoverCard
+                  transitionProps={{ duration: 200, transition: "pop" }}
+                  key={itemChild.Parent}
+                  position="right-start"
+                  offset={30}
+                >
+                  <HoverCard.Target>
+                    <Flex className="HoverYellow" justify={"space-between"}>
+                      <a>{itemChild.Parent} </a>
+                      <KeyboardArrowDownRounded />
+                    </Flex>
+                  </HoverCard.Target>
+                  <HoverCard.Dropdown className="HomePage_HoverCard_Container">
+                    {renderSubMenu(itemChild.Child)}
+                  </HoverCard.Dropdown>
+                </HoverCard>
+              ) : (
+                <h4 key={itemChild.Parent}>{itemChild.Parent}</h4>
+              )}
+            </div>
+          ))}
       </div>
     );
   };
@@ -199,15 +141,13 @@ function ScrollOpacityElement() {
       key={item.Parent}
     >
       <HoverCard.Target>
-        <a className="makeHoverable">{item.Parent}</a>
+        <a className="makeHoverable makeUnderlineHover">{item.Parent}</a>
       </HoverCard.Target>
       <HoverCard.Dropdown className="HomePage_HoverCard_Container">
         {item.Child && renderSubMenu(item.Child)}
       </HoverCard.Dropdown>
     </HoverCard>
   ));
-
-  // Now you can use 'renderNavMenuBottom' wherever you want to render your navigation menu
 
   return (
     <>
