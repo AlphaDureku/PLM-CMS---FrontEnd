@@ -1,9 +1,12 @@
 import { HomeRounded } from "@mui/icons-material/";
 import { IconCalendarStats } from "@tabler/icons-react";
+import { useSearchParams } from "react-router-dom";
 
 export interface selectedProp {
-  selected: string;
-  setSelected: React.Dispatch<React.SetStateAction<string>>;
+  selected: string | null;
+  // setSelected: React.Dispatch<React.SetStateAction<string>>;
+  // setSelected: () => void;
+  setSelected: ReturnType<typeof useSearchParams>[1];
 }
 
 export interface LinksGroupProps extends selectedProp {

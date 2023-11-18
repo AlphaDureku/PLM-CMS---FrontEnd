@@ -33,15 +33,13 @@ export default function LongCard(props: LongCardObject) {
               <span>{props.BottomRow.Time}</span>
             </div>
             <div>
-              <a href={props.BottomRow.BtnLink}>
-                <CustomButton
-                  color="#032968"
-                  ImageLink="/images/ButtonArrowLogo.png"
-                  text="Read More"
-                  size="md"
-                  gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                />
-              </a>
+              <CustomButton
+                color="#032968"
+                ImageLink="/images/ButtonArrowLogo.png"
+                text="Read More"
+                size="md"
+                gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              />
             </div>
           </div>
           <div></div>

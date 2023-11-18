@@ -132,16 +132,23 @@ function ScrollOpacityElement() {
     },
   ];
 
-  const renderNavMenuTop = NavBarDataTop.map((item) => {
+  const renderNavMenuTop = NavBarDataTop.map((item, index) => {
     return (
-      <HoverCard transitionProps={{ duration: 200, transition: "pop" }}>
+      <HoverCard
+        transitionProps={{ duration: 200, transition: "pop" }}
+        key={index}
+      >
         <HoverCard.Target>
           <a className="makeHoverable">{item.Parent}</a>
         </HoverCard.Target>
         <HoverCard.Dropdown className="HomePage_HoverCard_Container">
           <div className="HomePage_HoverCard ">
-            {item.Child.map((itemChild) => {
-              return <h4 className="HoverYellow">{itemChild}</h4>;
+            {item.Child.map((itemChild, index) => {
+              return (
+                <h4 className="HoverYellow" key={index}>
+                  {itemChild}
+                </h4>
+              );
             })}
           </div>
         </HoverCard.Dropdown>
@@ -168,7 +175,7 @@ function ScrollOpacityElement() {
                 offset={30}
               >
                 <HoverCard.Target>
-                  <Flex justify={"center"} className="HoverYellow">
+                  <Flex className="HoverYellow" justify={"space-between"}>
                     <h4>{itemChild.Parent} </h4>
                     <KeyboardArrowDownRounded />
                   </Flex>

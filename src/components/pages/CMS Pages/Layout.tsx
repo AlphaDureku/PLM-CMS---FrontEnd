@@ -1,5 +1,6 @@
 import { Flex, Transition } from "@mantine/core";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { mockdata } from "../../../assets/CMS_Static_Data/CMS_MenuData";
 import ManageAccounts from "../../CMS Components/Contents/ManageAccounts";
 import Notification from "../../CMS Components/Contents/Notifications";
@@ -8,10 +9,12 @@ import { CMSSideBar } from "../../CMS Components/SideNavBar";
 import CmsNavBar from "../../CMS Components/TopNavBar";
 export default function Content() {
   const [menuOpened, setMenuOpened] = useState(true);
-  const [selectedMenu, setSelectedMenu] = useState(mockdata[0].label);
+  const [selectedTab, setSelectedTab] = useSearchParams({
+    tab: mockdata[0].label,
+  });
 
   const getSelectedMenu = () => {
-    switch (selectedMenu) {
+    switch (selectedTab.get("tab")) {
       case "Dashboard":
         //
         break;
@@ -26,6 +29,7 @@ export default function Content() {
     }
   };
 
+  console.log(selectedTab.get("tab"));
   return (
     <>
       <CmsNavBar menuOpened={menuOpened} setMenuOpened={setMenuOpened} />
@@ -39,8 +43,8 @@ export default function Content() {
           {(styles) => (
             <div style={styles}>
               <CMSSideBar
-                selected={selectedMenu}
-                setSelected={setSelectedMenu}
+                selected={selectedTab.get("tab")}
+                setSelected={setSelectedTab}
               />
             </div>
           )}

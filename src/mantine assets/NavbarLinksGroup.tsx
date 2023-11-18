@@ -56,7 +56,13 @@ export function LinksGroup({
   return (
     <>
       <UnstyledButton
-        onClick={() => (setOpened((o) => !o), setSelected(label))}
+        onClick={() => {
+          setOpened((o) => !o);
+          setSelected((prev) => {
+            prev.set("tab", label);
+            return prev;
+          });
+        }}
         className={classes.control}
       >
         <Group justify="space-between" gap={0}>

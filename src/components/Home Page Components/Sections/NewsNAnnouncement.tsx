@@ -8,9 +8,10 @@ type Props = {
 
 export default function UserProfile(props: Props) {
   //Render Short Card Contents
-  const contents = props.items.map((item) => {
+  const contents = props.items.map((item, index) => {
     return (
       <LongCard
+        key={index}
         ImageLink={item.ImageLink}
         Description={item.Description}
         Title={item.Title}

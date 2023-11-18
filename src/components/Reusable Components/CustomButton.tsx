@@ -14,23 +14,25 @@ export default function CustomButton(props: Props) {
 
   return (
     <a href={props.gotoLink}>
-      <Button
-        variant="filled"
-        color={props.color}
-        radius="sm"
-        size={props.size}
-        onClick={props.onClick}
-      >
-        <span>{props.text}</span>
-        {props.ImageLink ? (
-          <img
-            src={props.ImageLink}
-            alt="img not found"
-            style={{ marginLeft: "8px" }}
-            width="65%"
-          />
-        ) : null}
-      </Button>
+      <div>
+        <Button
+          variant="filled"
+          color={props.color}
+          radius="sm"
+          size={props.size}
+          onClick={props.onClick}
+        >
+          <span>{props.text}</span>
+          {props.ImageLink ? (
+            <img
+              src={props.ImageLink}
+              alt="img not found"
+              style={{ marginLeft: "8px" }}
+              width="65%"
+            />
+          ) : null}
+        </Button>
+      </div>
     </a>
   );
 }
