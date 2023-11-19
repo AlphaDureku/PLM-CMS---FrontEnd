@@ -28,6 +28,7 @@ import {
 } from "../../../Types/CmsPage";
 import classes from "../../../mantine assets/TableSort.module.css";
 import ModifyAccountModal from "./ModifyAccountModal";
+import { useSearchParams } from "react-router-dom";
 
 function Th({ children, reversed, sorted, onSort }: ThProps) {
   const Icon = sorted
@@ -182,7 +183,8 @@ const permissions = originalData.map(({ id, permissions }) => ({
 }));
 
 export default function ManageAccounts() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useSearchParams({AccountQuery: ""})
+  // const [search, setSearch] = useState("");
   const [sortedData, setSortedData] = useState(data);
   const [sortBy, setSortBy] = useState<keyof ManageAccountRowData | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
@@ -203,7 +205,10 @@ export default function ManageAccounts() {
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
-    setSearch(value);
+    setSearch((prev) => {
+      prev.set("AccountQuery", value);
+      return prev;
+    });
     setSortedData(
       sortData(data, { sortBy, reversed: reverseSortDirection, search: value })
     );
@@ -308,7 +313,7 @@ export default function ManageAccounts() {
               stroke={1.5}
             />
           }
-          value={search}
+          value={search.get("AccountQuery")}
           onChange={handleSearchChange}
         />
         <ScrollArea

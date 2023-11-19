@@ -221,6 +221,7 @@
 }
 .HoverYellow:hover {
   color: var(--Yellow);
+  cursor: pointer;
 }
 
 .makeUnderlineHover {

@@ -114,7 +114,7 @@ function ScrollOpacityElement() {
                   transitionProps={{ duration: 200, transition: "pop" }}
                   key={itemChild.Parent}
                   position="right-start"
-                  offset={30}
+                  offset={25}
                 >
                   <HoverCard.Target>
                     <Flex className="HoverYellow" justify={"space-between"}>
@@ -143,7 +143,7 @@ function ScrollOpacityElement() {
       <HoverCard.Target>
         <a className="makeHoverable makeUnderlineHover">{item.Parent}</a>
       </HoverCard.Target>
-      <HoverCard.Dropdown className="HomePage_HoverCard_Container">
+      <HoverCard.Dropdown className="HomePage_HoverCard_Container make">
         {item.Child && renderSubMenu(item.Child)}
       </HoverCard.Dropdown>
     </HoverCard>

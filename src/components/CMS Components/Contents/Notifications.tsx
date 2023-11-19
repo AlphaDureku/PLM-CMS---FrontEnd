@@ -172,7 +172,13 @@ export default function Notification() {
         </Flex>
         <ScrollArea className="notificationFlexBoxContainer">
           <Flex direction={"column"}>
-            {!isUnread ? renderNotificationsAll : renderNotificationsUnread}
+            {!isUnread ? (
+              renderNotificationsAll
+            ) : !renderNotificationsUnread[0] ? (
+              <h4 className="centerText">No unread notifications</h4>
+            ) : (
+              renderNotificationsUnread
+            )}
           </Flex>
         </ScrollArea>
       </Flex>

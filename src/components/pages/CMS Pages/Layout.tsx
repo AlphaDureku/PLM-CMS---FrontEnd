@@ -10,11 +10,11 @@ import CmsNavBar from "../../CMS Components/TopNavBar";
 export default function Content() {
   const [menuOpened, setMenuOpened] = useState(true);
   const [selectedTab, setSelectedTab] = useSearchParams({
-    tab: mockdata[0].label,
+    Tab: mockdata[0].label,
   });
 
   const getSelectedMenu = () => {
-    switch (selectedTab.get("tab")) {
+    switch (selectedTab.get("Tab")) {
       case "Dashboard":
         //
         break;
@@ -29,7 +29,6 @@ export default function Content() {
     }
   };
 
-  console.log(selectedTab.get("tab"));
   return (
     <>
       <CmsNavBar menuOpened={menuOpened} setMenuOpened={setMenuOpened} />
@@ -43,7 +42,7 @@ export default function Content() {
           {(styles) => (
             <div style={styles}>
               <CMSSideBar
-                selected={selectedTab.get("tab")}
+                selected={selectedTab.get("Tab")}
                 setSelected={setSelectedTab}
               />
             </div>

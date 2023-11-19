@@ -59,7 +59,7 @@ export function LinksGroup({
         onClick={() => {
           setOpened((o) => !o);
           setSelected((prev) => {
-            prev.set("tab", label);
+            prev.set("Tab", label);
             return prev;
           });
         }}

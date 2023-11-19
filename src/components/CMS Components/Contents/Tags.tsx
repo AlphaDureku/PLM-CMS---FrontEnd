@@ -22,6 +22,8 @@ import {
 import { useState } from "react";
 import { TagsRowData, ThProps } from "../../../Types/CmsPage";
 import classes from "../../../mantine assets/TableSort.module.css";
+import { useSearchParams } from "react-router-dom";
+
 const data = [
   {
     id: "2020",
@@ -92,7 +94,8 @@ function sortData(
   );
 }
 export default function Tags() {
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
+  const [search, setSearch] = useSearchParams({TagQuery: ""})
   const [sortedData, setSortedData] = useState(data);
   const [sortBy, setSortBy] = useState<keyof TagsRowData | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
@@ -107,7 +110,10 @@ export default function Tags() {
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
-    setSearch(value);
+    setSearch((prev) => {
+      prev.set("TagQuery", value);
+      return prev;
+    });
     setSortedData(
       sortData(data, { sortBy, reversed: reverseSortDirection, search: value })
     );
@@ -159,7 +165,7 @@ export default function Tags() {
                 stroke={1.5}
               />
             }
-            value={search}
+            value={search.get("TagQuery")}
             onChange={handleSearchChange}
           />
           <Flex align={"center"} gap={"md"}>
