@@ -2,8 +2,7 @@ import { Affix, Flex, Image, Transition } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
 import useIntersectionObserver from "../../CustomHooks/observerClass";
-import HomePageFooter from "../../Home Page Components/Footer";
-import HomePageNavbar from "../../Home Page Components/NavBar";
+
 import HeroSection from "../../Home Page Components/Sections/HeroSection";
 import MissonVision from "../../Home Page Components/Sections/MissionVission";
 import NewsNAnnouncement from "../../Home Page Components/Sections/NewsNAnnouncement";
@@ -49,7 +48,6 @@ export default function Home() {
           )}
         </Transition>
       </Affix>
-      <HomePageNavbar />
       <Image
         src="/images/HomePage/RedBlob.png"
         className="HomeBlobImage  left"
@@ -182,7 +180,6 @@ export default function Home() {
           )}
         </Transition>
       </Affix> */}
-      <HomePageFooter />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import "@mantine/core/styles.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CMS from "./components/pages/CMS Pages/CMS";
-import Home from "./components/pages/Home Pages/Home";
+import HomePageLayout from "./components/pages/Home Pages/HomePageLayout";
 import TestSite from "./components/pages/TestSite";
 
 function App() {
@@ -9,10 +9,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<HomePageLayout />} />
           <Route path="/cms/*" element={<CMS />} />
           <Route path="/TestSite" element={<TestSite />} />
-        </Routes>
+           </Routes>
       </BrowserRouter>
     </>
   );

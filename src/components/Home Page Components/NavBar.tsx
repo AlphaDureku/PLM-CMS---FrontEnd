@@ -5,7 +5,7 @@ import { Menu, childMenu } from "../../Types/HomePageTypes";
 import {
   NavBarDataBottom,
   NavBarDataTop,
-} from "../../assets/CMS_Static_Data/HomePage_MenuData";
+} from "../../assets/Home_Static_Data/HomePage_MenuData";
 function ScrollOpacityElement() {
   const [opacity, setOpacity] = useState(0);
   const [Pcolor, setPcolor] = useState(false);
