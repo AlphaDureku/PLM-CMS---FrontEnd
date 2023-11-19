@@ -1,7 +1,6 @@
 import { Affix, Flex, Image, Transition } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
-import useIntersectionObserver from "../../CustomHooks/observerClass";
 
 import HeroSection from "../../Home Page Components/Sections/HeroSection";
 import MissonVision from "../../Home Page Components/Sections/MissionVission";
@@ -14,13 +13,7 @@ import QuickAccess from "../../Home Page Components/Sections/QuickAccess";
 export default function Home() {
   document.title = "PLM";
   const [scroll] = useWindowScroll();
-  useIntersectionObserver([
-    { selector: ".hidden", additionalClass: "show" },
-    { selector: ".left", additionalClass: "slideFromLeft" },
-    { selector: ".top", additionalClass: "slideFromTop" },
-    { selector: ".bottom", additionalClass: "slideFromBottom" },
-    { selector: ".right", additionalClass: "slideFromRight" },
-  ]);
+
   const scrollToTarget = () => {
     const targetDiv = document.getElementById("Explore");
     const navbarElement = document.getElementById("HomeNav");

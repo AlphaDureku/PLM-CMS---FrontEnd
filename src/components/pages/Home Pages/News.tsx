@@ -1,6 +1,5 @@
 import { Flex, Text } from "@mantine/core";
 import { ChevronLeftRounded } from "@mui/icons-material";
-import useIntersectionObserver from "../../CustomHooks/observerClass";
 import LongCard from "../../Reusable Components/LongCard";
 
 
@@ -62,12 +61,7 @@ export default function News() {
     });
 
 
-    useIntersectionObserver(
-        [
-            { selector: ".hidden", additionalClass: "show" },
 
-        ]
-    )
     return <>
 
         <Flex direction={"column"} align={"center"}>
