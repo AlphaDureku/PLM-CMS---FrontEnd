@@ -18,6 +18,7 @@ export type LongCardObject = {
 
 export type Menu = {
   Parent: string;
+  href?: string;
   Child: childMenu[];
 };
 

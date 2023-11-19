@@ -5,10 +5,9 @@ import Home from "./Home";
 import News from "./News";
 
 export default function HomePageLayout() {
-  const [directory, setDirectory] = useState<string[]>([])
 
   return (<>
-     <HomePageNavbar />  
+    <HomePageNavbar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/News" element={<News />} />

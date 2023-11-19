@@ -31,21 +31,21 @@ function ScrollOpacityElement() {
   };
   const handleLinkClick =
     (href: string): React.MouseEventHandler<HTMLAnchorElement> =>
-    (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-      event.preventDefault(); // Prevent the default anchor behavior
-      const targetElement = document.querySelector(href); // Find the target element by ID
-      const navbarElement = document.getElementById("HomeNav");
+      (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        event.preventDefault(); // Prevent the default anchor behavior
+        const targetElement = document.querySelector(href); // Find the target element by ID
+        const navbarElement = document.getElementById("HomeNav");
 
-      if (targetElement && navbarElement) {
-        const navbarHeight = navbarElement.clientHeight;
-        const targetOffsetTop =
-          targetElement.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top: targetOffsetTop - navbarHeight,
-          behavior: "smooth",
-        });
-      }
-    };
+        if (targetElement && navbarElement) {
+          const navbarHeight = navbarElement.clientHeight;
+          const targetOffsetTop =
+            targetElement.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: targetOffsetTop - navbarHeight,
+            behavior: "smooth",
+          });
+        }
+      };
 
   const renderNavMenuTop = NavBarDataTop.map((item, index) => {
     return (
@@ -141,7 +141,7 @@ function ScrollOpacityElement() {
       key={item.Parent}
     >
       <HoverCard.Target>
-        <a className="makeHoverable makeUnderlineHover">{item.Parent}</a>
+        <a className="makeHoverable makeUnderlineHover" href={item.href}>{item.Parent}</a>
       </HoverCard.Target>
       <HoverCard.Dropdown className="HomePage_HoverCard_Container make">
         {item.Child && renderSubMenu(item.Child)}

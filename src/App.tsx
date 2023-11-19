@@ -5,6 +5,7 @@ import HomePageLayout from "./components/pages/Home Pages/HomePageLayout";
 import TestSite from "./components/pages/TestSite";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -12,7 +13,8 @@ function App() {
           <Route path="/*" element={<HomePageLayout />} />
           <Route path="/cms/*" element={<CMS />} />
           <Route path="/TestSite" element={<TestSite />} />
-           </Routes>
+
+        </Routes>
       </BrowserRouter>
     </>
   );

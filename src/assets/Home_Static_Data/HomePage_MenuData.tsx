@@ -98,13 +98,14 @@ export const NavBarDataBottom: Menu[] = [
       { text: "Undergraduate Programs", href: "" },
       { text: "PLMAT", href: "https://www.plm.edu.ph/admissions/plmat" },
       { text: "CLAT", href: "https://www.plm.edu.ph/admissions/clat" },
-      {text: "Scholars and Financial Aid", href: "https://www.plm.edu.ph/admissions/scholarships"},
-      {text: "International Students", href: "https://plm.edu.ph/community/immigration-and-visa"}
+      { text: "Scholars and Financial Aid", href: "https://www.plm.edu.ph/admissions/scholarships" },
+      { text: "International Students", href: "https://plm.edu.ph/community/immigration-and-visa" }
 
     ],
   },
   {
     Parent: "News",
+    href: "/news",
     Child: [
       { text: "Announcements", href: "" },
       { text: "Newsletter", href: "" },

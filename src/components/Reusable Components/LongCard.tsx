@@ -1,4 +1,5 @@
 import { Image } from "@mantine/core";
+import { AccessTime, CalendarMonth } from "@mui/icons-material";
 import { LongCardObject } from "../../Types/HomePageTypes";
 import CustomButton from "./CustomButton";
 
@@ -13,7 +14,7 @@ export default function LongCard(props: LongCardObject) {
           src={props.ImageLink}
           alt="No way!"
           radius="md"
-          h={200}
+          h={150}
           w="auto"
           fit="contain"
         />
@@ -27,9 +28,9 @@ export default function LongCard(props: LongCardObject) {
         <div>
           <div className="LongCard_BottomRow">
             <div>
-              <img src="/images/CalendarLogo.png" alt="img not found" />
+              <CalendarMonth />
               <span>{props.BottomRow.Date}</span>
-              <img src="/images/ClockLogo.png" alt="img not found" />
+              <AccessTime />
               <span>{props.BottomRow.Time}</span>
             </div>
             <div>
@@ -37,7 +38,7 @@ export default function LongCard(props: LongCardObject) {
                 color="#032968"
                 ImageLink="/images/ButtonArrowLogo.png"
                 text="Read More"
-                size="md"
+                size="sm"
                 gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               />
             </div>
