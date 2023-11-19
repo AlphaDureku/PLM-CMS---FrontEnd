@@ -20,9 +20,9 @@ import {
   IconSelector,
 } from "@tabler/icons-react";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { TagsRowData, ThProps } from "../../../Types/CmsPage";
 import classes from "../../../mantine assets/TableSort.module.css";
-import { useSearchParams } from "react-router-dom";
 
 const data = [
   {
@@ -105,7 +105,7 @@ export default function Tags() {
     const reversed = field === sortBy ? !reverseSortDirection : false;
     setReverseSortDirection(reversed);
     setSortBy(field);
-    setSortedData(sortData(data, { sortBy: field, reversed, search }));
+    setSortedData(sortData(data, { sortBy: field, reversed, search: search.get("TagQuery") ?? "" }));
   };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -165,7 +165,7 @@ export default function Tags() {
                 stroke={1.5}
               />
             }
-            value={search.get("TagQuery")}
+            value={search.get("TagQuery") ?? ""}
             onChange={handleSearchChange}
           />
           <Flex align={"center"} gap={"md"}>

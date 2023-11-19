@@ -21,6 +21,7 @@ import {
   IconSelector,
 } from "@tabler/icons-react";
 import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
   ManageAccountRowData,
   ThProps,
@@ -28,7 +29,6 @@ import {
 } from "../../../Types/CmsPage";
 import classes from "../../../mantine assets/TableSort.module.css";
 import ModifyAccountModal from "./ModifyAccountModal";
-import { useSearchParams } from "react-router-dom";
 
 function Th({ children, reversed, sorted, onSort }: ThProps) {
   const Icon = sorted
@@ -200,7 +200,7 @@ export default function ManageAccounts() {
     const reversed = field === sortBy ? !reverseSortDirection : false;
     setReverseSortDirection(reversed);
     setSortBy(field);
-    setSortedData(sortData(data, { sortBy: field, reversed, search }));
+    setSortedData(sortData(data, { sortBy: field, reversed, search: search.get("AccountQuery") ?? "" }));
   };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -313,7 +313,7 @@ export default function ManageAccounts() {
               stroke={1.5}
             />
           }
-          value={search.get("AccountQuery")}
+          value={search.get("AccountQuery") ?? ""}
           onChange={handleSearchChange}
         />
         <ScrollArea
