@@ -17,6 +17,7 @@ function ScrollOpacityElement() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     const opacityThreshold = 100;
