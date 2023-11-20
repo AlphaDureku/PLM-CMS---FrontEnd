@@ -27,13 +27,13 @@ import classes from "../../../mantine assets/TableSort.module.css";
 const data = [
   {
     id: "2020",
-    name: "Post 1",
+    name: "Header",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio labore minima itaque temporibus adipisci illum dolor expedita pariatur alias fugiat natus ab quas, doloribus nam rerum delectus, rem culpa et!",
   },
   {
     id: "2021",
-    name: "Post 2",
+    name: "Card",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio labore minima itaque temporibus adipisci illum dolor expedita pariatur alias fugiat natus ab quas, doloribus nam rerum delectus, rem culpa et!",
   },
@@ -95,11 +95,11 @@ function sortData(
 }
 export default function Tags() {
   // const [search, setSearch] = useState("");
-  const [search, setSearch] = useSearchParams({TagQuery: ""})
+  const [search, setSearch] = useSearchParams({ TagQuery: "" })
   const [sortedData, setSortedData] = useState(data);
-  const [sortBy, setSortBy] = useState<keyof TagsRowData | null>(null);
+  const [sortBy, setSortBy] = useState < keyof TagsRowData | null > (null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
-  const [selectedRow, setSelectedRow] = useState<string[]>([]);
+  const [selectedRow, setSelectedRow] = useState < string[] > ([]);
 
   const setSorting = (field: keyof TagsRowData) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;
@@ -130,8 +130,8 @@ export default function Tags() {
             onChange={() =>
               selectedRow.includes(row.id)
                 ? setSelectedRow((prev) =>
-                    prev.filter((item) => item !== row.id)
-                  )
+                  prev.filter((item) => item !== row.id)
+                )
                 : setSelectedRow((prev) => [...prev, row.id])
             }
           />
