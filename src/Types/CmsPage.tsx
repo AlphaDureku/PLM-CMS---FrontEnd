@@ -101,3 +101,10 @@ export type accountType = {
   accountType?: string;
   permissions?: number[];
 };
+
+// Log In
+export interface PasswordFormProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
