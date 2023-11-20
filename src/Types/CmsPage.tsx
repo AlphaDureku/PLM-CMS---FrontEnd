@@ -108,3 +108,7 @@ export interface PasswordFormProps {
   onChange: (value: string) => void;
 }
 
+export interface UsernameFormProps {
+  value: string;
+  onChange: (value: string) => void;
+}

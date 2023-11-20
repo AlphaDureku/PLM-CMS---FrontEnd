@@ -2,9 +2,9 @@ import { ChangeEvent, useState } from 'react';
 import { TextInput, InputWrapper } from '@mantine/core';
 import { UsernameFormProps } from "../../Types/CmsPage";
 
-interface UsernameFormPropsWithValidation extends UsernameFormProps {
-  showError: boolean;
-}
+// interface UsernameFormPropsWithValidation extends UsernameFormProps {
+//   showError: boolean;
+// }
 
 const UsernameForm: React.FC<UsernameFormProps> = ({ value, onChange }) => {
   const [error, setError] = useState<string | null>(null);
