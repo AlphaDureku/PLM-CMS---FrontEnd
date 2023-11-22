@@ -183,10 +183,10 @@ const permissions = originalData.map(({ id, permissions }) => ({
 }));
 
 export default function ManageAccounts() {
-  const [search, setSearch] = useSearchParams({AccountQuery: ""})
+  const [search, setSearch] = useSearchParams({ AccountQuery: "" })
   // const [search, setSearch] = useState("");
   const [sortedData, setSortedData] = useState(data);
-  const [sortBy, setSortBy] = useState<keyof ManageAccountRowData | null>(null);
+  const [sortBy, setSortBy] = useState < keyof ManageAccountRowData | null > (null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
   const [opened, { open, close }] = useDisclosure(false);
   const [selectedAccount, setSelectedAccount] = useState({
@@ -255,7 +255,7 @@ export default function ManageAccounts() {
               className="makeHoverable"
               onClick={() => confirmHandler(row.id)}
             >
-              <Check style={{ width: "70%", height: "70%" }} />
+              <Check className="IconHeightWidth" />
             </ThemeIcon>
           </Tooltip>
           <Tooltip label="Modify">
@@ -275,7 +275,7 @@ export default function ManageAccounts() {
                 });
               }}
             >
-              <IconEdit style={{ width: "70%", height: "70%" }} />
+              <IconEdit className="IconHeightWidth" />
             </ThemeIcon>
           </Tooltip>
           <Tooltip label="Delete">
@@ -306,7 +306,7 @@ export default function ManageAccounts() {
         <TextInput
           placeholder="Search an account"
           mb="md"
-          style={{ width: "70%" }}
+          className="TextInputWidth"
           leftSection={
             <IconSearch
               style={{ width: rem(16), height: rem(16) }}

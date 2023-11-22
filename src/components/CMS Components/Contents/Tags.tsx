@@ -61,6 +61,7 @@ function Th({ children, reversed, sorted, onSort }: ThProps) {
   );
 }
 
+
 function filterData(data: TagsRowData[], search: string) {
   const query = search.toLowerCase().trim();
   const itemKeys = Object.keys(data[0]);
@@ -158,7 +159,7 @@ export default function Tags() {
           <TextInput
             placeholder="Search for tags"
             mb="md"
-            style={{ width: "70%" }}
+            className="TextInputWidth"
             leftSection={
               <IconSearch
                 style={{ width: rem(16), height: rem(16) }}

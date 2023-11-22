@@ -18,6 +18,18 @@
   --Grey: #686868;
 }
 
+.YColor{
+  color: var(--Yellow)
+}
+.RColor{
+  color: var(--Red)
+}
+.BColor{
+  color: var(--Blue)
+}
+.GColor{
+  color: var(--Grey)
+}
 * {
   padding: 0;
   margin: 0;

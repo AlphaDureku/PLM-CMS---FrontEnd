@@ -5,7 +5,7 @@ import { CMSmenuProp } from "../../Types/CmsPage";
 import UserProfile from "../Reusable Components/UserProfile";
 
 export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
-  const [indicator, setIndicator] = useState<boolean>(false);
+  const [indicator, setIndicator] = useState < boolean > (false);
   const handleMenuClick = () => {
     setMenuOpened(!menuOpened);
   };
@@ -30,7 +30,7 @@ export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
             />
           </svg>
         </button>
-        <h2 style={{ color: "var(--Red)" }}>PLM - CMS</h2>
+        <h2 className="RColor">PLM - CMS</h2>
       </Flex>
       <Flex align={"center"}>
         <img
@@ -39,7 +39,7 @@ export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
           alt="img not found"
         />
         <div>
-          <h4 style={{ color: "var(--Yellow)" }}>
+          <h4 className="YColor">
             PAMANTASAN NG LUNGSOD NG MAYNILA
           </h4>
           <h5>UNIVERSITY OF THE CITY OF MANILA</h5>
@@ -60,8 +60,7 @@ export default function CmsNavBar({ menuOpened, setMenuOpened }: CMSmenuProp) {
               <Indicator disabled={indicator}>
                 <MailOutline
                   fontSize="large"
-                  style={{ color: "var(--Grey)" }}
-                  className="makeHoverable"
+                  className="makeHoverable GColor"
                   onClick={() => {
                     setIndicator(true);
                   }}

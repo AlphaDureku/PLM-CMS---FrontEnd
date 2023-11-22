@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF to Excel Converter</title>
+</head>
+<body>
+  <h1>PDF to Excel Converter</h1>
+  <input type="file" id="pdfFileInput" accept=".pdf">
+  <button onclick="convertPdfToExcel()">Convert</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.16.0/dist/pdf-lib.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+  <script>
+    async function convertPdfToExcel() {
+      const pdfFileInput = document.getElementById('pdfFileInput');
+      const file = pdfFileInput.files[0];
+
+      if (!file) {
+        alert('Please select a PDF file.');
+        return;
+      }
+
+      const pdfBuffer = await file.arrayBuffer();
+      const pdfDoc = await PDFLib.PDFDocument.load(pdfBuffer);
+
+      const excelData = [];
+
+      for (let i = 0; i < pdfDoc.getPageCount(); i++) {
+        const page = pdfDoc.getPage(i + 1);
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items.map(item => item.str).join(' ');
+        excelData.push([pageText]);
+      }
+
+      const excelSheet = XLSX.utils.aoa_to_sheet(excelData);
+      const excelBuffer = XLSX.write(excelSheet, { bookType: 'xlsx', bookSST: true, type: 'array' });
+
+      const blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const url = window.URL.createObjectURL(blob);
+
+      // Create a link and trigger the download
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'converted.xlsx';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
