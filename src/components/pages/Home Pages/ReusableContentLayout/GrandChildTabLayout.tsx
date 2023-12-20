@@ -113,7 +113,7 @@ export default function GrandChildTabLayout() {
         );
     });
 
-
+    // Should be reusable especially when we pass sub childs
 
     const [activeChild, setActiveChild] = useState("Announcements")
     const childs: string[] = [
@@ -128,6 +128,23 @@ export default function GrandChildTabLayout() {
         </div>)
     })
 
+    const renderContent = () => {
+        switch (activeChild) {
+            case "Announcements":
+                return renderData;
+            case "NewsLetter":
+            case "Message From the University President":
+                return renderData;
+            case "Careers / Job Openings":
+                return renderData;
+            default:
+
+                break;
+        }
+    };
+
+
+
 
     return <>
         <Flex direction={"column"} align={"center"}>
@@ -141,7 +158,7 @@ export default function GrandChildTabLayout() {
                 <Flex style={{ height: "100%" }} className="ContentMaxWidth" direction={"column"} gap={"lg"}>
                     <h3>Announcements</h3>
                     <Flex direction={"column"} gap={"md"} >
-                        {renderData}
+                        {renderContent()}
                     </Flex>
                 </Flex>
             </Flex>

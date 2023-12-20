@@ -4,10 +4,15 @@ import { ChevronLeftRounded } from "@mui/icons-material";
 const useDirectoryRenderer = (directory) => {
     return directory.map((item, index) => {
         if (item !== "") {
+            const indexOfTab = directory.indexOf(item)
+            const subarray = directory.slice(1, indexOfTab + 1);
+            const mapForURL = subarray.map((url) => {
+                return ("/" + url)
+            })
             return (
                 <Flex key={index} >
                     < ChevronLeftRounded />
-                    <h3><a href={`/${item}`} > {item.charAt(0).toUpperCase() + item.slice(1)}</a></h3>
+                    <h3><a href={mapForURL.join("")} > {item.charAt(0).toUpperCase() + item.slice(1)}</a></h3>
                 </Flex >
             );
         }
