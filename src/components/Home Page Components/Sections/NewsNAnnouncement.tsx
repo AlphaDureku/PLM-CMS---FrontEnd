@@ -36,6 +36,7 @@ export default function UserProfile(props: Props) {
           align="center"
           direction="column"
           wrap="wrap"
+          className="ContentMaxWidth"
         >
           {contents}
         </Flex>

@@ -23,7 +23,7 @@ export default function LongCardWithoutBottomRow(props: LongCardWithoutBottomRow
                     <p>{props.Description}</p>
                 </div>
             </div>
-            <Flex align={"end"} ><CustomButton color="var(--Red)" gotoLink="/" text="See More" withArrowRightIcon="true" /></Flex>
+            <Flex align={"end"} ><CustomButton color="var(--Red)" gotoLink={props.BtnLink} text="See More" withArrowRightIcon={true} size="md" /></Flex>
         </Flex>
     );
 }

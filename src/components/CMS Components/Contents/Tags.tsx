@@ -153,8 +153,8 @@ export default function Tags() {
             <Flex direction={"column"} align={"center"} gap={"lg"}>
                 <Flex
                     align={"center"}
+                    className="ContentMaxWidth"
                     justify={"space-around"}
-                    style={{ width: "80%" }}
                 >
                     <TextInput
                         placeholder="Search for tags"

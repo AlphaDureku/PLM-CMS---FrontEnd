@@ -4,7 +4,9 @@
   transform: scale(1.1);
   transition: transform 0.15s;
 }
-
+.mousePointer:hover{
+  cursor: pointer;
+}
 .UserProfile_Container {
   display: flex;
   width: auto;
@@ -81,7 +83,7 @@ label {
   display: flex;
   flex-direction: row;
   text-align: left;
-  width: 75%;
+  width: 100%;
   border-radius: 8px;
 }
 
@@ -169,4 +171,8 @@ label {
 
 .LightBlue {
   color: #4088FF;
+}
+
+.ContentMaxWidth{
+  width: 80%;
 }

@@ -1,20 +1,20 @@
 import { Flex, Text } from "@mantine/core";
 import { useLocation } from "react-router-dom";
-import useDirectoryRenderer from "../../CustomHooks/TrackNavigate";
-import LongCardWithoutBottomRow from "../../Reusable Components/LongCardWithoutBottomRow";
+import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
+import LongCardWithoutBottomRow from "../../../Reusable Components/LongCardWithoutBottomRow";
 
 const newsData = [
     {
-        Title: "Title",
+        Title: "Announcements",
         ImageLink:
             "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
         Description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+        BtnLink: "/News/Announcements",
 
         BottomRow: {
             Date: "11/01/23",
             Time: "9:00PM",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         },
     },
     {
@@ -23,11 +23,11 @@ const newsData = [
             "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
         Description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+        BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 
         BottomRow: {
             Date: "11/01/23",
             Time: "9:00PM",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         },
     },
     {
@@ -36,11 +36,11 @@ const newsData = [
             "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
         Description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+        BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 
         BottomRow: {
             Date: "11/01/23",
             Time: "9:00PM",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         },
     },
     {
@@ -49,11 +49,11 @@ const newsData = [
             "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
         Description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+        BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 
         BottomRow: {
             Date: "11/01/23",
             Time: "9:00PM",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         },
     },
     {
@@ -62,11 +62,11 @@ const newsData = [
             "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
         Description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+        BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 
         BottomRow: {
             Date: "11/01/23",
             Time: "9:00PM",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         },
     },
     {
@@ -75,11 +75,11 @@ const newsData = [
             "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
         Description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+        BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 
         BottomRow: {
             Date: "11/01/23",
             Time: "9:00PM",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         },
     },
     {
@@ -88,11 +88,11 @@ const newsData = [
             "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
         Description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
+        BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 
         BottomRow: {
             Date: "11/01/23",
             Time: "9:00PM",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         },
     },
 
@@ -126,7 +126,7 @@ export default function News() {
                 <h1>News</h1>
                 <Text size="1.2rem">Browse through our latest news and updates about our university.</Text>
 
-                <Flex direction={"column"} align={"center"} gap={"md"} >
+                <Flex direction={"column"} align={"center"} gap={"md"} className="ContentMaxWidth">
                     {renderData}
 
                 </Flex>

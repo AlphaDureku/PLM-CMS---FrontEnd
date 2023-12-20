@@ -7,8 +7,8 @@ const useDirectoryRenderer = (directory) => {
             return (
                 <Flex key={index} >
                     < ChevronLeftRounded />
-                    <h3>{item.charAt(0).toUpperCase() + item.slice(1)}</h3>
-                </Flex>
+                    <h3><a href={`/${item}`} > {item.charAt(0).toUpperCase() + item.slice(1)}</a></h3>
+                </Flex >
             );
         }
         return null; // Return null for empty items
