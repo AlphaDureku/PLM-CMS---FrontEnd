@@ -7,9 +7,7 @@ import MissonVision from "../../Home Page Components/Sections/MissionVission";
 import NewsNAnnouncement from "../../Home Page Components/Sections/NewsNAnnouncement";
 import QuickAccess from "../../Home Page Components/Sections/QuickAccess";
 
-// type directory = {
-//   setDirectory: React.Dispatch<React.SetStateAction<string[]>>;
-// }
+
 export default function Home() {
   document.title = "PLM";
   const [scroll] = useWindowScroll();
@@ -28,6 +26,9 @@ export default function Home() {
       });
     }
   };
+
+
+
   return (
     <>
       <Affix className="exploreAffix">

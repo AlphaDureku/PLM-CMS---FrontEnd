@@ -13,6 +13,7 @@ export default function HomePageLayout() {
     { selector: ".bottom", additionalClass: "slideFromBottom" },
     { selector: ".right", additionalClass: "slideFromRight" },
   ]);
+
   return (<>
     <HomePageNavbar />
     <Routes>

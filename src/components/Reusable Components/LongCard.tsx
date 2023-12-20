@@ -14,7 +14,7 @@ export default function LongCard(props: LongCardObject) {
           src={props.ImageLink}
           alt="No way!"
           radius="md"
-          h={150}
+          h={165}
           w="auto"
           fit="contain"
         />

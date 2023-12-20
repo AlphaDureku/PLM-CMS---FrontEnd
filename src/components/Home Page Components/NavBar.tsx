@@ -1,21 +1,30 @@
 import { Flex, HoverCard } from "@mantine/core";
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Menu, childMenu } from "../../Types/HomePageTypes";
 import {
   NavBarDataBottom,
   NavBarDataTop,
 } from "../../assets/Home_Static_Data/HomePage_MenuData";
-function ScrollOpacityElement() {
+
+
+
+export default function HomeNavBar() {
   const [opacity, setOpacity] = useState(0);
   const [Pcolor, setPcolor] = useState(false);
+  const { pathname } = useLocation()
 
   useEffect(() => {
+    console.log()
+    if (pathname !== "/") {
+      setPcolor(true)
+    }
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-    };
+
+    }
   }, []);
 
   const handleScroll = () => {
@@ -24,11 +33,15 @@ function ScrollOpacityElement() {
     const newOpacity = Math.min(1, scrollPosition / opacityThreshold);
 
     setOpacity(newOpacity);
-    if (scrollPosition > opacityThreshold) {
-      setPcolor(true);
-    } else {
-      setPcolor(false);
+
+    if (pathname === "/") {
+      if (scrollPosition > opacityThreshold) {
+        setPcolor(true);
+      } else {
+        setPcolor(false);
+      }
     }
+
   };
   const handleLinkClick =
     (href: string): React.MouseEventHandler<HTMLAnchorElement> =>
@@ -195,4 +208,4 @@ function ScrollOpacityElement() {
   );
 }
 
-export default ScrollOpacityElement;
+

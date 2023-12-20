@@ -169,6 +169,10 @@ const originalData = [
   },
 ];
 
+// const group = Object.groupBy(originalData, myData => (myData.fullName[0] === "J"));
+// console.log(group.true)
+
+
 const data = originalData.map(({ id, fullName, userName, status, role }) => ({
   id,
   fullName,
