@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Announcements from "./Annoucements";
 import News from "./News";
+import SubNews from "./SubNews";
 
 
 
@@ -9,7 +9,7 @@ export default function NewsLayout() {
     return <>
         <Routes>
             <Route path="/" element={<News />} />
-            <Route path="/Announcements" element={<Announcements />} />
+            <Route path="/*" element={<SubNews />} />
         </Routes>
 
     </>

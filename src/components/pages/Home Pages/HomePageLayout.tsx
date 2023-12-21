@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import useIntersectionObserver from "../../CustomHooks/observerClass";
 import HomePageFooter from "../../Home Page Components/Footer";
 import HomePageNavbar from "../../Home Page Components/NavBar";
+import AboutLayout from "./AboutTab/AboutLayout";
 import Home from "./Home";
 import { default as NewsLayout } from "./NewsTab/NewsLayout";
 
@@ -19,6 +20,8 @@ export default function HomePageLayout() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/News/*" element={<NewsLayout />} />
+      <Route path="/About/*" element={<AboutLayout />} />
+
     </Routes>
     <HomePageFooter />
   </>)

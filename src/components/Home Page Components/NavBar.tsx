@@ -107,7 +107,6 @@ export default function HomeNavBar() {
                 itemChild.href && itemChild.href.includes("#") ? (
                   <a
                     href={itemChild.href}
-                    target="_blank"
                     key={index}
                     onClick={handleLinkClick(itemChild.href)}
                   >
@@ -116,7 +115,6 @@ export default function HomeNavBar() {
                 ) : (
                   <a
                     href={itemChild.href}
-                    target="_blank"
                     key={index}
                     className="HoverYellow"
                   >

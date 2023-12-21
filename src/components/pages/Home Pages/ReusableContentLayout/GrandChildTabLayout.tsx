@@ -1,38 +1,37 @@
 import { Flex } from "@mantine/core";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { Jobs } from "../../../../assets/Home_Static_Data/CareersJobs";
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
-import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
 import LongCard from "../../../Reusable Components/LongCard";
 
 type Props = {
     childs: string[],
+    // pathName: string,
+    setSplitPathName: React.Dispatch<React.SetStateAction<string[]>>,
+    directory: any,
 
 }
 
-export default function GrandChildTabLayout({ childs } = Props) {
-    const { pathname } = useLocation()
-    const directory = useDirectoryRenderer(pathname.split("/"))
-    const lastPathSegment = window.location.pathname.split('/').filter(part => part.trim() !== '').pop();
-    const [activeChild, setActiveChild] = useState(childs[0])
+export default function GrandChildTabLayout({ childs, setSplitPathName, directory } = Props) {
+    const indexOfLastPathSegment = childs.map(child => child.replace(/\s/g, '')).indexOf(window.location.pathname.split('/').filter(part => part.trim() !== '').pop());
+    console.log(window.location.pathname)
     const [data, setData] = useState("")
-    const renderData = isLongCardWithoutBottomRowObject(data) && activeChild.replace(/\s/g, '') === lastPathSegment ? newsData.map((item, index) => {
+    const [activeChild, setActiveChild] = useState(childs[indexOfLastPathSegment])
+    const renderData = isLongCardWithoutBottomRowObject(data) ? data.map((item, index) => {
         return (
             <LongCard
                 key={index}
                 {...item}
             />
         );
-    }) : console.log(data);
-
-    // Should be reusable especially when we pass sub childs
+    }) : "Hehe";
 
     const handleChildClick = (child: string) => {
         setActiveChild(child);
         handleChangeURL(child);
-        setData(newsData)
-
+        setSplitPathName(prevArray => {
+            const lastIndex = prevArray.length - 1;
+            return [...prevArray.slice(0, lastIndex), child];
+        });
     };
 
     const handleChangeURL = (newDirectory: string) => {
@@ -77,12 +76,23 @@ export default function GrandChildTabLayout({ childs } = Props) {
             typeof obj.BtnLink === 'string'
         );
     }
+    console.log(data)
 
     useEffect(() => {
         console.log("Fetch new Data from " + activeChild)
-        setData(Jobs)
+        switch (activeChild) {
+            case "Newsletters":
+                setData(newsData)
+                break;
+            case "Announcements":
+                setData(newsData)
+                break;
+            default:
+                setData("")
+                break;
+        }
 
-    }, [])
+    }, [activeChild])
 
     return <>
         <Flex direction={"column"} align={"center"}>
@@ -94,7 +104,7 @@ export default function GrandChildTabLayout({ childs } = Props) {
 
                 </Flex>
                 <Flex style={{ height: "100%" }} className="ContentMaxWidth" direction={"column"} gap={"lg"}>
-                    <h3>Announcements</h3>
+                    <h3>{activeChild}</h3>
                     <Flex direction={"column"} gap={"md"} >
                         {renderData}
                     </Flex>

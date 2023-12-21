@@ -53,6 +53,7 @@ export const NavBarDataTop: Menu[] = [
 export const NavBarDataBottom: Menu[] = [
   {
     Parent: "About",
+    href: "/About/University",
     Child: [
       {
         Parent: "University Profile",
@@ -107,10 +108,10 @@ export const NavBarDataBottom: Menu[] = [
     Parent: "News",
     href: "/news",
     Child: [
-      { text: "Announcements", href: "" },
-      { text: "Newsletter", href: "" },
-      { text: "Message from the University President", href: "" },
-      { text: "Job Openings / Careers", href: "" },
+      { text: "Announcements", href: "/News/Announcements" },
+      { text: "Newsletter", href: "/News/Newsletters" },
+      { text: "Message from the University President", href: "/News/MessagefromtheUniversityPresident" },
+      { text: "Job Openings / Careers", href: "/News/JobOpeningsandCareers" },
     ],
   },
 ];
