@@ -111,7 +111,7 @@ export const NavBarDataBottom: Menu[] = [
       { text: "Announcements", href: "/News/Announcements" },
       { text: "Newsletter", href: "/News/Newsletters" },
       { text: "Message from the University President", href: "/News/MessagefromtheUniversityPresident" },
-      { text: "Job Openings / Careers", href: "/News/JobOpeningsandCareers" },
+      { text: "Job Openings and Careers", href: "/News/JobOpeningsandCareers" },
     ],
   },
 ];
