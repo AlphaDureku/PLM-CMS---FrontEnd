@@ -20,14 +20,7 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
     console.log(window.location.pathname)
     const [data, setData] = useState < any > ("");
     const [activeChild, setActiveChild] = useState(childs[indexOfLastPathSegment])
-    const renderData = isLongCardWithoutBottomRowObjectArray(data) ? data.map((item: LongCardObject, index: number) => {
-        return (
-            <LongCard
-                key={index}
-                {...item}
-            />
-        );
-    }) : "Hehe";
+
 
     const handleChildClick = (child: string) => {
         setActiveChild(child);
@@ -52,6 +45,15 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
         </div>)
     })
 
+    const renderData = isLongCardWithoutBottomRowObjectArray(data) ? data.map((item: LongCardWithoutBottomRowObject, index: number) => {
+        return (
+            <LongCard
+                key={index}
+                {...item}
+            />
+        );
+    }) : "Hehe";
+
     function isLongCardWithoutBottomRowObjectArray(obj: any): obj is LongCardWithoutBottomRowObject[] {
         return (
             Array.isArray(obj) &&
@@ -69,6 +71,8 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
             )
         );
     }
+
+
 
     useEffect(() => {
         console.log("Fetch new Data from " + activeChild)
