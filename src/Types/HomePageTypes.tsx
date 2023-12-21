@@ -5,19 +5,17 @@ export type ShortCardObject = {
   GotoLink: string;
 };
 
-export type LongCardWithoutBottomRowObject = {
+export type LongCardObject = {
   ImageLink: string;
   Title: string;
   Description: string;
   BtnLink: string;
-};
-
-export type LongCardObject = LongCardWithoutBottomRowObject & {
-  BottomRow: {
+  BottomRow?: {
     Time: string;
     Date: string;
   };
 };
+
 
 
 export type Menu = {
