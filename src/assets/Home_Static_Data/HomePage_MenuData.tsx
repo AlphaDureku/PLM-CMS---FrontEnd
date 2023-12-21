@@ -99,9 +99,14 @@ export const NavBarDataBottom: Menu[] = [
       { text: "Undergraduate Programs", href: "" },
       { text: "PLMAT", href: "https://www.plm.edu.ph/admissions/plmat" },
       { text: "CLAT", href: "https://www.plm.edu.ph/admissions/clat" },
-      { text: "Scholars and Financial Aid", href: "https://www.plm.edu.ph/admissions/scholarships" },
-      { text: "International Students", href: "https://plm.edu.ph/community/immigration-and-visa" }
-
+      {
+        text: "Scholars and Financial Aid",
+        href: "https://www.plm.edu.ph/admissions/scholarships",
+      },
+      {
+        text: "International Students",
+        href: "https://plm.edu.ph/community/immigration-and-visa",
+      },
     ],
   },
   {
@@ -109,8 +114,11 @@ export const NavBarDataBottom: Menu[] = [
     href: "/news",
     Child: [
       { text: "Announcements", href: "/News/Announcements" },
-      { text: "Newsletter", href: "/News/Newsletters" },
-      { text: "Message from the University President", href: "/News/MessagefromtheUniversityPresident" },
+      { text: "Newsletter", href: "/News/Newsletter" },
+      {
+        text: "Message from the University President",
+        href: "/News/MessagefromtheUniversityPresident",
+      },
       { text: "Job Openings and Careers", href: "/News/JobOpeningsandCareers" },
     ],
   },

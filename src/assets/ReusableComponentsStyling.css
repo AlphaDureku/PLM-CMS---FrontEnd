@@ -4,7 +4,7 @@
   transform: scale(1.1);
   transition: transform 0.15s;
 }
-.mousePointer:hover{
+.mousePointer:hover {
   cursor: pointer;
 }
 .UserProfile_Container {
@@ -78,19 +78,16 @@ label {
   border: 4px solid var(--Blue);
 }
 .LongCard_Container {
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   padding: 8px;
-  display: flex;
-  flex-direction: row;
+
   text-align: left;
   width: 100%;
   border-radius: 8px;
 }
 
 /*Long Card*/
-.LongCard_Container > div:nth-child(1) {
-  margin-right: 16px;
-}
 
 .LongCard_BottomRow {
   display: flex;
@@ -144,35 +141,32 @@ label {
   font-weight: 600;
 }
 
-
-
 /*Animations*/
-
 
 /*Standard CSS*/
 
 .Grey {
-  color: var(--Grey)
+  color: var(--Grey);
 }
 
 .Blue {
-  color: var(--Blue)
+  color: var(--Blue);
 }
 .Red {
-  color: var(--Red)
+  color: var(--Red);
 }
 .Yellow {
-  color: var(--Yellow)
+  color: var(--Yellow);
 }
 
-.fontSize_SubHead{
+.fontSize_SubHead {
   font-size: 0.9rem;
 }
 
 .LightBlue {
-  color: #4088FF;
+  color: #4088ff;
 }
 
-.ContentMaxWidth{
+.ContentMaxWidth {
   width: 80%;
 }

@@ -1,15 +1,16 @@
-import { Image } from "@mantine/core";
+import { Flex, Image } from "@mantine/core";
 import { AccessTime, CalendarMonth } from "@mui/icons-material";
 import { LongCardObject } from "../../Types/HomePageTypes";
+import useResponsiveBreakpoints from "../CustomHooks/mediaQueryies";
 import CustomButton from "./CustomButton";
 
 export default function LongCard(props: LongCardObject) {
   //To add functionality
+  const { thirdBreakpoint } = useResponsiveBreakpoints()
 
   return (
-    <div className="LongCard_Container">
-      <div>
-        {" "}
+    <Flex className="LongCard_Container" direction={thirdBreakpoint ? "row" : "column"} gap={"md"}>
+      <Flex align={"center"} justify={"center"}>
         <Image
           src={props.ImageLink}
           alt="No way!"
@@ -18,7 +19,7 @@ export default function LongCard(props: LongCardObject) {
           w="auto"
           fit="contain"
         />
-      </div>
+      </Flex>
       <div>
         <div>
           <h2>{props.Title}</h2>
@@ -46,6 +47,6 @@ export default function LongCard(props: LongCardObject) {
           <div></div>
         </div>
       </div>
-    </div>
+    </Flex>
   );
 }

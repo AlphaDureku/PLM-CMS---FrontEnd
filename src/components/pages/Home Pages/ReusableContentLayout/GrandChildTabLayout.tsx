@@ -3,6 +3,7 @@ import { LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes"
 import LongCard from "../../../Reusable Components/LongCard";
 
 type Props = {
+  tabHeader: string;
   childs: string[];
   setSplitPathName: React.Dispatch<React.SetStateAction<string[]>>;
   directory: React.ReactElement;
@@ -20,6 +21,7 @@ const GrandChildTabLayout: React.FC<Props> = ({
   setData,
   activeChild,
   setActiveChild,
+  tabHeader,
 }) => {
   const handleChildClick = (child: string) => {
     setActiveChild(child);
@@ -53,8 +55,8 @@ const GrandChildTabLayout: React.FC<Props> = ({
 
   const renderData = isLongCardWithoutBottomRowObjectArray(data)
     ? data.map((item: any, index: number) => {
-        return <LongCard key={index} {...item} />;
-      })
+      return <LongCard key={index} {...item} />;
+    })
     : "Hehe";
 
   function isLongCardWithoutBottomRowObjectArray(
@@ -103,7 +105,7 @@ const GrandChildTabLayout: React.FC<Props> = ({
             gap={"lg"}
           >
             <h3 style={{ borderBottom: "3px solid var(--Red)" }}>
-              News and Updates
+              {tabHeader}
             </h3>
             {renderChilds}
           </Flex>

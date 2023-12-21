@@ -6,7 +6,7 @@ export default function AboutLayout() {
 
     return <>
         <Routes>
-            <Route path="/University" element={<SubAbout />} />
+            <Route path="/*" element={<SubAbout />} />
         </Routes>
 
     </>

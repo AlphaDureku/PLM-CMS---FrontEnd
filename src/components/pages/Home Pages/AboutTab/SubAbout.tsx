@@ -45,6 +45,7 @@ export default function SubAbout() {
   return (
     <>
       <GrandChildTabLayout
+        tabHeader="About"
         childs={childs}
         setSplitPathName={setSplitPathName}
         directory={directory}

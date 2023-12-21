@@ -8,6 +8,7 @@ export default function SubNews() {
   const childs: string[] = NavBarDataBottom[3].Child.map(
     (obj) => obj.text
   ) as string[];
+
   const { pathname } = useLocation();
   const [data, setData] = useState<any>("");
   const [splitPathName, setSplitPathName] = useState(pathname.split("/"));
@@ -26,19 +27,20 @@ export default function SubNews() {
 
   useEffect(() => {
     switch (activeChild) {
-      case "Announcements":
+      case NavBarDataBottom[3].Child[0].text:
         setData(newsData);
         break;
-      case "Newsletters":
+      case NavBarDataBottom[3].Child[1].text:
         setData(newsData);
         break;
-      case "Message from the University President":
+      case NavBarDataBottom[3].Child[2].text:
         setData(newsData);
         break;
-      case "Careers and Job Openings":
+      case NavBarDataBottom[3].Child[3].text:
         setData(newsData);
         break;
       default:
+        console.log(activeChild)
         setData("");
         break;
     }
@@ -46,7 +48,9 @@ export default function SubNews() {
 
   return (
     <>
+
       <GrandChildTabLayout
+        tabHeader={"News and Updates"}
         childs={childs}
         setSplitPathName={setSplitPathName}
         directory={directory}

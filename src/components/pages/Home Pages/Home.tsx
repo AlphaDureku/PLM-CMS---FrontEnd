@@ -7,10 +7,10 @@ import MissonVision from "../../Home Page Components/Sections/MissionVission";
 import NewsNAnnouncement from "../../Home Page Components/Sections/NewsNAnnouncement";
 import QuickAccess from "../../Home Page Components/Sections/QuickAccess";
 
-
 export default function Home() {
   document.title = "PLM";
   const [scroll] = useWindowScroll();
+
 
   const scrollToTarget = () => {
     const targetDiv = document.getElementById("Explore");
@@ -49,19 +49,16 @@ export default function Home() {
       <Image
         src="/images/HomePage/RedBlob.png"
         className="HomeBlobImage  left"
-        height={1000}
         w="auto"
       />{" "}
       <Image
         src="/images/HomePage/BuildingBlob.png"
         className="HomeBlobImage "
-        height={1000}
         w="auto"
       />
       <Image
         src="/images/HomePage/PLM_LogoBG.png"
         className="HomeLogoBG  right"
-        height={900}
         w="auto"
       />
       <div className="Main_Container">

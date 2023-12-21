@@ -7,6 +7,7 @@ import {
   NavBarDataBottom,
   NavBarDataTop,
 } from "../../assets/Home_Static_Data/HomePage_MenuData";
+import useResponsiveBreakpoints from "../CustomHooks/mediaQueryies";
 
 
 
@@ -14,7 +15,7 @@ export default function HomeNavBar() {
   const [opacity, setOpacity] = useState(0);
   const [Pcolor, setPcolor] = useState(false);
   const { pathname } = useLocation()
-
+  const { firstBreakpoint } = useResponsiveBreakpoints()
   useEffect(() => {
     console.log()
     if (pathname !== "/") {
@@ -61,6 +62,9 @@ export default function HomeNavBar() {
         }
       };
 
+
+
+
   const renderNavMenuTop = NavBarDataTop.map((item, index) => {
     return (
       <HoverCard
@@ -68,7 +72,8 @@ export default function HomeNavBar() {
         key={index}
       >
         <HoverCard.Target>
-          <a className="makeHoverable makeUnderlineHover">{item.Parent}</a>
+          <a className={`makeHoverable makeUnderlineHover ${firstBreakpoint ? "Grey" : "Yellow"}`}>{item.Parent}</a>
+
         </HoverCard.Target>
         <HoverCard.Dropdown className="HomePage_HoverCard_Container">
           <div className="HomePage_HoverCard">
@@ -153,13 +158,14 @@ export default function HomeNavBar() {
       key={item.Parent}
     >
       <HoverCard.Target>
-        <a className="makeHoverable makeUnderlineHover" href={item.href}>{item.Parent}</a>
+        <a className={`makeHoverable makeUnderlineHover ${firstBreakpoint ? "Grey" : "Yellow"}`}>{item.Parent}</a>
       </HoverCard.Target>
       <HoverCard.Dropdown className="HomePage_HoverCard_Container make">
         {item.Child && renderSubMenu(item.Child)}
       </HoverCard.Dropdown>
     </HoverCard>
   ));
+
 
   return (
     <>
