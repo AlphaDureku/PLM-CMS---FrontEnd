@@ -158,7 +158,7 @@ export default function HomeNavBar() {
       key={item.Parent}
     >
       <HoverCard.Target>
-        <a className={`makeHoverable makeUnderlineHover ${firstBreakpoint ? "Grey" : "Yellow"}`}>{item.Parent}</a>
+        <a className={`makeHoverable makeUnderlineHover ${firstBreakpoint ? "Grey" : "Yellow"}`} href={item.href}>{item.Parent}</a>
       </HoverCard.Target>
       <HoverCard.Dropdown className="HomePage_HoverCard_Container make">
         {item.Child && renderSubMenu(item.Child)}
