@@ -10,10 +10,7 @@ export type LongCardWithoutBottomRowObject = {
   Title: string;
   Description: string;
   BtnLink: string;
-  BottomRow?: {
-    Time: string;
-    Date: string;
-  };
+
 };
 
 export type LongCardObject = LongCardWithoutBottomRowObject & {
