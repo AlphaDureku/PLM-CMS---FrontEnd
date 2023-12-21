@@ -2,7 +2,8 @@ import { Flex } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
-import LongCard from "../../../Reusable Components/LongCard";
+import LongCardWithoutBottomRow from "../../../Reusable Components/LongCardWithoutBottomRow";
+
 type Props = {
     childs: string[];
     setSplitPathName: React.Dispatch<React.SetStateAction<string[]>>;
@@ -11,14 +12,17 @@ type Props = {
 
 
 const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, directory }) => {
-    const indexOfLastPathSegment = childs.map((child: string) => child.replace(/\s/g, '')).indexOf(window.location.pathname.split('/').filter(part => part.trim() !== '').pop());
+    const indexOfLastPathSegment = childs
+        .map((child: string) => child.replace(/\s/g, ''))
+        .indexOf((window.location.pathname.split('/').filter(part => part.trim() !== '').pop() ?? ''));
+
 
     console.log(window.location.pathname)
     const [data, setData] = useState("")
     const [activeChild, setActiveChild] = useState(childs[indexOfLastPathSegment])
     const renderData = isLongCardWithoutBottomRowObjectArray(data) ? data.map((item: LongCardWithoutBottomRowObject, index: number) => {
         return (
-            <LongCard
+            <LongCardWithoutBottomRow
                 key={index}
                 {...item}
             />
