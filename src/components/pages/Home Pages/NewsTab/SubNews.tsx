@@ -14,6 +14,6 @@ export default function SubNews() {
     const [splitPathName, setSplitPathName] = useState(pathname.split('/'))
     const directory = useDirectoryRenderer(splitPathName)
     return (<>
-        <GrandChildTabLayout childs={childs} setSplitPathName={setSplitPathName} directory={directory} pathName={pathname} />
+        <GrandChildTabLayout childs={childs} setSplitPathName={setSplitPathName} directory={directory} />
     </>)
 }

@@ -16,7 +16,7 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
     console.log(window.location.pathname)
     const [data, setData] = useState("")
     const [activeChild, setActiveChild] = useState(childs[indexOfLastPathSegment])
-    const renderData = isLongCardWithoutBottomRowObject(data) ? data.map((item: LongCardWithoutBottomRowObject, index: number) => {
+    const renderData = isLongCardWithoutBottomRowObjectArray(data) ? data.map((item: LongCardWithoutBottomRowObject, index: number) => {
         return (
             <LongCard
                 key={index}
@@ -48,9 +48,10 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
         </div>)
     })
 
-    function isLongCardWithoutBottomRowObject(obj): obj is LongCardWithoutBottomRowObject | LongCardWithoutBottomRowObject[] {
-        if (Array.isArray(obj)) {
-            return obj.every(item =>
+    function isLongCardWithoutBottomRowObjectArray(obj: any): obj is LongCardWithoutBottomRowObject[] {
+        return (
+            Array.isArray(obj) &&
+            obj.every(item =>
                 typeof item === 'object' &&
                 item !== null &&
                 'ImageLink' in item &&
@@ -61,20 +62,7 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
                 typeof item.Description === 'string' &&
                 'BtnLink' in item &&
                 typeof item.BtnLink === 'string'
-            );
-        }
-
-        return (
-            typeof obj === 'object' &&
-            obj !== null &&
-            'ImageLink' in obj &&
-            typeof obj.ImageLink === 'string' &&
-            'Title' in obj &&
-            typeof obj.Title === 'string' &&
-            'Description' in obj &&
-            typeof obj.Description === 'string' &&
-            'BtnLink' in obj &&
-            typeof obj.BtnLink === 'string'
+            )
         );
     }
     console.log(data)
