@@ -12,6 +12,7 @@ const useResponsiveBreakpoints = () => {
         secondBreakpoint,
         thirdBreakpoint,
         fourthBreakpoint,
+        fifthBreakpoint
     };
 };
 

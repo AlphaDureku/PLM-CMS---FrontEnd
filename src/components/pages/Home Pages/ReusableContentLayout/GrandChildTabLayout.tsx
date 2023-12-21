@@ -8,7 +8,6 @@ type Props = {
   setSplitPathName: React.Dispatch<React.SetStateAction<string[]>>;
   directory: React.ReactElement;
   data: any;
-  setData: React.Dispatch<React.SetStateAction<any>>;
   activeChild: string;
   setActiveChild: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -18,7 +17,6 @@ const GrandChildTabLayout: React.FC<Props> = ({
   setSplitPathName,
   directory,
   data,
-  setData,
   activeChild,
   setActiveChild,
   tabHeader,

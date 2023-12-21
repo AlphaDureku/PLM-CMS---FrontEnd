@@ -10,7 +10,7 @@ export default function SubAbout() {
   ) as string[];
 
   const { pathname } = useLocation();
-  const [data, setData] = useState<any>("");
+  const [data, setData] = useState < any > ("");
   const [splitPathName, setSplitPathName] = useState(pathname.split("/"));
   const directory = useDirectoryRenderer(splitPathName);
   const indexOfLastPathSegment = childs
@@ -50,7 +50,6 @@ export default function SubAbout() {
         setSplitPathName={setSplitPathName}
         directory={directory}
         data={data}
-        setData={setData}
         setActiveChild={setActiveChild}
         activeChild={activeChild}
       />
