@@ -4,14 +4,13 @@ import { LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes"
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import LongCard from "../../../Reusable Components/LongCard";
 type Props = {
-    childs: string[],
-    // pathName: string,
-    setSplitPathName: React.Dispatch<React.SetStateAction<string[]>>,
-    directory: React.ReactElement
+    childs: string[];
+    setSplitPathName: React.Dispatch<React.SetStateAction<string[]>>;
+    directory: React.ReactElement;
+};
 
-}
 
-export default function GrandChildTabLayout({ childs, setSplitPathName, directory } = Props) {
+const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, directory }) => {
     const indexOfLastPathSegment = childs.map((child: string) => child.replace(/\s/g, '')).indexOf(window.location.pathname.split('/').filter(part => part.trim() !== '').pop());
 
     console.log(window.location.pathname)
@@ -117,3 +116,5 @@ export default function GrandChildTabLayout({ childs, setSplitPathName, director
 
     </>
 }
+
+export default GrandChildTabLayout;
