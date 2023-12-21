@@ -1,6 +1,6 @@
 import { Flex } from "@mantine/core";
 import React, { useEffect, useState } from "react";
-import { LongCardObject } from "../../../../Types/HomePageTypes";
+import { LongCardObject, LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import LongCard from "../../../Reusable Components/LongCard";
 
@@ -52,7 +52,7 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
         </div>)
     })
 
-    function isLongCardWithoutBottomRowObjectArray(obj: any): obj is LongCardObject[] {
+    function isLongCardWithoutBottomRowObjectArray(obj: any): obj is LongCardWithoutBottomRowObject[] {
         return (
             Array.isArray(obj) &&
             obj.every(item =>
