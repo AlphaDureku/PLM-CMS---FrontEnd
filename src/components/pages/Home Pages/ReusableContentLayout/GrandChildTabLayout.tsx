@@ -1,150 +1,88 @@
 import { Flex } from "@mantine/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Jobs } from "../../../../assets/Home_Static_Data/CareersJobs";
+import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
-import LongCardWithoutBottomRow from "../../../Reusable Components/LongCardWithoutBottomRow";
-export default function GrandChildTabLayout() {
+import LongCard from "../../../Reusable Components/LongCard";
+
+type Props = {
+    childs: string[],
+
+}
+
+export default function GrandChildTabLayout({ childs } = Props) {
     const { pathname } = useLocation()
     const directory = useDirectoryRenderer(pathname.split("/"))
-
-    const newsData = [
-        {
-            Title: "Title",
-            ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-
-            BottomRow: {
-                Date: "11/01/23",
-                Time: "9:00PM",
-            },
-        },
-        {
-            Title: "Title",
-            ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-
-            BottomRow: {
-                Date: "11/01/23",
-                Time: "9:00PM",
-            },
-        },
-        {
-            Title: "Title",
-            ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-
-            BottomRow: {
-                Date: "11/01/23",
-                Time: "9:00PM",
-            },
-        },
-        {
-            Title: "Title",
-            ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-
-            BottomRow: {
-                Date: "11/01/23",
-                Time: "9:00PM",
-            },
-        },
-        {
-            Title: "Title",
-            ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-
-            BottomRow: {
-                Date: "11/01/23",
-                Time: "9:00PM",
-            },
-        },
-        {
-            Title: "Title",
-            ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-
-            BottomRow: {
-                Date: "11/01/23",
-                Time: "9:00PM",
-            },
-        },
-        {
-            Title: "Title",
-            ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
-            Description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
-            BtnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-
-            BottomRow: {
-                Date: "11/01/23",
-                Time: "9:00PM",
-            },
-        },
-
-
-    ]
-
-
-    const renderData = newsData.map((item, index) => {
+    const lastPathSegment = window.location.pathname.split('/').filter(part => part.trim() !== '').pop();
+    const [activeChild, setActiveChild] = useState(childs[0])
+    const [data, setData] = useState("")
+    const renderData = isLongCardWithoutBottomRowObject(data) && activeChild.replace(/\s/g, '') === lastPathSegment ? newsData.map((item, index) => {
         return (
-            <LongCardWithoutBottomRow
+            <LongCard
                 key={index}
                 {...item}
             />
         );
-    });
+    }) : console.log(data);
 
     // Should be reusable especially when we pass sub childs
 
-    const [activeChild, setActiveChild] = useState("Announcements")
-    const childs: string[] = [
-        "Announcements",
-        "NewsLetter",
-        "Message From the  University President",
-        "Careers / Job Openings"
-    ]
+    const handleChildClick = (child: string) => {
+        setActiveChild(child);
+        handleChangeURL(child);
+        setData(newsData)
 
-    const renderChilds = childs.map((child, index) => {
-        return (<div key={index} className={"mousePointer " + (child === activeChild ? "Yellow" : "")} onClick={() => setActiveChild(child)}>{child}
-        </div>)
-    })
+    };
 
-    const renderContent = () => {
-        switch (activeChild) {
-            case "Announcements":
-                return renderData;
-            case "NewsLetter":
-            case "Message From the University President":
-                return renderData;
-            case "Careers / Job Openings":
-                return renderData;
-            default:
-
-                break;
-        }
+    const handleChangeURL = (newDirectory: string) => {
+        const currentPath = window.location.pathname;
+        const newPath = currentPath.replace(/\/[^/]+$/, '/' + newDirectory.replace(/\s+/g, ''));
+        window.history.pushState({}, '', newPath);
     };
 
 
 
+    const renderChilds = childs.map((child, index) => {
+        return (<div key={index} className={"mousePointer " + (child === activeChild ? "Yellow" : "")} onClick={() => handleChildClick(child)}>{child}
+        </div>)
+    })
+
+    function isLongCardWithoutBottomRowObject(obj: any): obj is LongCardWithoutBottomRowObject | LongCardWithoutBottomRowObject[] {
+        if (Array.isArray(obj)) {
+            return obj.every(item =>
+                typeof item === 'object' &&
+                item !== null &&
+                'ImageLink' in item &&
+                typeof item.ImageLink === 'string' &&
+                'Title' in item &&
+                typeof item.Title === 'string' &&
+                'Description' in item &&
+                typeof item.Description === 'string' &&
+                'BtnLink' in item &&
+                typeof item.BtnLink === 'string'
+            );
+        }
+
+        return (
+            typeof obj === 'object' &&
+            obj !== null &&
+            'ImageLink' in obj &&
+            typeof obj.ImageLink === 'string' &&
+            'Title' in obj &&
+            typeof obj.Title === 'string' &&
+            'Description' in obj &&
+            typeof obj.Description === 'string' &&
+            'BtnLink' in obj &&
+            typeof obj.BtnLink === 'string'
+        );
+    }
+
+    useEffect(() => {
+        console.log("Fetch new Data from " + activeChild)
+        setData(Jobs)
+
+    }, [])
 
     return <>
         <Flex direction={"column"} align={"center"}>
@@ -158,7 +96,7 @@ export default function GrandChildTabLayout() {
                 <Flex style={{ height: "100%" }} className="ContentMaxWidth" direction={"column"} gap={"lg"}>
                     <h3>Announcements</h3>
                     <Flex direction={"column"} gap={"md"} >
-                        {renderContent()}
+                        {renderData}
                     </Flex>
                 </Flex>
             </Flex>

@@ -7,7 +7,7 @@ export default function LongCard(props: LongCardObject) {
   //To add functionality
 
   return (
-    <div className="LongCard_Container hidden">
+    <div className="LongCard_Container">
       <div>
         {" "}
         <Image
