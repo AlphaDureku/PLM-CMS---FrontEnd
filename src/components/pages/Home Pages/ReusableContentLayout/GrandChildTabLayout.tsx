@@ -1,6 +1,6 @@
 import { Flex } from "@mantine/core";
 import React, { useEffect, useState } from "react";
-import { LongCardObject, LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
+import { LongCardObject } from "../../../../Types/HomePageTypes";
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import LongCard from "../../../Reusable Components/LongCard";
 
@@ -20,7 +20,7 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
     console.log(window.location.pathname)
     const [data, setData] = useState < any > ("");
     const [activeChild, setActiveChild] = useState(childs[indexOfLastPathSegment])
-    const renderData = isLongCardWithoutBottomRowObjectArray(data) ? data.map((item: LongCardWithoutBottomRowObject, index: number) => {
+    const renderData = isLongCardWithoutBottomRowObjectArray(data) ? data.map((item: LongCardObject, index: number) => {
         return (
             <LongCard
                 key={index}
