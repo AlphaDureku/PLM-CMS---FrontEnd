@@ -1,5 +1,5 @@
 import { Flex } from "@mantine/core";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import LongCard from "../../../Reusable Components/LongCard";
 
@@ -7,7 +7,7 @@ type Props = {
     childs: string[],
     // pathName: string,
     setSplitPathName: React.Dispatch<React.SetStateAction<string[]>>,
-    directory: any,
+    directory: React.ReactElement
 
 }
 
@@ -47,7 +47,7 @@ export default function GrandChildTabLayout({ childs, setSplitPathName, director
         </div>)
     })
 
-    function isLongCardWithoutBottomRowObject(obj: any): obj is LongCardWithoutBottomRowObject | LongCardWithoutBottomRowObject[] {
+    function isLongCardWithoutBottomRowObject(obj): obj is LongCardWithoutBottomRowObject | LongCardWithoutBottomRowObject[] {
         if (Array.isArray(obj)) {
             return obj.every(item =>
                 typeof item === 'object' &&
