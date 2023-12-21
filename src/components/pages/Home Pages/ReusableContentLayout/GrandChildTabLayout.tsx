@@ -20,7 +20,7 @@ const GrandChildTabLayout: React.FC<Props> = ({ childs, setSplitPathName, direct
     console.log(window.location.pathname)
     const [data, setData] = useState < any > ("");
     const [activeChild, setActiveChild] = useState(childs[indexOfLastPathSegment])
-    const renderData = isLongCardWithoutBottomRowObjectArray(data) ? data.map((item: LongCardObject, index: number) => {
+    const renderData = isLongCardWithoutBottomRowObjectArray(data) ? data.map((item: LongCardWithoutBottomRowObject, index: number) => {
         return (
             <LongCard
                 key={index}
