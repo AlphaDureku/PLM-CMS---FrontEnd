@@ -10,7 +10,7 @@ export default function SubNews() {
   ) as string[];
 
   const { pathname } = useLocation();
-  const [data, setData] = useState<any>("");
+  const [data, setData] = useState < any > ("");
   const [splitPathName, setSplitPathName] = useState(pathname.split("/"));
   const directory = useDirectoryRenderer(splitPathName);
   const indexOfLastPathSegment = childs
@@ -55,7 +55,6 @@ export default function SubNews() {
         setSplitPathName={setSplitPathName}
         directory={directory}
         data={data}
-        setData={setData}
         activeChild={activeChild}
         setActiveChild={setActiveChild}
       />
