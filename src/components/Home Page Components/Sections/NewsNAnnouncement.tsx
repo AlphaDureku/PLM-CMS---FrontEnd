@@ -18,7 +18,7 @@ export default function UserProfile(props: Props) {
         BottomRow={{
           Date: item.BottomRow.Date,
           Time: item.BottomRow.Time,
-          BtnLink: item.BottomRow.BtnLink,
+          BtnLink: item.BtnLink,
         }}
       />
     );

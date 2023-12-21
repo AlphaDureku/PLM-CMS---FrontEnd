@@ -1,8 +1,8 @@
 import { Flex } from "@mantine/core";
 import React, { useEffect, useState } from "react";
+import { LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import LongCard from "../../../Reusable Components/LongCard";
-
 type Props = {
     childs: string[],
     // pathName: string,
@@ -12,11 +12,12 @@ type Props = {
 }
 
 export default function GrandChildTabLayout({ childs, setSplitPathName, directory } = Props) {
-    const indexOfLastPathSegment = childs.map(child => child.replace(/\s/g, '')).indexOf(window.location.pathname.split('/').filter(part => part.trim() !== '').pop());
+    const indexOfLastPathSegment = childs.map((child: string) => child.replace(/\s/g, '')).indexOf(window.location.pathname.split('/').filter(part => part.trim() !== '').pop());
+
     console.log(window.location.pathname)
     const [data, setData] = useState("")
     const [activeChild, setActiveChild] = useState(childs[indexOfLastPathSegment])
-    const renderData = isLongCardWithoutBottomRowObject(data) ? data.map((item, index) => {
+    const renderData = isLongCardWithoutBottomRowObject(data) ? data.map((item: LongCardWithoutBottomRowObject, index: number) => {
         return (
             <LongCard
                 key={index}
@@ -28,10 +29,11 @@ export default function GrandChildTabLayout({ childs, setSplitPathName, director
     const handleChildClick = (child: string) => {
         setActiveChild(child);
         handleChangeURL(child);
-        setSplitPathName(prevArray => {
+        setSplitPathName((prevArray: string[]) => {
             const lastIndex = prevArray.length - 1;
-            return [...prevArray.slice(0, lastIndex), child];
+            return [...prevArray.slice(0, lastIndex), child] as string[];
         });
+
     };
 
     const handleChangeURL = (newDirectory: string) => {
@@ -42,7 +44,7 @@ export default function GrandChildTabLayout({ childs, setSplitPathName, director
 
 
 
-    const renderChilds = childs.map((child, index) => {
+    const renderChilds = childs.map((child: string, index: number) => {
         return (<div key={index} className={"mousePointer " + (child === activeChild ? "Yellow" : "")} onClick={() => handleChildClick(child)}>{child}
         </div>)
     })
