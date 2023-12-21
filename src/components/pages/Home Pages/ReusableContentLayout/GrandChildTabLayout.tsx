@@ -1,6 +1,6 @@
 import { Flex } from "@mantine/core";
 import React, { useEffect, useState } from "react";
-import { LongCardObject, LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
+import { LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import LongCard from "../../../Reusable Components/LongCard";
 

@@ -15,10 +15,10 @@ export default function UserProfile(props: Props) {
         ImageLink={item.ImageLink}
         Description={item.Description}
         Title={item.Title}
-        BtnLink={item.BtnLink}
         BottomRow={{
           Date: item.BottomRow.Date,
           Time: item.BottomRow.Time,
+          BtnLink: item.BottomRow.BtnLink
         }}
       />
     );
