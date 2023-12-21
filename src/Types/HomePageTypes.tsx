@@ -14,7 +14,7 @@ export type LongCardWithoutBottomRowObject = {
 };
 
 export type LongCardObject = LongCardWithoutBottomRowObject & {
-  BottomRow: {
+  BottomRow?: {
     Time: string;
     Date: string;
   };
