@@ -1,10 +1,19 @@
+import useResponsiveBreakpoints from "../../CustomHooks/mediaQueryies";
 import CustomButton from "../../Reusable Components/CustomButton";
 
+
 export default function UserProfile() {
+  const { firstBreakpoint, secondBreakpoint } = useResponsiveBreakpoints()
+
+  const containerStyles = {
+    padding: secondBreakpoint ? "8vw" : "5vw",
+    width: !secondBreakpoint ? "45%" : null,
+  };
+
   return (
     <>
-      <section className="HeroSection_Container">
-        <h1 className="slideFromTop">LOREM IPSUM DOLOR SIT AMET</h1>
+      <section className="HeroSection_Container" style={containerStyles}>
+        <h1 className="slideFromTop H1_Default">LOREM IPSUM DOLOR SIT AMET</h1>
         <p className="slideFromTop">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -16,13 +25,14 @@ export default function UserProfile() {
           <CustomButton
             text="VIEW PROGRAMS"
             color="var(--Yellow)"
-            size="lg"
+            size={firstBreakpoint ? "lg" : (secondBreakpoint ? "md" : "sm")}
             gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           />
           <CustomButton
             text="APPLY NOW"
             color="var(--Yellow)"
-            size="lg"
+            size={firstBreakpoint ? "lg" : (secondBreakpoint ? "md" : "sm")}
+
             ImageLink="/images/GreaterThanSymbol.png"
             gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           />

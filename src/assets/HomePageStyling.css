@@ -2,6 +2,7 @@
   position: absolute;
   top: 0;
   z-index: -99;
+  width: 65dvw;
 }
 
 .HomeLogoBG {
@@ -9,20 +10,24 @@
   z-index: -100;
   margin-top: 5%;
   right: 0;
+  width: 45dvw;
 }
 
 .HeroSection_Container {
   height: 80vh;
   width: 50%;
-  padding: 10%;
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 10%;
+  gap: 3vw;
 }
 
 .HeroSection_Container > h1 {
-  font-size: 3rem;
+  font-size: max(min(1rem, 4vw), 2.5vw);
+}
+
+.HeroSection_Container > p {
+  font-size: max(min(0.8rem, 1.8vw), 1vw);
 }
 
 .HeroSection_Container > div {
@@ -37,7 +42,6 @@
   position: sticky;
   top: 0;
   padding: min(0.5rem, 1%) min(0.5rem, 2%);
-
   z-index: 1;
 }
 

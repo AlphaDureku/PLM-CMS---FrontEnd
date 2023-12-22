@@ -46,20 +46,18 @@ export default function Home() {
           )}
         </Transition>
       </Affix>
+
       <Image
         src="/images/HomePage/RedBlob.png"
-        className="HomeBlobImage  left"
-        w="auto"
+        className="HomeBlobImage left"
       />{" "}
       <Image
         src="/images/HomePage/BuildingBlob.png"
-        className="HomeBlobImage "
-        w="auto"
+        className="HomeBlobImage"
       />
       <Image
         src="/images/HomePage/PLM_LogoBG.png"
         className="HomeLogoBG  right"
-        w="auto"
       />
       <div className="Main_Container">
         <HeroSection />
