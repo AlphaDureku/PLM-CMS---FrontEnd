@@ -8,9 +8,9 @@ export default function ExitBtn() {
     <section className="MissionVision_Section" id="MissionVission">
       <div className="MissionVision_Container">
         <div>
-          <h2>OUR MISSION</h2>
+          <h2 className="responsive_H2">OUR MISSION</h2>
           <div>
-            <p>
+            <p className="responsive_P">
               The Pamantasan ng Lungsod ng Maynila shall form critical-minded
               and service-oriented leaders and innovators in various disciplines
               through accessible and relevant quality education, transformative
@@ -25,8 +25,8 @@ export default function ExitBtn() {
         </div>
         <div>
           <div>
-            <h2>OUR VISION</h2>
-            <p>
+            <h2 className="responsive_H2">OUR VISION</h2>
+            <p className="responsive_P">
               The Pamantasan ng Lungsod ng Maynila shall be the premier people’s
               university pursuing public interest and national development.
             </p>
@@ -38,9 +38,9 @@ export default function ExitBtn() {
           />
         </div>
         <div>
-          <h2>CORE VALUES</h2>
+          <h2 className="responsive_H2">CORE VALUES</h2>
           <div>
-            <p>
+            <p className="responsive_P">
               The Pamantasan ng Lungsod ng Maynila shall be guided by the values
               of academic excellence, integrity and social responsibility, and
               by the principles of <strong>Karunungan</strong>,{" "}

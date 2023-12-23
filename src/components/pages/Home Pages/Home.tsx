@@ -59,7 +59,7 @@ export default function Home() {
         src="/images/HomePage/PLM_LogoBG.png"
         className="HomeLogoBG  right"
       />
-      <div className="Main_Container">
+      <div>
         <HeroSection />
         <QuickAccess
           items={[

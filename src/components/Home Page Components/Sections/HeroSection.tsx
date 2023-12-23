@@ -13,8 +13,8 @@ export default function UserProfile() {
   return (
     <>
       <section className="HeroSection_Container" style={containerStyles}>
-        <h1 className="slideFromTop H1_Default">LOREM IPSUM DOLOR SIT AMET</h1>
-        <p className="slideFromTop">
+        <h1 className="slideFromTop responsive_H1">LOREM IPSUM DOLOR SIT AMET</h1>
+        <p className="slideFromTop responsive_H3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -25,13 +25,13 @@ export default function UserProfile() {
           <CustomButton
             text="VIEW PROGRAMS"
             color="var(--Yellow)"
-            size={firstBreakpoint ? "lg" : (secondBreakpoint ? "md" : "sm")}
+            size={firstBreakpoint ? "lg" : (secondBreakpoint ? "md" : "xs")}
             gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           />
           <CustomButton
             text="APPLY NOW"
             color="var(--Yellow)"
-            size={firstBreakpoint ? "lg" : (secondBreakpoint ? "md" : "sm")}
+            size={firstBreakpoint ? "lg" : (secondBreakpoint ? "md" : "xs")}
 
             ImageLink="/images/GreaterThanSymbol.png"
             gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"

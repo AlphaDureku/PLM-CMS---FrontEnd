@@ -28,7 +28,7 @@ export default function UserProfile(props: Props) {
     <>
       <section className="NewsNAnnouncement_Section">
         <div className="NewsNAnnouncement_Header">
-          <h2>News & Announcement</h2>
+          <h2 className="responsive_H1">News & Announcement</h2>
         </div>
         <Flex
           gap="xl"

@@ -24,7 +24,7 @@ export default function Cards(props: ShortCardObject) {
 
         <div style={{ textAlign: "left" }}>
           <h2>{props.Title}</h2>
-          <p>{props.Description}</p>
+          <p className="responsive_P">{props.Description}</p>
         </div>
       </Card>
     </div>

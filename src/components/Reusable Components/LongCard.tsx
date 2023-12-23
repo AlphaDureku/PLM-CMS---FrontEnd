@@ -1,4 +1,4 @@
-import { Flex, Image } from "@mantine/core";
+import { Flex, Image, Spoiler } from "@mantine/core";
 import { AccessTime, CalendarMonth } from "@mui/icons-material";
 import { LongCardObject } from "../../Types/HomePageTypes";
 import useResponsiveBreakpoints from "../CustomHooks/mediaQueryies";
@@ -6,7 +6,7 @@ import CustomButton from "./CustomButton";
 
 export default function LongCard(props: LongCardObject) {
   //To add functionality
-  const { thirdBreakpoint } = useResponsiveBreakpoints()
+  const { thirdBreakpoint, secondBreakpoint, firstBreakpoint } = useResponsiveBreakpoints()
 
   return (
     <Flex className="LongCard_Container" direction={thirdBreakpoint ? "row" : "column"} gap={"md"}>
@@ -22,24 +22,28 @@ export default function LongCard(props: LongCardObject) {
       </Flex>
       <div>
         <div>
-          <h2>{props.Title}</h2>
-          <p>{props.Description}</p>
+          <h2 className="responsive_H2">{props.Title}</h2>
+          <p className="responsive_P">
+            <Spoiler maxHeight={80} showLabel="..." hideLabel="Hide">
+              {props.Description}
+            </Spoiler>
+          </p>
         </div>
         <hr></hr>
         <div>
           <div className="LongCard_BottomRow">
             <div>
               <CalendarMonth />
-              <span>{props.BottomRow.Date}</span>
+              <p className="responsive_P">{props.BottomRow.Date}</p>
               <AccessTime />
-              <span>{props.BottomRow.Time}</span>
+              <p className="responsive_P">{props.BottomRow.Time}</p>
             </div>
             <div>
               <CustomButton
                 color="#032968"
                 ImageLink="/images/ButtonArrowLogo.png"
                 text="Read More"
-                size="sm"
+                size={firstBreakpoint ? "lg" : (secondBreakpoint ? "md" : "xs")}
                 gotoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               />
             </div>

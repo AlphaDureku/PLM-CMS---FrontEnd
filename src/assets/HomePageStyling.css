@@ -22,14 +22,6 @@
   gap: 3vw;
 }
 
-.HeroSection_Container > h1 {
-  font-size: max(min(1rem, 4vw), 2.5vw);
-}
-
-.HeroSection_Container > p {
-  font-size: max(min(0.8rem, 1.8vw), 1vw);
-}
-
 .HeroSection_Container > div {
   display: flex;
   gap: 10%;
@@ -80,12 +72,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10% 0 0 5%;
-}
-
-.QuickAccess_Header > h2 {
-  font-size: 2rem;
-  font-weight: 600;
+  margin: 5% 0 0 5%;
 }
 
 .QuickAccess_Header {
@@ -147,11 +134,6 @@
 
 .NewsNAnnouncement_Header {
   margin: 2% 0;
-}
-
-.NewsNAnnouncement_Header > h2 {
-  font-size: 2rem;
-  font-weight: 600;
 }
 
 .HomePageFooter_Container {

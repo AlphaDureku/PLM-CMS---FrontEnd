@@ -170,3 +170,18 @@ label {
 .ContentMaxWidth {
   width: 80%;
 }
+.responsive_H1 {
+  font-size: max(min(2rem, 4vw), 2vw);
+}
+
+.responsive_H2 {
+  font-size: max(min(1rem, 4vw), 1.5vw);
+}
+
+.responsive_H3 {
+  font-size: max(min(0.8rem, 2vw), 1.1vw);
+}
+
+.responsive_P {
+  font-size: max(min(0.8rem, 1.8vw), 1rem);
+}
