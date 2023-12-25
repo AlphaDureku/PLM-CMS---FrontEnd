@@ -11,8 +11,8 @@ export interface selectedProp {
 
 export interface LinksGroupProps extends selectedProp {
   icon:
-    | React.ComponentType<React.ComponentProps<typeof IconCalendarStats>>
-    | React.ComponentType<React.ComponentProps<typeof HomeRounded>>;
+  | React.ComponentType<React.ComponentProps<typeof IconCalendarStats>>
+  | React.ComponentType<React.ComponentProps<typeof HomeRounded>>;
   label: string;
   initiallyOpened?: boolean;
   links?: { label: string; link: string }[];
@@ -112,3 +112,10 @@ export interface UsernameFormProps {
   value: string;
   onChange: (value: string) => void;
 }
+
+export type notificationsData = {
+  title: string;
+  description: string;
+  timestamp: string;
+  isRead: boolean;
+};

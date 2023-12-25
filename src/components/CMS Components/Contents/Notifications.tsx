@@ -1,19 +1,15 @@
-import { Avatar, Flex, Group, ScrollArea, Text } from "@mantine/core";
+import { Avatar, Flex, Group, ScrollArea, Spoiler, Text } from "@mantine/core";
 import { CheckRounded } from "@mui/icons-material";
 import { useEffect, useState } from "react";
+import { notificationsData } from "../../../Types/CmsPage";
 
 export default function Notification() {
   const [isUnread, setIsUnread] = useState(true);
-  type notificationsData = {
-    title: string;
-    description: string;
-    timestamp: string;
-    isRead: boolean;
-  };
 
-  const [notificationsList, setNotificationsList] = useState<
+
+  const [notificationsList, setNotificationsList] = useState <
     notificationsData[]
-  >([]);
+    > ([]);
 
   const notificationsL: notificationsData[] = [
     {
@@ -78,32 +74,45 @@ export default function Notification() {
     setNotificationsList(notificationsL);
   }, []);
 
-  const renderNotificationsAll = notificationsList.map(
-    (item: notificationsData) => {
-      return (
-        <Flex justify={"space-between"} className="notificationsFlexBox">
-          <Flex gap={"md"}>
-            <Avatar
-              src={
-                "https://media.tenor.com/A18Em1XffR4AAAAd/bocchi-the-rock-anime.gif"
-              }
-              size={"xl"}
-            ></Avatar>
-            <Flex direction={"column"}>
-              <Text fw={"bold"} size="xl">
-                {item.title}
-              </Text>
-              <Text fw={item.isRead ? "" : "bolder"}>{item.description}</Text>
-            </Flex>
-          </Flex>
 
-          <Flex align={"center"} style={{ color: "var(--Grey)" }}>
-            <h5>{item.timestamp}</h5>
-          </Flex>
-        </Flex>
-      );
+  const NotificationList = () => {
+    const filteredNotifications = isUnread
+      ? notificationsList.filter((item) => !item.isRead)
+      : notificationsList;
+
+    const styles = {
+
     }
-  );
+    return (
+      <>
+        {filteredNotifications.map((item, index) => (
+          <Flex justify={'space-between'} className="notificationsFlexBox" key={index} >
+            <Flex gap={'md'} align={'center'}>
+              <Avatar
+                src={
+                  'https://media.tenor.com/A18Em1XffR4AAAAd/bocchi-the-rock-anime.gif'
+                }
+                size={'xl'}
+              ></Avatar>
+              <Flex direction={'column'}>
+                <h3 className="responsive_H4">
+                  {item.title}
+                </h3>
+                <Spoiler maxHeight={50} showLabel="..." hideLabel="Hide" transitionDuration={0}>
+                  <p className={`responsive_P ${item.isRead ? "" : "bold"}`}>{item.description}</p>
+                </Spoiler>
+              </Flex>
+            </Flex>
+
+            <Flex align={'center'} style={{ color: 'var(--Grey)' }}>
+              <h5>{item.timestamp}</h5>
+            </Flex>
+          </Flex >
+        ))
+        }
+      </>
+    );
+  };
 
   const markAllAsReadInPlace = () => {
     const updatedNotifications = notificationsList.map((notification) => {
@@ -113,34 +122,6 @@ export default function Notification() {
     setNotificationsList(updatedNotifications);
   };
 
-  const renderNotificationsUnread = notificationsList.map(
-    (item: notificationsData) => {
-      if (!item.isRead) {
-        return (
-          <Flex justify={"space-between"} className="notificationsFlexBox">
-            <Flex gap={"md"}>
-              <Avatar
-                src={
-                  "https://media.tenor.com/A18Em1XffR4AAAAd/bocchi-the-rock-anime.gif"
-                }
-                size={"xl"}
-              ></Avatar>
-              <Flex direction={"column"}>
-                <Text fw={"bold"} size="xl">
-                  {item.title}
-                </Text>
-                <Text fw={item.isRead ? "" : "bolder"}>{item.description}</Text>
-              </Flex>
-            </Flex>
-
-            <Flex align={"center"} style={{ color: "var(--Grey)" }}>
-              <h5>{item.timestamp}</h5>
-            </Flex>
-          </Flex>
-        );
-      }
-    }
-  );
 
   return (
     <>
@@ -170,17 +151,9 @@ export default function Notification() {
             <Text size="lg">Mark all as read</Text>
           </Flex>
         </Flex>
-        <ScrollArea className="notificationFlexBoxContainer">
-          <Flex direction={"column"}>
-            {!isUnread ? (
-              renderNotificationsAll
-            ) : !renderNotificationsUnread[0] ? (
-              <h4 className="centerText">No unread notifications</h4>
-            ) : (
-              renderNotificationsUnread
-            )}
-          </Flex>
-        </ScrollArea>
+        <div className="notificationFlexBoxContainer">
+          {NotificationList()}
+        </div>
       </Flex>
     </>
   );

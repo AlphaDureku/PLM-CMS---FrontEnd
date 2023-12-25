@@ -40,11 +40,13 @@
 
 .notificationFlexBoxContainer {
   background-color: #efefef;
-  height: 90%;
+  height: 80vh;
   border-radius: 8px;
+  overflow: auto;
 }
 .notificationsFlexBox {
   border-bottom: 1px solid var(--Grey);
+  height: 17%;
 }
 .notificationsFlexBox > * {
   padding: 12px;
@@ -57,11 +59,11 @@
   transform: translate(-50%, -50%);
 }
 
-.IconHeightWidth{
+.IconHeightWidth {
   height: 70%;
   width: 70%;
 }
 
-.TextInputWidth{
+.TextInputWidth {
   width: 70%;
 }

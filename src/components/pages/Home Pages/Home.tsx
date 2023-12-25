@@ -113,7 +113,7 @@ export default function Home() {
             },
           ]}
         />
-        <MissonVision />
+        {/* <MissonVision /> */}
         <NewsNAnnouncement
           items={[
             {

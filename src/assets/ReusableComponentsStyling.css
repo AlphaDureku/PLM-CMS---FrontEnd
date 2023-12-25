@@ -182,6 +182,13 @@ label {
   font-size: max(min(0.8rem, 2vw), 1.1vw);
 }
 
+.responsive_H4 {
+  font-size: max(min(0.5rem, 2vw), 0.8vw);
+}
+
 .responsive_P {
   font-size: max(min(0.8rem, 1.8vw), 1rem);
+}
+.bold {
+  font-weight: bold;
 }
