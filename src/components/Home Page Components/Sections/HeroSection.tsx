@@ -7,7 +7,7 @@ export default function UserProfile() {
 
   const containerStyles = {
     padding: secondBreakpoint ? "8vw" : "5vw",
-    width: !secondBreakpoint ? "45%" : null,
+    width: !secondBreakpoint ? "45%" : "",
   };
 
   return (

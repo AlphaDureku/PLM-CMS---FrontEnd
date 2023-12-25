@@ -1,4 +1,4 @@
-import { Avatar, Flex, Group, ScrollArea, Spoiler, Text } from "@mantine/core";
+import { Avatar, Flex, Group, Spoiler, Text } from "@mantine/core";
 import { CheckRounded } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { notificationsData } from "../../../Types/CmsPage";
@@ -80,9 +80,7 @@ export default function Notification() {
       ? notificationsList.filter((item) => !item.isRead)
       : notificationsList;
 
-    const styles = {
 
-    }
     return (
       <>
         {filteredNotifications.map((item, index) => (
