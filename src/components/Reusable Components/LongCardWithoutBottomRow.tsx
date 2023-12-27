@@ -1,12 +1,14 @@
 import { Flex, Image } from "@mantine/core";
 import { LongCardWithoutBottomRowObject } from "../../Types/HomePageTypes";
+import useResponsiveBreakpoints from "../CustomHooks/mediaQueryies";
 import CustomButton from "./CustomButton";
 
 export default function LongCardWithoutBottomRow(props: LongCardWithoutBottomRowObject) {
+    const { thirdBreakpoint } = useResponsiveBreakpoints()
     //To add functionality
 
     return (
-        <Flex className="LongCard_Container hidden">
+        <Flex className="LongCard_Container" direction={thirdBreakpoint ? "row" : "column"} gap={"md"}>
             <div>
                 <Image
                     src={props.ImageLink}

@@ -97,7 +97,7 @@ export default function Notification() {
                   {item.title}
                 </h3>
                 <Spoiler maxHeight={50} showLabel="..." hideLabel="Hide" transitionDuration={0}>
-                  <p className={`responsive_P ${item.isRead ? "" : "bold"}`}>{item.description}</p>
+                  <p className={`responsive_P  ${item.isRead ? "Grey" : "bold"}`}>{item.description}</p>
                 </Spoiler>
               </Flex>
             </Flex>

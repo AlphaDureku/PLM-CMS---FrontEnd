@@ -7,17 +7,6 @@
 .mousePointer:hover {
   cursor: pointer;
 }
-.UserProfile_Container {
-  display: flex;
-  width: auto;
-}
-
-.UserProfile_Container > div:nth-child(1) {
-  background-color: var(--Yellow);
-  margin-right: 10px;
-  padding: 5px;
-  border-radius: 100%;
-}
 
 .UserProfile_Container > div:nth-child(2) {
   margin: auto 0;
