@@ -24,7 +24,7 @@ export default function LongCard(props: LongCardObject) {
         <div>
           <h2 className="responsive_H2">{props.Title}</h2>
           <p className="responsive_P">
-            <Spoiler maxHeight={80} showLabel="..." hideLabel="Hide">
+            <Spoiler maxHeight={875} showLabel="..." hideLabel="Hide">
               {props.Description}
             </Spoiler>
           </p>

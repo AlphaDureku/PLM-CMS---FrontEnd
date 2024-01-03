@@ -41,5 +41,9 @@ export type childMenu = {
 export type textNLinks = {
   text: string;
   href: string;
+  ImageLink?: string
+  Description?: string;
+  BtnLink?: string
+
 };
 

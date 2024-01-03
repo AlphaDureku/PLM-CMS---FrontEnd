@@ -135,7 +135,7 @@ export default function HomeNavBar() {
                 >
                   <HoverCard.Target>
                     <Flex className="HoverYellow" justify={"space-between"}>
-                      <a>{itemChild.Parent} </a>
+                      <a href={itemChild.href}>{itemChild.Parent} </a>
                       <KeyboardArrowDownRounded />
                     </Flex>
                   </HoverCard.Target>

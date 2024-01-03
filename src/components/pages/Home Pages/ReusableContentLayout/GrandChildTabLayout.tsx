@@ -1,6 +1,7 @@
 import { Flex } from "@mantine/core";
-import { LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
+import { LongCardObject, LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
 import LongCard from "../../../Reusable Components/LongCard";
+import LongCardWithoutBottomRow from "../../../Reusable Components/LongCardWithoutBottomRow";
 
 type Props = {
   tabHeader: string;
@@ -51,15 +52,23 @@ const GrandChildTabLayout: React.FC<Props> = ({
     );
   });
 
-  const renderData = isLongCardWithoutBottomRowObjectArray(data)
-    ? data.map((item: any, index: number) => {
-      return <LongCard key={index} {...item} />;
-    })
-    : "Hehe";
 
-  function isLongCardWithoutBottomRowObjectArray(
+  console.log(data)
+  const renderData = data
+    ? data.map((item: any, index: number) =>
+      isLongCardObjectArray(data) ? (
+        <LongCard key={index} {...item} />
+
+      ) : (
+        <LongCardWithoutBottomRow key={index} {...item} />
+
+      )
+    )
+    : null;
+
+  function isLongCardObjectArray(
     obj: any
-  ): obj is LongCardWithoutBottomRowObject[] {
+  ): obj is LongCardObject[] {
     return (
       Array.isArray(obj) &&
       obj.every(
@@ -73,7 +82,15 @@ const GrandChildTabLayout: React.FC<Props> = ({
           "Description" in item &&
           typeof item.Description === "string" &&
           "BtnLink" in item &&
-          typeof item.BtnLink === "string"
+          typeof item.BtnLink === "string" &&
+          "BottomRow" in item &&
+          typeof item.BottomRow === "object" &&
+          item.BottomRow !== null &&
+          "Time" in item.BottomRow &&
+          typeof item.BottomRow.Time === "string" &&
+          "Date" in item.BottomRow &&
+          typeof item.BottomRow.Date === "string"
+
       )
     );
   }

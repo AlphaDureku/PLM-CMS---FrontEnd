@@ -53,20 +53,36 @@ export const NavBarDataTop: Menu[] = [
 export const NavBarDataBottom: Menu[] = [
   {
     Parent: "About",
-    href: "/About/University",
     Child: [
       {
         Parent: "University Profile",
+        href: "/About/UniversityProfile",
         Child: [
-          { text: "Vision and Mission", href: "#MissionVission" },
-          { text: "Seal and Symbols", href: "" },
-          { text: "History", href: "" },
-          { text: "University Hymn", href: "" },
-          { text: "University Code", href: "" },
+          {
+            text: "Vision and Mission", href: "#MissionVission", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, aut? Voluptatibus culpa illum rem tenetur quis sunt corrupti enim quibusdam. Quam soluta consequatur recusandae nisi exercitationem mollitia cumque hic dicta?", ImageLink: "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+            BtnLink: "/About/UniversityProfile/UniversityProfile"
+          },
+          {
+            text: "Seal and Symbols", href: "", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, aut? Voluptatibus culpa illum rem tenetur quis sunt corrupti enim quibusdam. Quam soluta consequatur recusandae nisi exercitationem mollitia cumque hic dicta?", ImageLink: "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+            BtnLink: "/About/UniversityProfile/SealAndSymbols"
+          },
+          {
+            text: "History", href: "", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, aut? Voluptatibus culpa illum rem tenetur quis sunt corrupti enim quibusdam. Quam soluta consequatur recusandae nisi exercitationem mollitia cumque hic dicta?", ImageLink: "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+            BtnLink: "/About/UniversityProfile/History"
+          },
+          {
+            text: "University Hymn", href: "", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, aut? Voluptatibus culpa illum rem tenetur quis sunt corrupti enim quibusdam. Quam soluta consequatur recusandae nisi exercitationem mollitia cumque hic dicta?", ImageLink: "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+            BtnLink: "/About/UniversityProfile/UniversityHymn"
+          },
+          {
+            text: "University Code", href: "", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, aut? Voluptatibus culpa illum rem tenetur quis sunt corrupti enim quibusdam. Quam soluta consequatur recusandae nisi exercitationem mollitia cumque hic dicta?", ImageLink: "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+            BtnLink: "/About/UniversityProfile/UniversityCode"
+          },
         ],
       },
       {
         Parent: "Administration",
+        href: "/About/Administration",
         Child: [
           { text: "Board of Regents", href: "" },
           { text: "The President", href: "" },
@@ -78,6 +94,7 @@ export const NavBarDataBottom: Menu[] = [
       },
       {
         Parent: "Pride Hall",
+        href: "/About/PrideHall",
         Child: [
           { text: "Board Exam Passers", href: "" },
           { text: "Graduates", href: "" },

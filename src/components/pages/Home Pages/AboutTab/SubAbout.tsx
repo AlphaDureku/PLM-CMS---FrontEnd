@@ -24,23 +24,41 @@ export default function SubAbout() {
   const [activeChild, setActiveChild] = useState(
     childs[indexOfLastPathSegment]
   );
+  const { Child } = NavBarDataBottom[0]
+
 
   useEffect(() => {
+    conditionallyRenderBodyContent()
+  }, [activeChild]);
+
+  function changePropertyName(originalArray) {
+    return originalArray.map(function (item) {
+      const { text, href, ...rest } = item;
+      return {
+        'Title': text,
+        'BtnLink': href,
+        ...rest
+      };
+    });
+  }
+
+  const conditionallyRenderBodyContent = () => {
     switch (activeChild) {
-      case childs[0]:
-        setData(newsData);
+      case Child[0].Parent:
+        setData(changePropertyName(Child[0].Child));
         break;
       case childs[1]:
-        setData(newsData);
+        setData(changePropertyName(Child[1].Child));
         break;
       case childs[2]:
-        setData(newsData);
+        setData(changePropertyName(Child[2].Child));
         break;
       default:
-        setData("");
+        setData(changePropertyName(Child[0].Child));
         break;
     }
-  }, [activeChild]);
+  }
+
 
   return (
     <>

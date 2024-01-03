@@ -164,15 +164,15 @@ label {
 }
 
 .responsive_H2 {
-  font-size: max(min(1rem, 4vw), 1.5vw);
+  font-size: clamp(1.5rem, 2.5vw, 1.8rem);
 }
 
 .responsive_H3 {
-  font-size: max(min(0.8rem, 2vw), 1.1vw);
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .responsive_H4 {
-  font-size: max(min(0.5rem, 2vw), 0.8vw);
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
 }
 
 .responsive_P {
