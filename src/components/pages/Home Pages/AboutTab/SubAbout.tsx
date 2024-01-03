@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { NavBarDataBottom } from "../../../../assets/Home_Static_Data/HomePage_MenuData";
-import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
 import GrandChildTabLayout from "../ReusableContentLayout/GrandChildTabLayout";
 export default function SubAbout() {

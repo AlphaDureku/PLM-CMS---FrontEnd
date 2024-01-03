@@ -1,5 +1,5 @@
 import { Flex } from "@mantine/core";
-import { LongCardObject, LongCardWithoutBottomRowObject } from "../../../../Types/HomePageTypes";
+import { LongCardObject } from "../../../../Types/HomePageTypes";
 import LongCard from "../../../Reusable Components/LongCard";
 import LongCardWithoutBottomRow from "../../../Reusable Components/LongCardWithoutBottomRow";
 
