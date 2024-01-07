@@ -4,18 +4,38 @@ import { NavBarDataBottom } from "../../../../assets/Home_Static_Data/HomePage_M
 import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
 import GrandChildTabLayout from "../ReusableContentLayout/GrandChildTabLayout";
 export default function SubAbout() {
-  const childs: string[] = NavBarDataBottom[0].Child.map(
-    (obj) => obj.Parent
-  ) as string[];
 
+  NavBarDataBottom[0].Child[1].Child?.map(item => item.text)
+  console.log(NavBarDataBottom[0].Parent)
   const { pathname } = useLocation();
   const [data, setData] = useState < any > ("");
   const [splitPathName, setSplitPathName] = useState(pathname.split("/"));
+  let childs: string[] = [];
+  let tabHeader: string | undefined = "About";
+
+  const aboutCondition = splitPathName.slice(-2).includes("About");
+  const adminCondition =
+    NavBarDataBottom[0]?.Child[1]?.Child !== undefined && splitPathName.slice(-2).includes("Administration");
+  const profileCondition =
+    NavBarDataBottom[0]?.Child[0]?.Child !== undefined && splitPathName.slice(-2).includes("UniversityProfile");
+
+  if (aboutCondition) {
+    childs = NavBarDataBottom[0]?.Child.map((obj) => obj.Parent) as string[];
+  } else if (adminCondition) {
+    childs = NavBarDataBottom[0]?.Child[1]?.Child?.map((obj) => obj.text) as string[];
+    tabHeader = "Administration";
+  } else if (profileCondition) {
+    childs = NavBarDataBottom[0]?.Child[0]?.Child?.map((obj) => obj.text) as string[];
+  } else if (NavBarDataBottom[0]?.Child[2]?.Child !== undefined && splitPathName.slice(-2).includes("UniversityProfile")) {
+    childs = NavBarDataBottom[0]?.Child[2]?.Child?.map((obj) => obj.text) as string[];
+    tabHeader = "Administration";
+  }
+
   const directory = useDirectoryRenderer(splitPathName);
   const indexOfLastPathSegment = childs
-    .map((child: string) => child.replace(/\s/g, ""))
+    .map((child: string) => child)
     .indexOf(
-      window.location.pathname
+      decodeURIComponent(window.location.pathname)
         .split("/")
         .filter((part) => part.trim() !== "")
         .pop() ?? ""
@@ -29,6 +49,20 @@ export default function SubAbout() {
   useEffect(() => {
     conditionallyRenderBodyContent()
   }, [activeChild]);
+
+
+
+  //BUG
+  // useEffect(() => {
+  //   if (splitPathName[splitPathName.length - 1] === 'About') {
+  //     // Redirect to a different URL
+  //     window.history.pushState({}, "", "/about/University%20Profile");
+  //   }
+  // }, []);
+
+
+
+
 
   function changePropertyName(originalArray) {
     return originalArray.map(function (item) {
@@ -57,12 +91,12 @@ export default function SubAbout() {
         break;
     }
   }
-
+  console.log(childs)
 
   return (
     <>
       <GrandChildTabLayout
-        tabHeader="About"
+        tabHeader={tabHeader}
         childs={childs}
         setSplitPathName={setSplitPathName}
         directory={directory}

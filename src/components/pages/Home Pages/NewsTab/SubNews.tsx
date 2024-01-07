@@ -14,9 +14,9 @@ export default function SubNews() {
   const [splitPathName, setSplitPathName] = useState(pathname.split("/"));
   const directory = useDirectoryRenderer(splitPathName);
   const indexOfLastPathSegment = childs
-    .map((child: string) => child.replace(/\s/g, ""))
+    .map((child: string) => child)
     .indexOf(
-      window.location.pathname
+      decodeURIComponent(window.location.pathname)
         .split("/")
         .filter((part) => part.trim() !== "")
         .pop() ?? ""
@@ -24,7 +24,6 @@ export default function SubNews() {
   const [activeChild, setActiveChild] = useState(
     childs[indexOfLastPathSegment]
   );
-
   useEffect(() => {
     switch (activeChild) {
       case NavBarDataBottom[3].Child[0].text:
@@ -45,6 +44,7 @@ export default function SubNews() {
         break;
     }
   }, [activeChild]);
+
 
   return (
     <>

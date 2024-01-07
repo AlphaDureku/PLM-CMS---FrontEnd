@@ -9,10 +9,12 @@ const useDirectoryRenderer = (directory) => {
             const mapForURL = subarray.map((url) => {
                 return ("/" + url)
             })
+            let text = item.charAt(0).toUpperCase() + item.slice(1)
+
             return (
                 <Flex key={index} >
                     < ChevronLeftRounded />
-                    <h3><a href={mapForURL.join("")} > {item.charAt(0).toUpperCase() + item.slice(1)}</a></h3>
+                    <h3><a href={mapForURL.join("")} > {text.replace(/%20/g, ' ')}</a></h3>
                 </Flex >
             );
         }
