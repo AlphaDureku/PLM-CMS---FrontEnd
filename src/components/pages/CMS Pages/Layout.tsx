@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { mockdata } from "../../../assets/CMS_Static_Data/CMS_MenuData";
 import ManageAccounts from "../../CMS Components/Contents/ManageAccounts";
 import Notification from "../../CMS Components/Contents/Notifications";
+import Posts  from "../../CMS Components/Contents/Posts";
 import Tags from "../../CMS Components/Contents/Tags";
 import { CMSSideBar } from "../../CMS Components/SideNavBar";
 import CmsNavBar from "../../CMS Components/TopNavBar";
@@ -18,6 +19,8 @@ export default function Content() {
       case "Dashboard":
         //
         break;
+      case "Posts":
+        return<Posts/>;
       case "Manage Accounts":
         return <ManageAccounts />;
       case "Tags":

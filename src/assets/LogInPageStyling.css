@@ -9,14 +9,14 @@
 
 .LogInPage_PLMLogo{
     width: 100%;
-    max-width: 450px;
+    max-width: 430px;
     height: auto;
     margin-top: 0.5rem;
 }
 
 .LogInPage_Header{
     margin-top: 1rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     letter-spacing: 0.3rem;
     font-weight: 600;
     color: var(--Red);
@@ -26,21 +26,14 @@
     display:flex;
     flex-direction: row;
     align-items: center;
-    margin: 80px 0 0 0;
-    justify-content: center;
+    margin: 60px 0 0 0;
+    justify-content: space-evenly;
 }
 
-.LogInPage_Left_Body_Col{
-    margin-right: 100px;
-}
-
-.LogInPage_Right_Body_Col{
-    margin-left: 100px;
-}
 
 .LogInPage_BGImage{
     width: 100%;
-    max-width: 500px;
+    max-width: 480px;
     height: auto;
     margin-top: 0.5rem;
 }
@@ -57,20 +50,64 @@
 
 }
 
-.LogInPage_Footer_Container{
-    height: 100px;
-}
+.LogInPage_Footer_Container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
 
-.LogInPage_Footer_Bricks{
-    background-color: silver !important;
-    background-image: 
-    linear-gradient(335deg, #b00 23px, transparent 23px),
-    linear-gradient(155deg, #d00 23px, transparent 23px),
-    linear-gradient(335deg, #b00 23px, transparent 23px),
-    linear-gradient(155deg, #d00 23px, transparent 23px);
-    background-size: 58px 58px;
-    background-position: 0px 2px, 4px 35px, 29px 31px, 31px 6px;
-}
+  .Login_brick_wall {
+    display: flex;
+    flex-direction: column-reverse
+  }
+  
+  .Login_brick_row {
+    display: flex;
+  }
+  
+  .brick {
+    width: 5vw; 
+    height: 2.2rem; 
+    background-color: #8B0000; 
+    border: 2px solid #752202; 
+    border-radius: 3px;
+    margin: 2px;
+  }
+  
+  .double {
+    width: 10vw; 
+  }
 
+  .triple{
+    width: 15vw;
+  }
 
+  .brick_blank{
+    width: 5vw; 
+    background-color: #ffff;
+  }
 
+  .brick_footer_name{
+    width: 20vw;
+    height: 2.2rem;
+    background-color: #4F090B;
+    border: 2px solid #752202; 
+    border-radius: 3px;
+    margin: 2px;
+
+  } 
+  
+  .ErrorMessageContainer {
+    margin: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Login_ErrorMessage{
+    font-weight: 600;
+    position: absolute;
+    color: red; 
+  }
