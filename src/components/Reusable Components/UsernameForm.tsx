@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import { TextInput, InputWrapper } from '@mantine/core';
 import { UsernameFormProps } from "../../Types/CmsPage";
 
@@ -7,7 +7,7 @@ import { UsernameFormProps } from "../../Types/CmsPage";
 // }
 
 const UsernameForm: React.FC<UsernameFormProps> = ({ value, onChange }) => {
-  const [error, setError] = useState<string | null>(null);
+
 
   const formstyles = {
     input: {
@@ -15,21 +15,13 @@ const UsernameForm: React.FC<UsernameFormProps> = ({ value, onChange }) => {
     },
   };
 
-  const validateUsername = (value: string): boolean => {
-    const isValid = value.length >= 4;
-    if (!isValid) {
-      setError('Invalid username: Username must be at least 4 characters.');
-    } else {
-      setError(null);
-    }
-    return isValid;
-  };
+
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     onChange(newValue);
 
-    validateUsername(newValue);
+    
   };
 
   return (
@@ -44,7 +36,6 @@ const UsernameForm: React.FC<UsernameFormProps> = ({ value, onChange }) => {
           placeholder="Username"
           value={value}
           onChange={handleInputChange}
-          error={error ? 'Invalid username: Username must be at least 3 characters.' : undefined}
         />
       </InputWrapper>
     </>
