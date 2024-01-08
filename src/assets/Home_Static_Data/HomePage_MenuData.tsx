@@ -3,10 +3,10 @@ export const NavBarDataTop: Menu[] = [
   {
     Parent: "Students",
     Child: [
-      { text: "Student Manual", href: "/downloads/Student%20Manual" },
-      { text: "Tuition and Fees", href: "/downloads/Tuition%20and%20Fees" },
-      { text: "SFES", href: "/downloads/SFES" },
-      { text: "Student 201 Management System", href: "/downloads/Student%20201%20Management%20System" },
+      { text: "Student Manual", href: "/Students/Student%20Manual" },
+      { text: "Tuition and Fees", href: "/Students/Tuition%20and%20Fees" },
+      { text: "SFES", href: "/Students/SFES" },
+      { text: "Student 201 Management System", href: "/Students/Student%20201%20Management%20System" },
     ],
   },
   {
@@ -16,36 +16,34 @@ export const NavBarDataTop: Menu[] = [
         text: "Student Manual",
         href: "https://www.plm.edu.ph/images/downloads/manuals/PLM_Student_Manual_v1.pdf",
       },
-      { text: "Tuition and Fees", href: "/downloads/Faculty/Tuition%20and%20Fees" },
+      { text: "Tuition and Fees", href: "/Faculty/Tuition%20and%20Fees" },
       { text: "SFES", href: "https://web2.plm.edu.ph/sfe/" },
-      { text: "Student 201 Management System", href: "/downloads/Faculty/Student%20201%20Management%20System" },
+      { text: "Student 201 Management System", href: "/Faculty/Student%20201%20Management%20System" },
     ],
   },
   {
     Parent: "Alumni",
     Child: [
-      { text: "The Alumni Association", href: "/downloads/Alumni/The%20Alumni%20Association" },
-      { text: "PLM Scholars Foundation, Inc", href: "/downloads/Alumni/PLM%20Scholars%20Foundation%2C%20Inc" },
-      { text: "Alumni News & Updates", href: "/downloads/Alumni/Alumni%20News%20%26%20Updates" },
-      { text: "ARS", href: "/downloads/Alumni/ARS" },
+      { text: "The Alumni Association", href: "/Alumni/The%20Alumni%20Association" },
+      { text: "PLM Scholars Foundation, Inc", href: "/Alumni/PLM%20Scholars%20Foundation%2C%20Inc" },
+      { text: "Alumni News & Updates", href: "/Alumni/Alumni%20News%20%26%20Updates" },
+      { text: "ARS", href: "/Alumni/ARS" },
     ],
   },
   {
     Parent: "Events",
+    href: "Events",
     Child: [
-      { text: "Student Manual", href: "/downloads/Events/Student%20Manual" },
-      { text: "Tuition and Fees", href: "/downloads/Events/Tuition%20and%20Fees" },
-      { text: "SFES", href: "/downloads/Events/SFES" },
-      { text: "Student 201 Management System", href: "/downloads/Events/Student%20201%20Management%20System" },
+      // { text: "Student Manual", href: "/downloads/Events/Student%20Manual" },
+      // { text: "Tuition and Fees", href: "/downloads/Events/Tuition%20and%20Fees" },
+      // { text: "SFES", href: "/downloads/Events/SFES" },
+      // { text: "Student 201 Management System", href: "/downloads/Events/Student%20201%20Management%20System" },
     ],
   },
   {
     Parent: "Downloads",
     Child: [
-      { text: "Student Manual", href: "/downloads/Downloads/Student%20Manual" },
-      { text: "Tuition and Fees", href: "/downloads/Downloads/Tuition%20and%20Fees" },
-      { text: "SFES", href: "/downloads/Downloads/SFES" },
-      { text: "Student 201 Management System", href: "/downloads/Downloads/Student%20201%20Management%20System" },
+
     ],
   },
 ];
@@ -128,7 +126,7 @@ export const NavBarDataBottom: Menu[] = [
   {
     Parent: "Admission",
     Child: [
-      { text: "Undergraduate Programs", href: "" },
+      { text: "Undergraduate Programs", href: "/Admission/Undergraduate%20Programs" },
       { text: "PLMAT", href: "https://www.plm.edu.ph/admissions/plmat" },
       { text: "CLAT", href: "https://www.plm.edu.ph/admissions/clat" },
       {
@@ -139,6 +137,15 @@ export const NavBarDataBottom: Menu[] = [
         text: "International Students",
         href: "https://plm.edu.ph/community/immigration-and-visa",
       },
+    ],
+  },
+  {
+    Parent: "Community",
+    href: "/Community",
+    Child: [
+      { text: "Campus Map", href: "/Community/Campus%20Map" },
+      { text: "Campus Events", href: "/Community/Campus%20Events" },
+
     ],
   },
   {

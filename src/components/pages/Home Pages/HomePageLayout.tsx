@@ -3,6 +3,7 @@ import useIntersectionObserver from "../../CustomHooks/observerClass";
 import HomePageFooter from "../../Home Page Components/Footer";
 import HomePageNavbar from "../../Home Page Components/NavBar";
 import AboutLayout from "./AboutTab/AboutLayout";
+import AdmissionLayout from "./AdmissionTab/AdmissionLayout";
 import Home from "./Home";
 import { default as NewsLayout } from "./NewsTab/NewsLayout";
 
@@ -21,6 +22,7 @@ export default function HomePageLayout() {
       <Route path="/" element={<Home />} />
       <Route path="/News/*" element={<NewsLayout />} />
       <Route path="/About/*" element={<AboutLayout />} />
+      <Route path="/Admission/*" element={<AdmissionLayout />} />
 
     </Routes>
     <HomePageFooter />

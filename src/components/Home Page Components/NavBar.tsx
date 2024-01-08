@@ -72,10 +72,10 @@ export default function HomeNavBar() {
         key={index}
       >
         <HoverCard.Target>
-          <a className={`makeHoverable makeUnderlineHover ${firstBreakpoint ? "Grey" : "Yellow"}`}>{item.Parent}</a>
+          <a href={item.href} className={`makeHoverable makeUnderlineHover ${firstBreakpoint ? "Grey" : "Yellow"}`}>{item.Parent}</a>
 
         </HoverCard.Target>
-        <HoverCard.Dropdown className="HomePage_HoverCard_Container">
+        {item.Child.length === 0 ? null : <HoverCard.Dropdown className="HomePage_HoverCard_Container">
           <div className="HomePage_HoverCard">
             {item.Child.map((itemChild, childIndex) =>
               itemChild.href && itemChild.href.includes("#") ? (
@@ -97,7 +97,8 @@ export default function HomeNavBar() {
               )
             )}
           </div>
-        </HoverCard.Dropdown>
+        </HoverCard.Dropdown>}
+
       </HoverCard>
     );
   });

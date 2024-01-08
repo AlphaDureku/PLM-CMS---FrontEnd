@@ -63,7 +63,8 @@
 
 .HomePageNavBar_Container > div:nth-child(2) > div {
   display: flex;
-  gap: 80px;
+  gap: 5rem;
+  margin-right: 1%;
 }
 
 /* QuickAccess_Section */
