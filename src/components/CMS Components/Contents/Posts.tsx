@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import { Flex, ScrollArea } from "@mantine/core";
+import React, { useState } from "react";
 
-export default function Posts() {
+export default function Posts({ selectedGrandChild }) {
 
   return (
     <Flex direction="column" align="center" gap="lg">
@@ -12,6 +12,8 @@ export default function Posts() {
       >
       </Flex>
 
+
+      <p>{selectedGrandChild}</p>
       <ScrollArea
         style={{
           backgroundColor: "white",

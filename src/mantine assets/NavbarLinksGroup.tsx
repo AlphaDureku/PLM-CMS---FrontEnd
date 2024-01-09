@@ -21,6 +21,7 @@ export function LinksGroup({
   links,
   selected,
   setSelected,
+  setSelectedGrandChild,
   keys,
 }: LinksGroupProps) {
   const hasLinks = Array.isArray(links);
@@ -32,80 +33,81 @@ export function LinksGroup({
   }, [selected]);
 
   const items = (hasLinks ? links : []).map((link) => (
-    <Text<"a">
-      component="a"
-      className={classes.link}
-      href={link.link}
-      key={link.label}
-      onClick={(event) => {
-        event.preventDefault();
-        setSelectedChild(link.label);
-      }}
+    <Text<"a" >
+  component="a"
+      className = { classes.link }
+      href = { link.link }
+      key = { link.label }
+      onClick = {(event) => {
+    event.preventDefault();
+    setSelectedChild(link.label);
+  }
+}
     >
-      <Flex
-        align={"center"}
-        style={{
-          color: link.label === selectedChild ? "var(--Yellow)" : "var(--Grey)",
-        }}
-      >
-        <ArrowRightRounded /> <h4>{link.label}</h4>
-      </Flex>
-    </Text>
+  <Flex
+    align={"center"}
+    style={{
+      color: link.label === selectedChild ? "var(--Yellow)" : "var(--Grey)",
+    }}
+  >
+    <ArrowRightRounded /> <h4 onClick={() => setSelectedGrandChild(link.label)}>{link.label}</h4>
+  </Flex>
+    </Text >
   ));
 
-  return (
-    <>
-      <UnstyledButton
-        onClick={() => {
-          setOpened((o) => !o);
-          setSelected((prev) => {
-            prev.set("Tab", label);
-            return prev;
-          });
-        }}
-        className={classes.control}
-      >
-        <Group justify="space-between" gap={0}>
-          <Box style={{ display: "flex", alignItems: "center" }}>
-            <Box ml="md">
-              <h3
-                style={{
-                  color: selected === keys ? "var(--Yellow)" : "var(--Grey)",
-                }}
-              >
-                {label}
-              </h3>
-            </Box>
-          </Box>
-          <Group>
-            {hasLinks && (
-              <IconChevronRight
-                className={classes.chevron}
-                stroke={1.5}
-                style={{
-                  width: rem(16),
-                  height: rem(16),
-                  transform: opened ? "rotate(-90deg)" : "none",
-                }}
-              />
-            )}
-            <ThemeIcon
-              size={"4rem"}
-              className="ParentThemeIcon"
-              color="transparent"
+return (
+  <>
+    <UnstyledButton
+      onClick={() => {
+        setOpened((o) => !o);
+        setSelected((prev) => {
+          prev.set("Tab", label);
+          return prev;
+        });
+      }}
+      className={classes.control}
+    >
+      <Group justify="space-between" gap={0}>
+        <Box style={{ display: "flex", alignItems: "center" }}>
+          <Box ml="md">
+            <h3
+              style={{
+                color: selected === keys ? "var(--Yellow)" : "var(--Grey)",
+              }}
             >
-              <Icon
-                style={{
-                  color: selected === keys ? "var(--Yellow)" : "var(--Grey)",
+              {label}
+            </h3>
+          </Box>
+        </Box>
+        <Group>
+          {hasLinks && (
+            <IconChevronRight
+              className={classes.chevron}
+              stroke={1.5}
+              style={{
+                width: rem(16),
+                height: rem(16),
+                transform: opened ? "rotate(-90deg)" : "none",
+              }}
+            />
+          )}
+          <ThemeIcon
+            size={"4rem"}
+            className="ParentThemeIcon"
+            color="transparent"
+          >
+            <Icon
+              style={{
+                color: selected === keys ? "var(--Yellow)" : "var(--Grey)",
 
-                  fontSize: "2.2rem",
-                }}
-              />
-            </ThemeIcon>
-          </Group>
+                fontSize: "2.2rem",
+              }}
+            />
+          </ThemeIcon>
         </Group>
-      </UnstyledButton>
-      {hasLinks ? <Collapse in={opened}>{items}</Collapse> : null}
-    </>
-  );
+      </Group>
+    </UnstyledButton>
+    {hasLinks ? <Collapse in={opened}>{items}</Collapse> : null}
+  </>
+);
 }

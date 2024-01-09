@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { mockdata } from "../../../assets/CMS_Static_Data/CMS_MenuData";
 import ManageAccounts from "../../CMS Components/Contents/ManageAccounts";
 import Notification from "../../CMS Components/Contents/Notifications";
-import Posts  from "../../CMS Components/Contents/Posts";
+import Posts from "../../CMS Components/Contents/Posts";
 import Tags from "../../CMS Components/Contents/Tags";
 import { CMSSideBar } from "../../CMS Components/SideNavBar";
 import CmsNavBar from "../../CMS Components/TopNavBar";
@@ -13,6 +13,7 @@ export default function Content() {
   const [selectedTab, setSelectedTab] = useSearchParams({
     Tab: mockdata[0].label,
   });
+  const [selectedGrandChild, setSelectedGrandChild] = useState("")
 
   const getSelectedMenu = () => {
     switch (selectedTab.get("Tab")) {
@@ -20,7 +21,7 @@ export default function Content() {
         //
         break;
       case "Posts":
-        return<Posts/>;
+        return <Posts selectedGrandChild={selectedGrandChild} />;
       case "Manage Accounts":
         return <ManageAccounts />;
       case "Tags":
@@ -47,6 +48,7 @@ export default function Content() {
               <CMSSideBar
                 selected={selectedTab.get("Tab")}
                 setSelected={setSelectedTab}
+                setSelectedGrandChild={setSelectedGrandChild}
               />
             </div>
           )}

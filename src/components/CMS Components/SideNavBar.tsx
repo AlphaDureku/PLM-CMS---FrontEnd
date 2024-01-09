@@ -12,6 +12,7 @@ export function CMSSideBar(props: selectedProp) {
       selected={props.selected}
       keys={item.label}
       setSelected={props.setSelected}
+      setSelectedGrandChild={props.setSelectedGrandChild}
     />
   ));
 

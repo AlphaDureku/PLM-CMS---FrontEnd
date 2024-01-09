@@ -7,6 +7,7 @@ export interface selectedProp {
   // setSelected: React.Dispatch<React.SetStateAction<string>>;
   // setSelected: () => void;
   setSelected: ReturnType<typeof useSearchParams>[1];
+  setSelectedGrandChild: any
 }
 
 export interface LinksGroupProps extends selectedProp {
@@ -16,7 +17,7 @@ export interface LinksGroupProps extends selectedProp {
   label: string;
   initiallyOpened?: boolean;
   links?: { label: string; link: string }[];
-
+  setSelectedGrandChild: any;
   keys: string;
 }
 
