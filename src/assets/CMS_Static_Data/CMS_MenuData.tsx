@@ -14,7 +14,7 @@ export const mockdata = [
     icon: NewspaperRounded,
     links: [
       { label: "View Posts", link: "/" },
-      { label: "Create Posts ", link: "/" },
+      { label: "Create Posts", link: "/" },
       { label: "Manage Posts", link: "/" },
     ],
   },

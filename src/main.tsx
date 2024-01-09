@@ -7,6 +7,8 @@ import "./assets/LogInPageStyling.css";
 import "./assets/ReusableComponentsStyling.css";
 import "./index.css";
 
+
+
 const theme = createTheme({});
 
 const rootElement = document.getElementById("root");
