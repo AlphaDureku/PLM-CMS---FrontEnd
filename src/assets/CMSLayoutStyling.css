@@ -67,3 +67,34 @@
 .TextInputWidth {
   width: 70%;
 }
+
+.CMS_CreatePosts_Container{
+  display: flex;
+  flex-direction: column;
+}
+
+.Posts-InnerRow{
+  margin: 1.1rem 0 1.1rem 0;
+}
+
+.Posts-InnerRowQuill{
+  margin: 1.1rem 0 1.1rem 0;
+  height: 100%;
+}
+
+.custom-quill {
+  border: 1px solid #CACACA;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
+}
+
+.quill .ql-container{
+  height: 20vh;
+}
+
+.ql-editor {
+  font-family: 'Roboto', sans-serif; /* Replace with your desired font */
+  font-size: 16px; /* Replace with your desired font size */
+}
+
+
+

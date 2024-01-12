@@ -1,7 +1,22 @@
 import { Flex, ScrollArea } from "@mantine/core";
-import React, { useState } from "react";
+import CreatePost from "./Posts Components/CreatePost";
 
 export default function Posts({ selectedGrandChild }) {
+
+  let content;
+  switch (selectedGrandChild) {
+    case "View Posts":
+      content = <h3>View Posts</h3> ;
+      break;
+    case "Create Posts":
+      content = <CreatePost/>;
+    break;
+    case "Manage Posts":
+      content = <h3>Manage Posts</h3>;
+      break;
+    default:
+      content = null;
+  }
 
   return (
     <Flex direction="column" align="center" gap="lg">
@@ -11,20 +26,7 @@ export default function Posts({ selectedGrandChild }) {
         justify="space-around"
       >
       </Flex>
-
-
-      <p>{selectedGrandChild}</p>
-      <ScrollArea
-        style={{
-          backgroundColor: "white",
-          borderRadius: "8px",
-          padding: "2%",
-          height: "70vh",
-        }}
-      >
-        <h3>Posts</h3>
-
-      </ScrollArea>
+      {content}
     </Flex>
   );
 }

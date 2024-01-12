@@ -29,30 +29,42 @@ export function LinksGroup({
   const [selectedChild, setSelectedChild] = useState("");
 
   useEffect(() => {
-    setSelectedChild("");
+    if (selected && ["Dashboard", "Manage Accounts", "Tags", "Notifications"].includes(selected)) {
+      setSelectedChild("");
+      setSelectedGrandChild("");
+    }
   }, [selected]);
+  
+  
+  console.log(selectedChild);
 
   const items = (hasLinks ? links : []).map((link) => (
-    <Text<"a" >
-  component="a"
-      className = { classes.link }
-      href = { link.link }
-      key = { link.label }
-      onClick = {(event) => {
-    event.preventDefault();
-    setSelectedChild(link.label);
-  }
-}
-    >
-  <Flex
-    align={"center"}
-    style={{
-      color: link.label === selectedChild ? "var(--Yellow)" : "var(--Grey)",
+    <Text<"a">
+    component="a"
+    className={classes.link}
+    href={link.link}
+    key={link.label}
+    onClick={(event) => {
+      event.preventDefault();
+      setSelectedChild(link.label);
+      setSelected((prev) => {
+        prev.set("Tab", "Posts");
+        setSelectedGrandChild(link.label);
+        return prev;
+      });
+
     }}
   >
-    <ArrowRightRounded /> <h4 onClick={() => setSelectedGrandChild(link.label)}>{link.label}</h4>
-  </Flex>
-    </Text >
+    <Flex
+      align={"center"}
+      style={{
+        color: link.label === selectedChild ? "var(--Yellow)" : "var(--Grey)",
+      }}
+    >
+      <ArrowRightRounded /> 
+      <h4 >{link.label}</h4>
+    </Flex>
+  </Text>
   ));
 
 return (
