@@ -3,6 +3,11 @@ import { useLocation } from "react-router-dom";
 import { NavBarDataBottom } from "../../../../assets/Home_Static_Data/HomePage_MenuData";
 import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
+import BodyHistory from "../AboutTab/BodyHistory";
+import BodyUniversity_Code from "../AboutTab/BodyUniversity_Code";
+import BodyUniversityHymn from "../AboutTab/BodyUniversity_Hymn";
+import BodyVisionMission from "../AboutTab/BodyVisionMission";
+import SealNSymbols from "../AboutTab/SealNSymbols";
 import GrandChildTabLayout from "../ReusableContentLayout/GrandChildTabLayout";
 export default function SubNews() {
   const childs: string[] = NavBarDataBottom[4].Child.map(
@@ -47,6 +52,8 @@ export default function SubNews() {
     }
   }, [activeChild]);
 
+
+  const components = [<BodyVisionMission />, <SealNSymbols />, <BodyHistory />, <BodyUniversityHymn />, <BodyUniversity_Code />]
 
   const conditionallyRenderNotCardContent = () => {
     switch (activeChild) {
