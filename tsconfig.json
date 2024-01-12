@@ -2,17 +2,17 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "target": "ES2020",
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": false,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "skipLibCheck": true,
+    "skipLibCheck": false,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": false,
+    "isolatedModules": false,
+    "noEmit": false,
     "jsx": "react-jsx",
 
     /* Linting */
