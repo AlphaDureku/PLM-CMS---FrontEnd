@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { NavBarDataBottom } from "../../../../assets/Home_Static_Data/HomePage_MenuData";
 import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
 import GrandChildTabLayout from "../ReusableContentLayout/GrandChildTabLayout";
+import BodyFinancial_aid from "./BodyFinancial_Aid";
 
 
 export default function SubAdmission() {
@@ -75,10 +76,7 @@ export default function SubAdmission() {
         setActiveChild("Undergraduate Programs")
         window.open('https://www.plm.edu.ph/admissions/medical-college-admission-test-mca', '_blank');
         break;
-      case childs[3]:
-        setActiveChild("Undergraduate Programs")
-        window.open('https://www.plm.edu.ph/admissions/scholarships', '_blank');
-        break;
+
       case childs[4]:
         setActiveChild("Undergraduate Programs")
         window.open('https://plm.edu.ph/community/immigration-and-visa', '_blank');
@@ -89,9 +87,27 @@ export default function SubAdmission() {
     }
   }
 
+  const components = [<BodyFinancial_aid />]
+
+
+  const conditionallyRenderNotCardContent = () => {
+    switch (activeChild) {
+      case 'Scholars and Financial Aid':
+        return components[0]
+
+
+      default:
+        return false
+    }
+  }
+
+
+
+
   return (
     <>
       <GrandChildTabLayout
+        components={conditionallyRenderNotCardContent}
         tabHeader={tabHeader}
         childs={childs}
         setSplitPathName={setSplitPathName}

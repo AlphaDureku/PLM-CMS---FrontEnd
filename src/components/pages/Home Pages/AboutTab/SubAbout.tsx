@@ -3,6 +3,11 @@ import { useLocation } from "react-router-dom";
 import { NavBarDataBottom } from "../../../../assets/Home_Static_Data/HomePage_MenuData";
 import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
 import GrandChildTabLayout from "../ReusableContentLayout/GrandChildTabLayout";
+import BodyHistory from "./BodyHistory";
+import BodyUniversity_Code from "./BodyUniversity_Code";
+import BodyUniversity_Hymn from "./BodyUniversity_Hymn";
+import BodyVisionMission from "./BodyVisionMission";
+import SealNSymbols from "./SealNSymbols";
 export default function SubAbout() {
 
   NavBarDataBottom[0].Child[1].Child?.map(item => item.text)
@@ -91,7 +96,27 @@ export default function SubAbout() {
         break;
     }
   }
-  console.log(childs)
+  const components = [<BodyVisionMission />, <SealNSymbols />, <BodyHistory />, <BodyUniversity_Hymn />, <BodyUniversity_Code />]
+
+
+  const conditionallyRenderNotCardContent = () => {
+    switch (activeChild) {
+      case 'Vision and Mission':
+        return components[0]
+      case 'Seal and Symbols':
+        return components[1]
+      case 'History':
+        return components[2]
+      case 'University Hymn':
+        return components[3]
+      case 'University Code':
+        return components[4]
+      default:
+        return false
+    }
+  }
+
+  console.log(activeChild)
 
   return (
     <>
@@ -101,6 +126,7 @@ export default function SubAbout() {
         setSplitPathName={setSplitPathName}
         directory={directory}
         data={data}
+        components={conditionallyRenderNotCardContent}
         setActiveChild={setActiveChild}
         activeChild={activeChild}
       />

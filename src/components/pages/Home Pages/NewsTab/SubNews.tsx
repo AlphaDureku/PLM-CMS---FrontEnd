@@ -5,7 +5,7 @@ import { newsData } from "../../../../assets/Home_Static_Data/NewsData";
 import useDirectoryRenderer from "../../../CustomHooks/TrackNavigate";
 import GrandChildTabLayout from "../ReusableContentLayout/GrandChildTabLayout";
 export default function SubNews() {
-  const childs: string[] = NavBarDataBottom[3].Child.map(
+  const childs: string[] = NavBarDataBottom[4].Child.map(
     (obj) => obj.text
   ) as string[];
 
@@ -24,18 +24,20 @@ export default function SubNews() {
   const [activeChild, setActiveChild] = useState(
     childs[indexOfLastPathSegment]
   );
+
+  console.log(NavBarDataBottom[4].Child[0].text)
   useEffect(() => {
     switch (activeChild) {
-      case NavBarDataBottom[3].Child[0].text:
+      case NavBarDataBottom[4].Child[0].text:
         setData(newsData);
         break;
-      case NavBarDataBottom[3].Child[1].text:
+      case NavBarDataBottom[4].Child[1].text:
         setData(newsData);
         break;
-      case NavBarDataBottom[3].Child[2].text:
+      case NavBarDataBottom[4].Child[2].text:
         setData(newsData);
         break;
-      case NavBarDataBottom[3].Child[3].text:
+      case NavBarDataBottom[4].Child[3].text:
         setData(newsData);
         break;
       default:
@@ -46,15 +48,32 @@ export default function SubNews() {
   }, [activeChild]);
 
 
+  const conditionallyRenderNotCardContent = () => {
+    switch (activeChild) {
+      case 'Vision and Mission':
+        return components[0]
+      case 'Seal and Symbols':
+        return components[1]
+      case 'History':
+        return components[2]
+      case 'University Hymn':
+        return components[3]
+      case 'University Code':
+        return components[4]
+      default:
+        return false
+    }
+  }
+
   return (
     <>
-
       <GrandChildTabLayout
         tabHeader={"News and Updates"}
         childs={childs}
         setSplitPathName={setSplitPathName}
         directory={directory}
         data={data}
+        components={conditionallyRenderNotCardContent}
         activeChild={activeChild}
         setActiveChild={setActiveChild}
       />

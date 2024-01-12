@@ -5,7 +5,8 @@ export const NavBarDataTop: Menu[] = [
     Child: [
       { text: "Student Manual", href: "/Students/Student%20Manual" },
       { text: "Tuition and Fees", href: "/Students/Tuition%20and%20Fees" },
-      { text: "SFES", href: "/Students/SFES" },
+      { text: "Student's Faculty Evaluation System (SFES)", href: "/Students/SFES" },
+      { text: "Computerized Registration System (CRS)", href: "/Students/CRS" },
       { text: "Student 201 Management System", href: "/Students/Student%20201%20Management%20System" },
     ],
   },
