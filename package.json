@@ -16,8 +16,10 @@
     "@mantine/hooks": "^7.1.5",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.17",
-    "@tabler/icons-react": "^2.40.0",
+    "@tabler/icons-react": "^2.45.0",
     "lodash": "^4.17.21",
+    "react-file-input-previews-base64": "^1.0.8",
+    "react-images-uploading": "^3.1.7",
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.18.0"
   },

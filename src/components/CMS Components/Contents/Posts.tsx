@@ -1,5 +1,6 @@
-import { Flex, ScrollArea } from "@mantine/core";
+import { Flex } from "@mantine/core";
 import CreatePost from "./Posts Components/CreatePost";
+import ModifyPost from "./Posts Components/ModifyPost";
 
 export default function Posts({ selectedGrandChild }) {
 
@@ -12,7 +13,7 @@ export default function Posts({ selectedGrandChild }) {
       content = <CreatePost/>;
     break;
     case "Manage Posts":
-      content = <h3>Manage Posts</h3>;
+      content = <ModifyPost/>;
       break;
     default:
       content = null;

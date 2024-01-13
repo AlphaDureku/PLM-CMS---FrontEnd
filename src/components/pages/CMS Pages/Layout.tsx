@@ -8,6 +8,7 @@ import Posts from "../../CMS Components/Contents/Posts";
 import Tags from "../../CMS Components/Contents/Tags";
 import { CMSSideBar } from "../../CMS Components/SideNavBar";
 import CmsNavBar from "../../CMS Components/TopNavBar";
+import Dashboard from "../../CMS Components/Dashboard";
 export default function Content() {
   const [menuOpened, setMenuOpened] = useState(true);
   const [selectedTab, setSelectedTab] = useSearchParams({
@@ -17,7 +18,7 @@ export default function Content() {
 
   const getSelectedMenu = () => {
     switch (selectedTab.get("Tab")) {
-      case "Dashboard":
+      case "Dashboard": return <Dashboard setSelectedGrandChild={setSelectedGrandChild}/>
         //
         break;
       case "Posts":

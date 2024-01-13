@@ -7,7 +7,7 @@ import SubmitDiscard from "../../../Reusable Components/SubmitDiscard";
 import { useState, useEffect } from 'react';
 
 
-export default function CreatePost() {
+export default function ModifyPost() {
   const [postTitle, setPostTitle] = useState('');
   const [category, setCategory] = useState('');
   const [status, setStatus] = useState('');
@@ -65,7 +65,7 @@ export default function CreatePost() {
           height: "77vh",
         }}
       >
-        <h3>Create Posts</h3>
+        <h3>Modify Posts</h3>
         <div className="CMS_CreatePosts_Container">
           <div className="Posts-InnerRow">
             <PostTitleForm onChange={(value) => setPostTitle(value)} clearData={clearData} setClearData={setClearData}/>

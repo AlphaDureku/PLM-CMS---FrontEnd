@@ -96,5 +96,83 @@
   font-size: 16px; /* Replace with your desired font size */
 }
 
+.upload__image-wrapper{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction:row ;
+}
+
+.imagefileupload_container{
+  display: flex;
+  flex-direction: row;
+}
+
+.fileinput_container{
+min-height: 20vh;
+}
+
+.mobileresCMS{
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  top: 0; 
+  right: 0;
+  height: 100%;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+  color: var(--Red);
+}
 
 
+
+.image-itemUpload {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: 10px;
+
+}
+
+.image-itemUpload img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  margin: 0 10px 0 10px;
+  border: 1px solid #CACACA;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
+  border-radius: 0.5rem;
+}
+
+.image-itemUpload__btn-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 93%;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+
+.file_upload_error{
+  color: red;
+
+}
+
+.Dashboard_Row{
+  margin: 50px;
+}
+
+.Dashboard_Container{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
