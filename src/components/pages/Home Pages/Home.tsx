@@ -66,7 +66,7 @@ export default function Home() {
             {
               GotoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Title: "Bocchi the Rock",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt.",
@@ -74,7 +74,7 @@ export default function Home() {
             {
               GotoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Title: "Bocchi the Rock",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt.",
@@ -82,7 +82,7 @@ export default function Home() {
             {
               GotoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Title: "Bocchi the Rock",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt.",
@@ -90,7 +90,7 @@ export default function Home() {
             {
               GotoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Title: "Bocchi the Rock",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt.",
@@ -98,7 +98,7 @@ export default function Home() {
             {
               GotoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Title: "Bocchi the Rock",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt.",
@@ -106,7 +106,7 @@ export default function Home() {
             {
               GotoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Title: "Bocchi the Rock",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat perspiciatis non eligendi blanditiis delectus hic! Est in ab incidunt.",
@@ -119,7 +119,7 @@ export default function Home() {
             {
               Title: "Title",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
 
@@ -133,7 +133,7 @@ export default function Home() {
             {
               Title: "Title",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
 
@@ -147,7 +147,7 @@ export default function Home() {
             {
               Title: "Title",
               ImageLink:
-                "https://media.tenor.com/e046riJYwWwAAAAC/bocchi-bocchi-the-rock.gif",
+                "/images/Rectangle 17.png",
               Description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto sapiente quos iste dicta voluptate maxime eligendi repellendus dolore ab beatae nisi, quisquam, nam suscipit vero et facere, obcaecati amet.",
 

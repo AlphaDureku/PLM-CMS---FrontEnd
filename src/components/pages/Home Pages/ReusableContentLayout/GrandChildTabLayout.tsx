@@ -10,7 +10,9 @@ type Props = {
   directory: React.ReactElement;
   data: any;
   activeChild: string;
+  components: any;
   setActiveChild: React.Dispatch<React.SetStateAction<string>>;
+
 };
 
 const GrandChildTabLayout: React.FC<Props> = ({
@@ -19,6 +21,7 @@ const GrandChildTabLayout: React.FC<Props> = ({
   directory,
   data,
   activeChild,
+  components,
   setActiveChild,
   tabHeader,
 }) => {
@@ -40,6 +43,8 @@ const GrandChildTabLayout: React.FC<Props> = ({
     window.history.pushState({}, "", newPath);
   };
 
+
+  console.log(childs)
   const renderChilds = childs.map((child: string, index: number) => {
     return (
       <div
@@ -53,7 +58,6 @@ const GrandChildTabLayout: React.FC<Props> = ({
   });
 
 
-  console.log(data)
   const renderData = data
     ? data.map((item: any, index: number) =>
       isLongCardObjectArray(data) ? (
@@ -95,6 +99,9 @@ const GrandChildTabLayout: React.FC<Props> = ({
     );
   }
 
+
+
+
   return (
     <>
       <Flex direction={"column"} align={"center"}>
@@ -132,7 +139,8 @@ const GrandChildTabLayout: React.FC<Props> = ({
           >
             <h3>{activeChild}</h3>
             <Flex direction={"column"} gap={"md"}>
-              {renderData}
+              {!components() ? renderData : components()}
+
             </Flex>
           </Flex>
         </Flex>
